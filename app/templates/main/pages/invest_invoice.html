@@ -1,0 +1,119 @@
+
+{% extends "main/layouts/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} <title>NOLE | Investment</title> {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="base_wrapper">
+    <div class="card_invoice">
+            <a href="#">
+                <img class="acrypto_qrcode_image" 
+                style="max-width:200px; height:auto; width:auto\9;" 
+                alt="qrcode" data-size="200" src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=bitcoin:{{dataInvoice.address}}?amount={{dataInvoice.amount}}&amp;choe=UTF-8">
+            </a>
+            <h3 class="title">{{dataInvoice.amount}} {{dataInvoice.currency}}</h3>
+            <p class="note">Send exactly {{dataInvoice.amount}} {{dataInvoice.currency}} to:</p>
+            <p class="address">{{dataInvoice.address}}</p>
+            
+            <div class="time_left">
+               Time Left: <span value="{{dataInvoice.time_end}}" class="status-countdown" id="countdown"></span>
+            </div>
+            <p class="waiting">
+                Awaiting Payment From You...
+            </p>
+    </div>
+    
+</div>
+
+
+{% endblock content %}
+
+{% block javascripts %}
+<script type="text/javascript">
+    // localStorage.setItem("{{dataInvoice.transaction_id}}", "Smith");
+    var time_end = localStorage.getItem("{{dataInvoice.transaction_id}}");
+    if(!time_end){
+        localStorage.setItem("{{dataInvoice.transaction_id}}", {{dataInvoice.timeout}});
+    }    
+    var left = time_end || {{dataInvoice.timeout}};
+    function duration2(secs) {
+        if (secs <= 0) {
+            return 'Too Late';
+        }
+        var vDay = Math.floor(secs / 86400);
+        secs -= (vDay * 86400);
+        var vHour = Math.floor(secs / 3600);
+        secs -= (vHour * 3600);
+        var vMin = Math.floor(secs / 60);
+        secs -= (vMin * 60);
+    
+        var sout = '';
+        if (vDay > 0) { sout = sout+vDay+'d '; }
+        if (vHour > 0) { sout = sout+vHour+'h '; }
+        if (vMin > 0) { sout = sout+vMin+'m '; }
+        if (secs > 0) { sout = sout+secs+'s'; }
+        return sout.trim();
+    }
+    
+    function updCountdown() {
+        var el = document.getElementsByClassName('status-countdown');
+        var i = 0;
+        for (i=0; i < el.length; i++) {
+            el[i].innerHTML = duration2(left);
+        }
+        left--;
+        localStorage.setItem("{{dataInvoice.transaction_id}}", left);
+        
+    }
+    setInterval(updCountdown, 1000);
+</script>
+<!-- 
+<script type="text/javascript">
+var getIOSSaveDateObj = function(dateString){
+    if(dateString.indexOf('-') > 0){
+        var arr = dateString.split(/[- :]/);
+        var date = new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]);
+    }else{
+        var arr = dateString.split(/[. :]/);
+        var date = new Date(arr[2], arr[1]-1, arr[0], arr[3], arr[4], arr[5]);
+    }
+    return date;
+}
+    let times = document.getElementById("countdown").getAttribute("value")
+    var new_time = getIOSSaveDateObj(times)
+    var countDownDate = new Date(new_time).getTime();    
+    var nowa = new Date().getTime();
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+    }, 1000);
+  
+    setInterval(function(){
+        // window.location.reload()
+    }, 30000)
+</script> -->
+{% endblock javascripts %}

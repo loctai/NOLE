@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Confirm Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        .email { display: block; width: 470px; padding: 20px 30px; margin: 50px auto; background: #fff; box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3); border-radius: 10px; }
+        p { font-size: 14px; margin-bottom: 1em; line-height: 1; color: #444; }            
+    </style>
+</head>
+<body style="background-color: #e9ecef;">    
+    <div style="padding-top:20px">
+        <div class="email">
+            <div style="text-align: center;">
+                <h3 style=" font-size: 45px; font-weight: 700; line-height: 1; letter-spacing: 1px; text-transform: uppercase; color: #00487b; -webkit-text-stroke: 2px #00487b; margin: 0; ">Nole</h3>
+            </div>            
+            <p>Dear {{ data.name }},</p>
+            <p>{{txt}}</p>
+            <div style="margin: 25px 0;">
+                <span style=" border: 1px solid #00487b; padding: 10px 20px; letter-spacing: 10px; border-radius: 5px; font-size: 25px; color: #0996fb; ">{{data.code}}</span>
+            </div>
+            <p>Sincerely,</p>
+            <p>The NOLE Team</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,802 @@
+
+{% extends "main/layouts/base.html" %}
+
+{% block title %} <title>NOLE | Dashboard</title> {% endblock %}
+
+{% block content %}
+
+<div class="base_wrapper partner_link">
+  <div class="partner_link_wrapper">
+      <div class="preview">
+          <img src="/static/account/img/bg/exm.png" alt="NOLE">
+      </div>
+
+      <div class="link_info">
+          <h3 class="title">
+            Referral Link
+        </h3>
+          <!-- <p class="text">Use our affiliate program to work with your referral partners and get even more income! We provide you with unlimited opportunities for the number of your referral partners and high interest conditions for the possibility of your early development.</p> -->
+          <input type="text" class="input_link" readonly value="https://nole.ai/?ref={{user.username}}" />
+          <div class="link_control">
+              <button class="big_button link_copy" data-link="https://nole.ai/?ref={{user.username}}" data-base-text="Get the link" data-copied-text="Copied!">
+                  <i class="icon">
+                      <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.092 512.092" style="enable-background:new 0 0 512.092 512.092;" xml:space="preserve">
+  <g>
+      <g>
+          <path d="M312.453,199.601c-6.066-6.102-12.792-11.511-20.053-16.128c-19.232-12.315-41.59-18.859-64.427-18.859
+              c-31.697-0.059-62.106,12.535-84.48,34.987L34.949,308.23c-22.336,22.379-34.89,52.7-34.91,84.318
+              c-0.042,65.98,53.41,119.501,119.39,119.543c31.648,0.11,62.029-12.424,84.395-34.816l89.6-89.6
+              c1.628-1.614,2.537-3.816,2.524-6.108c-0.027-4.713-3.87-8.511-8.583-8.484h-3.413c-18.72,0.066-37.273-3.529-54.613-10.581
+              c-3.195-1.315-6.867-0.573-9.301,1.877l-64.427,64.512c-20.006,20.006-52.442,20.006-72.448,0
+              c-20.006-20.006-20.006-52.442,0-72.448l108.971-108.885c19.99-19.965,52.373-19.965,72.363,0
+              c13.472,12.679,34.486,12.679,47.957,0c5.796-5.801,9.31-13.495,9.899-21.675C322.976,216.108,319.371,206.535,312.453,199.601z"
+              />
+      </g>
+  </g>
+  <g>
+      <g>
+          <path d="M477.061,34.993c-46.657-46.657-122.303-46.657-168.96,0l-89.515,89.429c-2.458,2.47-3.167,6.185-1.792,9.387
+              c1.359,3.211,4.535,5.272,8.021,5.205h3.157c18.698-0.034,37.221,3.589,54.528,10.667c3.195,1.315,6.867,0.573,9.301-1.877
+              l64.256-64.171c20.006-20.006,52.442-20.006,72.448,0c20.006,20.006,20.006,52.442,0,72.448l-80.043,79.957l-0.683,0.768
+              l-27.989,27.819c-19.99,19.965-52.373,19.965-72.363,0c-13.472-12.679-34.486-12.679-47.957,0
+              c-5.833,5.845-9.35,13.606-9.899,21.845c-0.624,9.775,2.981,19.348,9.899,26.283c9.877,9.919,21.433,18.008,34.133,23.893
+              c1.792,0.853,3.584,1.536,5.376,2.304c1.792,0.768,3.669,1.365,5.461,2.048c1.792,0.683,3.669,1.28,5.461,1.792l5.035,1.365
+              c3.413,0.853,6.827,1.536,10.325,2.133c4.214,0.626,8.458,1.025,12.715,1.195h5.973h0.512l5.12-0.597
+              c1.877-0.085,3.84-0.512,6.059-0.512h2.901l5.888-0.853l2.731-0.512l4.949-1.024h0.939c20.961-5.265,40.101-16.118,55.381-31.403
+              l108.629-108.629C523.718,157.296,523.718,81.65,477.061,34.993z"/>
+      </g>
+  </g>
+</svg>                    </i>
+                  <span class="btn_text">Get the link</span>
+              </button>
+
+              <ul class="action_position">
+                <li>
+                    {% if user.position == 0 %}
+                        <input type="radio" checked id="left" value="0"  name="position">
+                    {% else %}
+                        <input type="radio" id="left"  value="0" name="position">
+                    {% endif %}
+                  <label for="left">Left</label>
+                  
+                  <div class="check"></div>
+                </li>
+                
+                <li>
+                    {% if user.position == 1 %}
+                    <input type="radio" checked id="right"  value="1" name="position">
+                    {% else %}
+                        <input type="radio" id="right"  value="1" name="position">
+                    {% endif %}
+                  <label for="right">Right</label>
+                  
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+                
+              
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="base_wrapper">
+  <div class="card_head">
+    <h2 class="base_title">Crypto<strong> Wallet</strong></h2>
+    <div class="live_ticker">
+        <div class="items trx_price" data-trx={{price_trx}}>
+             TRX = $ {{price_trx}}
+        </div>
+        <div class="items btc_price" data-btc={{price_btc}}>
+             BTC = $ {{price_btc}}
+        </div>
+        <div class="items eth_price" data-eth={{price_eth}}>
+            ETH = $ {{price_eth}}
+       </div>
+       <div class="items qtc_price" data-qtc={{price_qtc}}>
+            QTC = $ {{price_qtc}}
+       </div>
+    </div>
+</div>
+  <div class="card_dash">
+      <div class="card_dash-box _link dashAction" data-currency="BTC">
+          <div class="card_dash-container">
+              <div class="card_dash-left">
+                <div class="bg_ic"></div>
+                <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16s-7.163 16-16 16zm7.189-17.98c.314-2.096-1.283-3.223-3.465-3.975l.708-2.84l-1.728-.43l-.69 2.765c-.454-.114-.92-.22-1.385-.326l.695-2.783L15.596 6l-.708 2.839c-.376-.086-.746-.17-1.104-.26l.002-.009l-2.384-.595l-.46 1.846s1.283.294 1.256.312c.7.175.826.638.805 1.006l-.806 3.235c.048.012.11.03.18.057l-.183-.045l-1.13 4.532c-.086.212-.303.531-.793.41c.018.025-1.256-.313-1.256-.313l-.858 1.978l2.25.561c.418.105.828.215 1.231.318l-.715 2.872l1.727.43l.708-2.84c.472.127.93.245 1.378.357l-.706 2.828l1.728.43l.715-2.866c2.948.558 5.164.333 6.097-2.333c.752-2.146-.037-3.385-1.588-4.192c1.13-.26 1.98-1.003 2.207-2.538zm-3.95 5.538c-.533 2.147-4.148.986-5.32.695l.95-3.805c1.172.293 4.929.872 4.37 3.11zm.535-5.569c-.487 1.953-3.495.96-4.47.717l.86-3.45c.975.243 4.118.696 3.61 2.733z" fill="#ff9900"/></svg>
+              </div>
+              
+              <div class="card_dash-right">
+                  <div class="info">
+                      <strong class="title">{{user.wallet.BTC.balance | format_satoshi}}</strong>
+                      <small class="sub_title">BTC</small>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card_dash-box _link dashAction" data-currency="USDT" >
+          <div class="card_dash-container" >
+              <div class="card_dash-left">
+                <div class="bg_ic"></div>
+                  <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16s-7.163 16-16 16zm1.922-18.207v-2.366h5.414V7.819H8.595v3.608h5.414v2.365c-4.4.202-7.709 1.074-7.709 2.118c0 1.044 3.309 1.915 7.709 2.118v7.582h3.913v-7.584c4.393-.202 7.694-1.073 7.694-2.116c0-1.043-3.301-1.914-7.694-2.117zm0 3.59v-.002c-.11.008-.677.042-1.942.042c-1.01 0-1.721-.03-1.971-.042v.003c-3.888-.171-6.79-.848-6.79-1.658c0-.809 2.902-1.486 6.79-1.66v2.644c.254.018.982.061 1.988.061c1.207 0 1.812-.05 1.925-.06v-2.643c3.88.173 6.775.85 6.775 1.658c0 .81-2.895 1.485-6.775 1.657z" fill="#22a079"/></svg>
+              </div>
+              <div class="card_dash-right">
+                  <div class="info">
+                      <strong class="title">{{user.wallet.USDT.balance | format_satoshi}}</strong>
+                      <small class="sub_title">USDT ERC20</small>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card_dash-box _link dashAction" data-currency="ETH">
+          <div class="card_dash-container">
+              <div class="card_dash-left">
+                <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.62em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 417"><path fill="#343434" d="M127.961 0l-2.795 9.5v275.668l2.795 2.79l127.962-75.638z"/><path fill="#8C8C8C" d="M127.962 0L0 212.32l127.962 75.639V154.158z"/><path fill="#3C3C3B" d="M127.961 312.187l-1.575 1.92v98.199l1.575 4.6L256 236.587z"/><path fill="#8C8C8C" d="M127.962 416.905v-104.72L0 236.585z"/><path fill="#141414" d="M127.961 287.958l127.96-75.637l-127.96-58.162z"/><path fill="#393939" d="M0 212.32l127.96 75.638v-133.8z"/></svg>
+              </div>
+              <div class="card_dash-right">
+                  <div class="info">
+                      <strong class="title">{{user.wallet.ETH.balance | format_satoshi}}</strong>
+                      <small class="sub_title">ETH</small>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card_dash-box _link dashAction" data-currency="TRX">
+        <div class="card_dash-container">
+            <div class="card_dash-left">
+              <div class="bg_ic"></div>
+              <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16s-7.163 16-16 16zm8.745-19.734c-.799-.567-1.654-1.172-2.49-1.772c-.019-.014-.037-.028-.06-.042a1.12 1.12 0 0 0-.328-.187l-.01-.005a3200.4 3200.4 0 0 1-6.709-1.654L9.164 7.129l-.157-.042c-.18-.051-.388-.108-.61-.08a.421.421 0 0 0-.17.066l-.056.047a.69.69 0 0 0-.157.253L8 7.411v.215l.01.033c1.26 3.585 2.554 7.222 3.802 10.741c.961 2.71 1.96 5.516 2.934 8.272c.06.187.231.31.444.328h.046a.519.519 0 0 0 .462-.258l3.66-5.413c.891-1.317 1.783-2.638 2.675-3.955l1.095-1.622c.6-.89 1.22-1.809 1.835-2.704l.032-.046v-.057c.014-.164.018-.501-.25-.68zm-4.288 1.973c-.86.454-1.737.923-2.62 1.387l1.544-1.678c.642-.703 1.312-1.43 1.968-2.142l.014-.014c.055-.075.125-.145.199-.22c.05-.051.106-.103.157-.164c.342.24.688.483 1.021.722c.24.173.485.347.735.52a257.207 257.207 0 0 0-3.018 1.589zm-2.208-.225c-.661.726-1.345 1.471-2.024 2.207a1308.127 1308.127 0 0 0-3.965-4.855l-1.779-2.17l-.004-.005c-.134-.154-.264-.323-.393-.482c-.083-.108-.171-.211-.259-.319c.536.14 1.077.272 1.608.398c.467.113.952.23 1.428.352l8.045 1.982c-.892.966-1.789 1.945-2.657 2.892zm-2.325 9.134c.051-.492.107-.998.153-1.495c.042-.399.083-.806.125-1.195c.064-.624.134-1.27.19-1.903l.013-.112c.046-.404.092-.82.12-1.238a1.38 1.38 0 0 1 .167-.08c.069-.032.138-.06.207-.102a611.674 611.674 0 0 1 3.207-1.697c1.068-.562 2.163-1.144 3.249-1.72a935.472 935.472 0 0 0-2.944 4.35c-.827 1.222-1.677 2.483-2.523 3.725c-.332.497-.679 1.003-1.007 1.49c-.37.544-.749 1.101-1.118 1.66c.046-.563.101-1.13.161-1.683zM9.484 9.496c-.06-.169-.126-.342-.181-.506c1.248 1.528 2.504 3.065 3.729 4.555c.633.773 1.266 1.542 1.899 2.32c.125.145.25.3.37.45c.157.192.314.394.485.586c-.056.482-.102.97-.153 1.438c-.032.328-.064.657-.101.99v.004c-.014.21-.042.422-.065.628l-.106.933l-.005.032c-.083.947-.185 1.903-.282 2.831c-.041.384-.078.778-.12 1.172c-.023-.07-.05-.141-.074-.207a21.05 21.05 0 0 1-.203-.576l-.495-1.392L9.483 9.496z" fill="#c23631"/></svg>
+            </div>
+            <div class="card_dash-right">
+                <div class="info">
+                    <strong class="title">{{user.wallet.TRX.balance | format_satoshi}}</strong>
+                    <small class="sub_title">TRX</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card_dash-box _link dashAction" data-currency="USD">
+        <div class="card_dash-container">
+            <!-- <div class="card_dash-left">
+                <svg class="svg-icon white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372s372 166.6 372 372s-166.6 372-372 372zm47.7-395.2l-25.4-5.9V348.6c38 5.2 61.5 29 65.5 58.2c.5 4 3.9 6.9 7.9 6.9h44.9c4.7 0 8.4-4.1 8-8.8c-6.1-62.3-57.4-102.3-125.9-109.2V263c0-4.4-3.6-8-8-8h-28.1c-4.4 0-8 3.6-8 8v33c-70.8 6.9-126.2 46-126.2 119c0 67.6 49.8 100.2 102.1 112.7l24.7 6.3v142.7c-44.2-5.9-69-29.5-74.1-61.3c-.6-3.8-4-6.6-7.9-6.6H363c-4.7 0-8.4 4-8 8.7c4.5 55 46.2 105.6 135.2 112.1V761c0 4.4 3.6 8 8 8h28.4c4.4 0 8-3.6 8-8.1l-.2-31.7c78.3-6.9 134.3-48.8 134.3-124c-.1-69.4-44.2-100.4-109-116.4zm-68.6-16.2c-5.6-1.6-10.3-3.1-15-5c-33.8-12.2-49.5-31.9-49.5-57.3c0-36.3 27.5-57 64.5-61.7v124zM534.3 677V543.3c3.1.9 5.9 1.6 8.8 2.2c47.3 14.4 63.2 34.4 63.2 65.1c0 39.1-29.4 62.6-72 66.4z" fill="#626262"/></svg>
+            </div> -->
+            <div class="card_dash-left">
+                <div class="bg_ic"></div>
+                  <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16s-7.163 16-16 16zm1.922-18.207v-2.366h5.414V7.819H8.595v3.608h5.414v2.365c-4.4.202-7.709 1.074-7.709 2.118c0 1.044 3.309 1.915 7.709 2.118v7.582h3.913v-7.584c4.393-.202 7.694-1.073 7.694-2.116c0-1.043-3.301-1.914-7.694-2.117zm0 3.59v-.002c-.11.008-.677.042-1.942.042c-1.01 0-1.721-.03-1.971-.042v.003c-3.888-.171-6.79-.848-6.79-1.658c0-.809 2.902-1.486 6.79-1.66v2.644c.254.018.982.061 1.988.061c1.207 0 1.812-.05 1.925-.06v-2.643c3.88.173 6.775.85 6.775 1.658c0 .81-2.895 1.485-6.775 1.657z" fill="#22a079"/></svg>
+              </div>
+            <div class="card_dash-right">
+                <div class="info">
+                    <strong class="title">{{user.wallet.usd_balance}}</strong>
+                    <small class="sub_title">USDT TRC20</small>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="card_dash-box _link" onclick="openWithdrawCommission('USD')">
+        <div class="card_dash-container">
+            <div class="card_dash-left">
+                <svg class="svg-icon white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372s372 166.6 372 372s-166.6 372-372 372zm47.7-395.2l-25.4-5.9V348.6c38 5.2 61.5 29 65.5 58.2c.5 4 3.9 6.9 7.9 6.9h44.9c4.7 0 8.4-4.1 8-8.8c-6.1-62.3-57.4-102.3-125.9-109.2V263c0-4.4-3.6-8-8-8h-28.1c-4.4 0-8 3.6-8 8v33c-70.8 6.9-126.2 46-126.2 119c0 67.6 49.8 100.2 102.1 112.7l24.7 6.3v142.7c-44.2-5.9-69-29.5-74.1-61.3c-.6-3.8-4-6.6-7.9-6.6H363c-4.7 0-8.4 4-8 8.7c4.5 55 46.2 105.6 135.2 112.1V761c0 4.4 3.6 8 8 8h28.4c4.4 0 8-3.6 8-8.1l-.2-31.7c78.3-6.9 134.3-48.8 134.3-124c-.1-69.4-44.2-100.4-109-116.4zm-68.6-16.2c-5.6-1.6-10.3-3.1-15-5c-33.8-12.2-49.5-31.9-49.5-57.3c0-36.3 27.5-57 64.5-61.7v124zM534.3 677V543.3c3.1.9 5.9 1.6 8.8 2.2c47.3 14.4 63.2 34.4 63.2 65.1c0 39.1-29.4 62.6-72 66.4z" fill="#626262"/></svg>
+            </div>
+            <div class="card_dash-right">
+                <div class="info">
+                    <strong class="title">${{user.balance.balance_usd | format_usd}}</strong>
+                    <small class="sub_title">Balance Commission</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card_dash-box _link dashAction" data-currency="QTC">
+        <div class="card_dash-container">
+            <div class="card_dash-left">
+                <img src="/static/account/img/icons/icon.svg" style="height: 45px;">
+            </div>
+            <div class="card_dash-right">
+                <div class="info">
+                    <strong class="title">{{user.wallet.coin_balance | format_satoshi}}</strong>
+                    <small class="sub_title">QTC</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card_dash-box _link" onclick="openWithdraw('QTC2')">
+        <div class="card_dash-container">
+            <div class="card_dash-left">
+                <img src="/static/account/img/icons/icon.svg" style="height: 45px;">
+            </div>
+            <div class="card_dash-right">
+                <div class="info">
+                    
+                    <strong class="title">{{user.wallet.coin_balance_reward | format_satoshi}}</strong>
+                    <small class="sub_title">QTC Reward</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card_dash-box _link" onclick="openWithdraw('QTC4')" style="display: none;">
+        <div class="card_dash-container">
+            <div class="card_dash-left">
+                <img src="/static/account/img/icons/icon.svg" style="height: 45px;">
+            </div>
+            <div class="card_dash-right">
+                <div class="info">
+                    
+                    <strong class="title">{{user.wallet.balance_promotion | format_satoshi}}</strong>
+                    <small class="sub_title">QTC Promotion</small>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="card_dash-box _link" style="display:none;">
+          <div class="card_dash-container">
+              <div class="card_dash-left">
+                <img src="/static/account/img/icons/icon.svg" style="height: 45px;">
+              </div>
+              <div class="card_dash-right" style="display: flex;">
+                  <div class="info" onclick="openWithdraw('QTC')">
+                      <strong class="title">{{user.wallet.coin_balance | format_satoshi}}</strong>
+                      <small class="sub_title">QTC</small>
+                  </div>
+                  <div class="info" onclick="openWithdraw('QTC2')" style="align-items: flex-end;">
+                    <strong class="title">{{user.wallet.coin_balance_reward | format_satoshi}}</strong>
+                      <small class="sub_title">QTC Reward</small>
+                </div>
+              </div>
+          </div>
+      </div>
+      <!-- <div class="card_dash-box crypto"></div> -->
+      <div class="card_dash-box _link" style="display:none;">
+          <div class="card_dash-container">
+              <div class="card_dash-left">
+                <img src="/static/account/img/icons/icon.svg" style="height: 45px;">
+              </div>
+              <div class="card_dash-right" style=" display: flex; ">
+                  <div class="info">
+                      <strong class="title">{{user.wallet.QTC.balance | format_satoshi}}</strong>
+                      <small class="sub_title">QTC</small>
+                  </div>
+                  <div class="card_btn_action" style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        z-index: 1;
+                    ">
+                        <a onclick="getAddress('QTC')" href="javascript:void(0)" style=" color: #0e5181; background:#fff; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border: 1px solid #fff; padding: 3px; border-radius: 5px; width: 64px; margin-bottom: 5px; ">Receive</a>
+                        <a onclick="openWithdraw('QTC3')" href="javascript:void(0)" style=" color: #0e5181; background:#fff; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border: 1px solid #fff; padding: 3px; border-radius: 5px; width: 64px; ">Send</a>
+                    </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+  <!-- Last arbitrage transaction - count: 4 -->
+  <div class="base_wrapper">
+      <h2 class="base_title">Statistical <strong>Commission</strong></h2>
+
+      <div class="card_dash commission" >
+        <div class="card_dash-box" style="display: none;">
+            <div class="card_dash-container">
+                <div class="card_dash-left" id="bitcoin">
+                    <svg class="svg-icon white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.13em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 576 512"><path d="M271.06 144.3l54.27 14.3a8.59 8.59 0 0 1 6.63 8.1c0 4.6-4.09 8.4-9.12 8.4h-35.6a30 30 0 0 1-11.19-2.2c-5.24-2.2-11.28-1.7-15.3 2l-19 17.5a11.68 11.68 0 0 0-2.25 2.66a11.42 11.42 0 0 0 3.88 15.74a83.77 83.77 0 0 0 34.51 11.5V240c0 8.8 7.83 16 17.37 16h17.37c9.55 0 17.38-7.2 17.38-16v-17.6c32.93-3.6 57.84-31 53.5-63c-3.15-23-22.46-41.3-46.56-47.7l-54.27-14.3a8.59 8.59 0 0 1-6.63-8.1c0-4.6 4.09-8.4 9.12-8.4h35.6A30 30 0 0 1 332 83.1c5.23 2.2 11.28 1.7 15.3-2l19-17.5a11.31 11.31 0 0 0 2.17-2.6a11.43 11.43 0 0 0-3.84-15.78a83.82 83.82 0 0 0-34.52-11.5V16c0-8.8-7.82-16-17.37-16h-17.37C285.82 0 278 7.2 278 16v17.6c-32.89 3.6-57.85 31-53.51 63c3.14 23 22.51 41.3 46.57 47.7zm294.21 183.8c-11.8-10.7-30.2-10-42.6 0l-92.4 73.9a63.64 63.64 0 0 1-40 14H272a16 16 0 0 1 0-32h78.29c15.9 0 30.71-10.9 33.25-26.6a31.2 31.2 0 0 0 .46-5.46A32 32 0 0 0 352 320H192a117.66 117.66 0 0 0-74.1 26.29L71.4 384H16a16 16 0 0 0-16 16v96a16 16 0 0 0 16 16h356.77a64 64 0 0 0 40-14L564 377a32 32 0 0 0 1.28-48.9z" fill="#626262"/></svg>
+                </div>
+                <div class="card_dash-right">
+                    <div class="info">
+                        <strong class="title">{{percent}} <sup>%</sup></strong>
+                        <small class="sub_title">Total Receive</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="card_dash-box" >
+              <div class="card_dash-container">
+                  <div class="card_dash-left" id="bitcoin">
+                      <svg class="svg-icon white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.13em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 576 512"><path d="M271.06 144.3l54.27 14.3a8.59 8.59 0 0 1 6.63 8.1c0 4.6-4.09 8.4-9.12 8.4h-35.6a30 30 0 0 1-11.19-2.2c-5.24-2.2-11.28-1.7-15.3 2l-19 17.5a11.68 11.68 0 0 0-2.25 2.66a11.42 11.42 0 0 0 3.88 15.74a83.77 83.77 0 0 0 34.51 11.5V240c0 8.8 7.83 16 17.37 16h17.37c9.55 0 17.38-7.2 17.38-16v-17.6c32.93-3.6 57.84-31 53.5-63c-3.15-23-22.46-41.3-46.56-47.7l-54.27-14.3a8.59 8.59 0 0 1-6.63-8.1c0-4.6 4.09-8.4 9.12-8.4h35.6A30 30 0 0 1 332 83.1c5.23 2.2 11.28 1.7 15.3-2l19-17.5a11.31 11.31 0 0 0 2.17-2.6a11.43 11.43 0 0 0-3.84-15.78a83.82 83.82 0 0 0-34.52-11.5V16c0-8.8-7.82-16-17.37-16h-17.37C285.82 0 278 7.2 278 16v17.6c-32.89 3.6-57.85 31-53.51 63c3.14 23 22.51 41.3 46.57 47.7zm294.21 183.8c-11.8-10.7-30.2-10-42.6 0l-92.4 73.9a63.64 63.64 0 0 1-40 14H272a16 16 0 0 1 0-32h78.29c15.9 0 30.71-10.9 33.25-26.6a31.2 31.2 0 0 0 .46-5.46A32 32 0 0 0 352 320H192a117.66 117.66 0 0 0-74.1 26.29L71.4 384H16a16 16 0 0 0-16 16v96a16 16 0 0 0 16 16h356.77a64 64 0 0 0 40-14L564 377a32 32 0 0 0 1.28-48.9z" fill="#626262"/></svg>
+                  </div>
+                  <div class="card_dash-right">
+                      <div class="info">
+                          <strong class="title">{{user.balance.commission_remain | format_usd}} <sup>$</sup></strong>
+                          <small class="sub_title">Remaining</small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card_dash-box">
+              <div class="card_dash-container">
+                  <div class="card_dash-left">
+                      <svg class="svg-icon white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372s372 166.6 372 372s-166.6 372-372 372zm47.7-395.2l-25.4-5.9V348.6c38 5.2 61.5 29 65.5 58.2c.5 4 3.9 6.9 7.9 6.9h44.9c4.7 0 8.4-4.1 8-8.8c-6.1-62.3-57.4-102.3-125.9-109.2V263c0-4.4-3.6-8-8-8h-28.1c-4.4 0-8 3.6-8 8v33c-70.8 6.9-126.2 46-126.2 119c0 67.6 49.8 100.2 102.1 112.7l24.7 6.3v142.7c-44.2-5.9-69-29.5-74.1-61.3c-.6-3.8-4-6.6-7.9-6.6H363c-4.7 0-8.4 4-8 8.7c4.5 55 46.2 105.6 135.2 112.1V761c0 4.4 3.6 8 8 8h28.4c4.4 0 8-3.6 8-8.1l-.2-31.7c78.3-6.9 134.3-48.8 134.3-124c-.1-69.4-44.2-100.4-109-116.4zm-68.6-16.2c-5.6-1.6-10.3-3.1-15-5c-33.8-12.2-49.5-31.9-49.5-57.3c0-36.3 27.5-57 64.5-61.7v124zM534.3 677V543.3c3.1.9 5.9 1.6 8.8 2.2c47.3 14.4 63.2 34.4 63.2 65.1c0 39.1-29.4 62.6-72 66.4z" fill="#626262"/></svg>
+                  </div>
+                  <div class="card_dash-right">
+                      <div class="info">
+                          <strong class="title">{{user.balance.commission_binary | format_usd}} <sup>$</sup></strong>
+                          <small class="sub_title">Binary</small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card_dash-box">
+              <div class="card_dash-container">
+                  <div class="card_dash-left">
+                      <svg class="svg-icon white" viewBox="0 0 20 20">
+            <path fill="none" d="M4.319,8.257c-0.242,0-0.438,0.196-0.438,0.438c0,0.243,0.196,0.438,0.438,0.438c0.242,0,0.438-0.196,0.438-0.438C4.757,8.454,4.561,8.257,4.319,8.257 M7.599,10.396c0,0.08,0.017,0.148,0.05,0.204c0.034,0.056,0.076,0.104,0.129,0.144c0.051,0.04,0.112,0.072,0.182,0.097c0.041,0.015,0.068,0.028,0.098,0.04V9.918C7.925,9.927,7.832,9.958,7.747,10.02C7.648,10.095,7.599,10.22,7.599,10.396 M15.274,6.505H1.252c-0.484,0-0.876,0.392-0.876,0.876v7.887c0,0.484,0.392,0.876,0.876,0.876h14.022c0.483,0,0.876-0.392,0.876-0.876V7.381C16.15,6.897,15.758,6.505,15.274,6.505M1.69,7.381c0.242,0,0.438,0.196,0.438,0.438S1.932,8.257,1.69,8.257c-0.242,0-0.438-0.196-0.438-0.438S1.448,7.381,1.69,7.381M1.69,15.269c-0.242,0-0.438-0.196-0.438-0.438s0.196-0.438,0.438-0.438c0.242,0,0.438,0.195,0.438,0.438S1.932,15.269,1.69,15.269M14.836,15.269c-0.242,0-0.438-0.196-0.438-0.438s0.196-0.438,0.438-0.438s0.438,0.195,0.438,0.438S15.078,15.269,14.836,15.269M15.274,13.596c-0.138-0.049-0.283-0.08-0.438-0.08c-0.726,0-1.314,0.589-1.314,1.314c0,0.155,0.031,0.301,0.08,0.438H2.924c0.049-0.138,0.081-0.283,0.081-0.438c0-0.726-0.589-1.314-1.315-1.314c-0.155,0-0.3,0.031-0.438,0.08V9.053C1.39,9.103,1.535,9.134,1.69,9.134c0.726,0,1.315-0.588,1.315-1.314c0-0.155-0.032-0.301-0.081-0.438h10.678c-0.049,0.137-0.08,0.283-0.08,0.438c0,0.726,0.589,1.314,1.314,1.314c0.155,0,0.301-0.031,0.438-0.081V13.596z M14.836,8.257c-0.242,0-0.438-0.196-0.438-0.438s0.196-0.438,0.438-0.438s0.438,0.196,0.438,0.438S15.078,8.257,14.836,8.257 M12.207,13.516c-0.242,0-0.438,0.196-0.438,0.438s0.196,0.438,0.438,0.438s0.438-0.196,0.438-0.438S12.449,13.516,12.207,13.516 M8.812,11.746c-0.059-0.043-0.126-0.078-0.199-0.104c-0.047-0.017-0.081-0.031-0.117-0.047v1.12c0.137-0.021,0.237-0.064,0.336-0.143c0.116-0.09,0.174-0.235,0.174-0.435c0-0.092-0.018-0.17-0.053-0.233C8.918,11.842,8.87,11.788,8.812,11.746 M18.78,3.875H4.757c-0.484,0-0.876,0.392-0.876,0.876V5.19c0,0.242,0.196,0.438,0.438,0.438c0.242,0,0.438-0.196,0.438-0.438V4.752H18.78v7.888h-1.315c-0.242,0-0.438,0.196-0.438,0.438c0,0.243,0.195,0.438,0.438,0.438h1.315c0.483,0,0.876-0.393,0.876-0.876V4.752C19.656,4.268,19.264,3.875,18.78,3.875 M8.263,8.257c-1.694,0-3.067,1.374-3.067,3.067c0,1.695,1.373,3.068,3.067,3.068c1.695,0,3.067-1.373,3.067-3.068C11.33,9.631,9.958,8.257,8.263,8.257 M9.488,12.543c-0.062,0.137-0.147,0.251-0.255,0.342c-0.108,0.092-0.234,0.161-0.378,0.209c-0.123,0.041-0.229,0.063-0.359,0.075v0.347H8.058v-0.347c-0.143-0.009-0.258-0.032-0.388-0.078c-0.152-0.053-0.281-0.128-0.388-0.226c-0.108-0.098-0.191-0.217-0.25-0.359c-0.059-0.143-0.087-0.307-0.083-0.492h0.575c-0.004,0.219,0.046,0.391,0.146,0.518c0.088,0.109,0.207,0.165,0.388,0.185v-1.211c-0.102-0.031-0.189-0.067-0.3-0.109c-0.136-0.051-0.259-0.116-0.368-0.198c-0.109-0.082-0.198-0.183-0.265-0.306c-0.067-0.123-0.101-0.275-0.101-0.457c0-0.159,0.031-0.298,0.093-0.419c0.062-0.121,0.146-0.222,0.252-0.303S7.597,9.57,7.735,9.527C7.85,9.491,7.944,9.474,8.058,9.468V9.134h0.438v0.333c0.114,0.005,0.207,0.021,0.319,0.054c0.134,0.04,0.251,0.099,0.351,0.179c0.099,0.079,0.178,0.18,0.237,0.303c0.059,0.122,0.088,0.265,0.088,0.427H8.916c-0.007-0.169-0.051-0.297-0.134-0.387C8.712,9.968,8.626,9.932,8.496,9.919v1.059c0.116,0.035,0.213,0.074,0.333,0.118c0.145,0.053,0.272,0.121,0.383,0.203c0.111,0.083,0.2,0.186,0.268,0.308c0.067,0.123,0.101,0.273,0.101,0.453C9.581,12.244,9.549,12.406,9.488,12.543"></path>
+          </svg>
+                  </div>
+                  <div class="card_dash-right">
+                      <div class="info">
+                          <strong class="title">{{user.balance.commission_floor | format_usd}} <sup>$</sup></strong>
+                          <small class="sub_title">Floor</small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card_dash-box">
+              <div class="card_dash-container">
+                  <div class="card_dash-left">
+                      <svg class="svg-icon white" viewBox="0 0 20 20">
+            <path fill="none" d="M5.109,8.392H4.249c-0.238,0-0.43,0.193-0.43,0.431c0,0.238,0.192,0.431,0.43,0.431h0.861c0.238,0,0.43-0.193,0.43-0.431C5.54,8.585,5.347,8.392,5.109,8.392 M4.249,4.088h11.19c0.238,0,0.431-0.192,0.431-0.43c0-0.238-0.192-0.431-0.431-0.431H4.249c-0.238,0-0.43,0.192-0.43,0.431C3.818,3.896,4.011,4.088,4.249,4.088 M2.527,5.81H17.16c0.238,0,0.431-0.192,0.431-0.43c0-0.238-0.192-0.431-0.431-0.431H2.527c-0.238,0-0.43,0.192-0.43,0.431C2.097,5.617,2.289,5.81,2.527,5.81 M18.452,6.67H1.236c-0.476,0-0.861,0.385-0.861,0.861v8.608c0,0.475,0.385,0.86,0.861,0.86h17.216c0.475,0,0.86-0.386,0.86-0.86V7.531C19.312,7.056,18.927,6.67,18.452,6.67 M1.666,7.531c0.238,0,0.431,0.192,0.431,0.431c0,0.238-0.192,0.43-0.431,0.43c-0.238,0-0.43-0.192-0.43-0.43C1.236,7.724,1.428,7.531,1.666,7.531 M1.666,16.14c-0.238,0-0.43-0.192-0.43-0.431c0-0.237,0.192-0.431,0.43-0.431c0.238,0,0.431,0.193,0.431,0.431C2.097,15.947,1.904,16.14,1.666,16.14 M18.021,16.14c-0.238,0-0.431-0.192-0.431-0.431c0-0.237,0.192-0.431,0.431-0.431s0.431,0.193,0.431,0.431C18.452,15.947,18.26,16.14,18.021,16.14 M18.452,14.496c-0.136-0.048-0.279-0.078-0.431-0.078c-0.714,0-1.291,0.578-1.291,1.291c0,0.151,0.03,0.295,0.078,0.431H2.878c0.048-0.136,0.079-0.279,0.079-0.431c0-0.713-0.579-1.291-1.292-1.291c-0.151,0-0.295,0.03-0.43,0.078V9.174c0.135,0.048,0.279,0.079,0.43,0.079c0.713,0,1.292-0.578,1.292-1.291c0-0.152-0.031-0.295-0.079-0.431h13.93C16.761,7.667,16.73,7.81,16.73,7.962c0,0.713,0.577,1.291,1.291,1.291c0.151,0,0.295-0.031,0.431-0.079V14.496z M18.021,8.392c-0.238,0-0.431-0.192-0.431-0.43c0-0.238,0.192-0.431,0.431-0.431s0.431,0.192,0.431,0.431C18.452,8.2,18.26,8.392,18.021,8.392 M15.438,14.418h-0.86c-0.238,0-0.431,0.192-0.431,0.43c0,0.238,0.192,0.431,0.431,0.431h0.86c0.238,0,0.431-0.192,0.431-0.431C15.869,14.61,15.677,14.418,15.438,14.418 M9.844,8.392c-1.901,0-3.443,1.542-3.443,3.443s1.542,3.443,3.443,3.443s3.443-1.542,3.443-3.443S11.745,8.392,9.844,8.392 M11.233,13.271c-0.071,0.162-0.169,0.297-0.292,0.403c-0.124,0.108-0.268,0.189-0.434,0.246c-0.166,0.058-0.295,0.089-0.488,0.097v0.4H9.673v-0.4c-0.208-0.004-0.35-0.037-0.522-0.099c-0.174-0.063-0.322-0.151-0.445-0.267s-0.219-0.257-0.286-0.424c-0.067-0.168-0.099-0.361-0.095-0.579h0.659c-0.003,0.256,0.052,0.459,0.168,0.608c0.115,0.147,0.257,0.226,0.522,0.233v-1.417c-0.158-0.042-0.265-0.094-0.422-0.154c-0.156-0.061-0.297-0.139-0.422-0.234c-0.125-0.095-0.226-0.215-0.303-0.36c-0.077-0.144-0.115-0.323-0.115-0.538c0-0.187,0.035-0.352,0.106-0.494c0.072-0.143,0.168-0.261,0.289-0.357c0.121-0.096,0.261-0.168,0.419-0.22C9.383,9.665,9.5,9.64,9.673,9.64V9.256h0.348V9.64c0.173,0,0.287,0.023,0.441,0.07c0.154,0.047,0.288,0.117,0.401,0.211c0.114,0.093,0.204,0.212,0.272,0.356c0.067,0.145,0.101,0.312,0.101,0.503h-0.659c-0.008-0.199-0.059-0.351-0.153-0.457c-0.095-0.105-0.197-0.158-0.404-0.158V11.4c0.173,0.048,0.293,0.103,0.459,0.165c0.166,0.062,0.312,0.142,0.439,0.239c0.127,0.098,0.229,0.219,0.306,0.363c0.077,0.144,0.116,0.321,0.116,0.532C11.341,12.919,11.305,13.109,11.233,13.271M10.458,12.332c-0.067-0.051-0.143-0.092-0.228-0.123c-0.085-0.031-0.123-0.06-0.21-0.082v1.363c0.208-0.016,0.329-0.076,0.462-0.185c0.133-0.107,0.199-0.277,0.199-0.512c0-0.109-0.02-0.2-0.061-0.275C10.581,12.444,10.526,12.383,10.458,12.332 M9.069,10.74c0,0.094,0.019,0.174,0.058,0.241c0.039,0.066,0.087,0.122,0.148,0.169c0.06,0.047,0.128,0.085,0.208,0.114s0.109,0.054,0.19,0.073v-1.171c-0.208,0-0.32,0.044-0.434,0.132C9.126,10.386,9.069,10.533,9.069,10.74"></path>
+          </svg>
+                  </div>
+                  <div class="card_dash-right">
+                      <div class="info">
+                          <strong class="title">{{user.balance.commission_income | format_usd}} <sup>$</sup></strong>
+                          <small class="sub_title">Income</small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal_condition arbitrage_modal_window modal_withdraw">
+      <div class="modal_title"></div>
+    <div class="content_wrapper">
+        
+    <img src="/static/account/img/icons/btc.svg" style=" height: 60px;margin-bottom: 5px !important; " alt="app.name"
+            class="preview preview_wallet notranslate">
+        {% if user['security']['two_factor_auth']['status'] == 0 %}
+                        <h3 style=" text-align: center; margin: 10px 0; ">Setting up Your Two-Factor Authentication (2FA)</h3>
+                        <a class="big_button" href="/account/profile" >
+                            <i class="icon"> <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve"> <g> <g> <g> <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0 C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046 c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85 c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844 c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695 c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25 c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/> <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741 c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72 c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/> <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178 c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169 C172.877,105.405,176.842,107.812,180.997,107.812z"/> <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659 c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241 c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849 C390.702,357.21,389.301,350.536,384.322,347.283z"/> <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376 c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736 C294.286,432.161,287.688,430.44,282.558,433.443z"/> <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254 c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255 L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254 c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946 c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946 s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948 s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/> </g> </g> </g> </svg></i>
+                            Settings
+                        </a>
+                    {% else %}
+                    
+    <form action="/account/withdraw-crypto"  method="POST" class="base_form withdraw_crypto_form">
+        {{ form_withdraw_token.csrf_token(  id='form_withdraw_commission' ) }} 
+        <input type="hidden" name="_currency" value="">
+        <div class="wait_time">
+            Waiting time: <span id="date_reward"></span>
+        </div>
+        <div class="form_block">
+            <label for="withdrawal_balance_amount" class="label">Amount 
+                (Balance: <b class="qtc_balance">{{user.wallet.coin_balance | format_satoshi}}</b> 
+                <b class="qtc_reward">{{user.wallet.coin_balance_reward | format_satoshi}}</b>
+                <b class="qtc_promotion">{{user.wallet.balance_promotion | format_satoshi}}</b>
+                 QTC)
+            </label>
+            <div class="d_flex" style="align-items: center; justify-content: space-between;">
+                <div style=" width: 60%; position: relative; ">
+                    <input class="data_field" type="number" id="withdrawal_balance_amount" name="amount" step="0.01" min="0.0005" max="100000" required>
+                    <!-- <small class="input_add_block">
+                        <img src="/static/account/img/icons/input_add_block.png" alt="NOLE">
+                    </small> -->
+                    <small class="number_add_code" style="right: 4px;">USD</small>
+                </div>
+                <div class="withdrawal_balance_amount_usd">≈ <span id="withdrawal_balance_amount_usd">0</span> USD</div>
+            </div>
+            
+        </div>
+        <div class="form_block">
+            <label for="withdrawal_balance_address" class="label">Address for withdrawal</label>
+            <input class="data_field" id="withdrawal_balance_address" name="address" type="text" required>
+            <small class="input_add_block">
+                <img src="/static/account/img/icons/input_add_block.png" alt="NOLE">
+            </small>
+        </div>
+        <div class="form_block">
+            <label for="withdrawal_code__" class="label">Email Code</label>
+            <div class="get_code">
+                <input class="data_field" type="text" id="withdrawal_code__" name="code" required>
+                <a  onclick="getCode(event, 'withdraw_crypto')">Get OTP</a>
+            </div>           
+        </div>
+        <div class="form_block">
+            <label for="2fa_code_" class="label">2FA Code</label>
+            <input class="data_field" type="text" id="2fa_code_" name="otp" required>
+           
+        </div>
+        <small style=" margin-top: -9px; font-weight: 600; font-size: 12px; margin-bottom: 9px; ">	• 24h Withdrawl Limit: {{user.balance.withdraw_usd_today | format_usd}} / {{max_ | format_usd}} USD</small>
+        <div class="form_block d_flex" style=" flex-direction: row; align-items: center; justify-content: space-between;">
+            <button class="big_button"  type="button" >
+                <i class="icon"> <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve"> <g> <g> <g> <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0 C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046 c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85 c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844 c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695 c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25 c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/> <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741 c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72 c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/> <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178 c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169 C172.877,105.405,176.842,107.812,180.997,107.812z"/> <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659 c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241 c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849 C390.702,357.21,389.301,350.536,384.322,347.283z"/> <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376 c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736 C294.286,432.161,287.688,430.44,282.558,433.443z"/> <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254 c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255 L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254 c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946 c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946 s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948 s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/> </g> </g> </g> </svg></i>
+                Send requests
+            </button>
+            <a class="__history" href="/account/withdrawals" >
+                <span>History</span>
+                <svg class="svg-icon" style=" width: 2em; height: 2em; " viewBox="0 0 20 20">
+                    <path style=" fill: #00487b; " fill="none" d="M11.088,2.542c0.063-0.146,0.103-0.306,0.103-0.476c0-0.657-0.534-1.19-1.19-1.19c-0.657,0-1.19,0.533-1.19,1.19c0,0.17,0.038,0.33,0.102,0.476c-4.085,0.535-7.243,4.021-7.243,8.252c0,4.601,3.73,8.332,8.332,8.332c4.601,0,8.331-3.73,8.331-8.332C18.331,6.562,15.173,3.076,11.088,2.542z M10,1.669c0.219,0,0.396,0.177,0.396,0.396S10.219,2.462,10,2.462c-0.22,0-0.397-0.177-0.397-0.396S9.78,1.669,10,1.669z M10,18.332c-4.163,0-7.538-3.375-7.538-7.539c0-4.163,3.375-7.538,7.538-7.538c4.162,0,7.538,3.375,7.538,7.538C17.538,14.957,14.162,18.332,10,18.332z M10.386,9.26c0.002-0.018,0.011-0.034,0.011-0.053V5.24c0-0.219-0.177-0.396-0.396-0.396c-0.22,0-0.397,0.177-0.397,0.396v3.967c0,0.019,0.008,0.035,0.011,0.053c-0.689,0.173-1.201,0.792-1.201,1.534c0,0.324,0.098,0.625,0.264,0.875c-0.079,0.014-0.155,0.043-0.216,0.104l-2.244,2.244c-0.155,0.154-0.155,0.406,0,0.561s0.406,0.154,0.561,0l2.244-2.242c0.061-0.062,0.091-0.139,0.104-0.217c0.251,0.166,0.551,0.264,0.875,0.264c0.876,0,1.587-0.711,1.587-1.587C11.587,10.052,11.075,9.433,10.386,9.26z M10,11.586c-0.438,0-0.793-0.354-0.793-0.792c0-0.438,0.355-0.792,0.793-0.792c0.438,0,0.793,0.355,0.793,0.792C10.793,11.232,10.438,11.586,10,11.586z"></path>
+                </svg>
+            </a>
+        </div>
+    </form>
+    {% endif %}
+    <p class="plan_info"><b class="notranslate" style="word-break: break-all;"></b></p>
+
+    </div>
+</div>
+<div class="modal_condition arbitrage_modal_window modal_withdraw_commission">
+    <div class="modal_title"></div>
+    <div class="content_wrapper">
+        
+    <img src="/static/account/img/icons/btc.svg" style=" height: 60px; margin-bottom: 5px !important; " alt="app.name"
+            class="preview preview_wallet notranslate">
+            {% if user['security']['two_factor_auth']['status'] == 0 %}
+            <h3 style=" text-align: center; margin: 10px 0; ">Setting up Your Two-Factor Authentication (2FA)</h3>
+            <a class="big_button" href="/account/profile" >
+                <i class="icon"> <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve"> <g> <g> <g> <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0 C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046 c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85 c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844 c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695 c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25 c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/> <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741 c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72 c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/> <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178 c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169 C172.877,105.405,176.842,107.812,180.997,107.812z"/> <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659 c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241 c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849 C390.702,357.21,389.301,350.536,384.322,347.283z"/> <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376 c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736 C294.286,432.161,287.688,430.44,282.558,433.443z"/> <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254 c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255 L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254 c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946 c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946 s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948 s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/> </g> </g> </g> </svg></i>
+                Settings
+            </a>
+        {% else %}
+    <form action="/account/withdraw-commission"  method="POST" class="base_form balance_form">
+        <input type="hidden" name="_currency" value="">
+                    {{ form_withdraw_commission.csrf_token(  id='form_withdraw_commission_' ) }} 
+                    <input type="hidden" name="_token" value="jg32FNcIeoLBfLyt9ZabegFOrqhehTg0bK3RbcEV">
+                    
+                    <div class="form_block">
+                        <label for="withdrawal_balance_amount_" class="label">Withdrawal amount (Balance: <b>${{user.balance.balance_usd | format_usd}}</b>)</label>
+                        <input class="data_field" type="number" id="withdrawal_balance_amount_" name="amount_usd" step="0.01" min="1" max="100000" required>
+                        <small class="input_add_block">
+                            <img src="/static/account/img/icons/input_add_block.png" alt="NOLE">
+                        </small>
+                        <small class="number_add_code">USD</small>
+                    </div>
+                                        
+                    
+                    <div class="d_flex">
+                        <div class="form_block">
+                            <label for="withdrawal_balance_payment_system" class="label">Payment system</label>
+                            <select class="data_field beautiful_select_list merchant_list" name="payment_system" id="withdrawal_balance_payment_system" required>
+                                <!-- <option selected value="ETH" data-id="1">Ethereum</option> -->
+                               
+                                <option selected value="QTC" data-id="1">Nole [QTC]</option>
+                            </select>
+                        </div>
+                        <div class="form_block">
+                            <label for="withdrawal_balance_amount_trx" class="label">QTC</label>
+                            <input class="data_field" type="text" readonly id="withdrawal_balance_amount_trx" name="withdrawal_balance_amount_trx">
+                          
+                            <small class="number_add_code">QTC</small>
+                        </div>
+                    </div>
+                    <div class="form_block">
+                        <label for="withdrawal_balance_address_" class="label">Address for withdrawal</label>
+                        <input class="data_field" id="withdrawal_balance_address_" name="address" type="text" required>
+                        <small class="input_add_block">
+                            <img src="/static/account/img/icons/input_add_block.png" alt="NOLE">
+                        </small>
+                    </div>
+                    <div class="form_block">
+                        <label for="withdrawal_code_" class="label">Email Code</label>
+                        <div class="get_code">
+                            <input class="data_field" type="text" id="withdrawal_code_" name="code" required>
+                            <a  onclick="getCode(event, 'withdraw_commission')">Get OTP</a>
+                        </div>
+                       
+                    </div>
+                    <div class="form_block">
+                        <label for="2fa_code" class="label">2FA Code</label>
+                        <input class="data_field" type="text" id="2fa_code" name="otp" required>
+                       
+                    </div>
+                    <small style=" margin-top: -9px; font-weight: 600; font-size: 12px; margin-bottom: 9px; ">	• 24h Withdrawl Limit: {{user.balance.withdraw_usd_today | format_usd}} / {{max_ | format_usd}} USD</small>
+                    <div class="form_block d_flex" style=" flex-direction: row; align-items: center; justify-content: space-between;">
+                        <button class="big_button"  type="submit" >
+                            <i class="icon"> <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve"> <g> <g> <g> <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0 C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046 c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85 c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844 c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695 c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25 c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/> <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741 c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72 c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/> <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178 c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169 C172.877,105.405,176.842,107.812,180.997,107.812z"/> <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659 c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241 c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849 C390.702,357.21,389.301,350.536,384.322,347.283z"/> <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376 c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736 C294.286,432.161,287.688,430.44,282.558,433.443z"/> <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254 c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255 L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254 c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946 c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946 s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948 s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/> </g> </g> </g> </svg></i>
+                            Send requests
+                        </button>
+                        <a class="__history" href="/account/withdrawals" >
+                            <span>History</span>
+                            <svg class="svg-icon" style=" width: 2em; height: 2em; " viewBox="0 0 20 20">
+                                <path style=" fill: #00487b; " fill="none" d="M11.088,2.542c0.063-0.146,0.103-0.306,0.103-0.476c0-0.657-0.534-1.19-1.19-1.19c-0.657,0-1.19,0.533-1.19,1.19c0,0.17,0.038,0.33,0.102,0.476c-4.085,0.535-7.243,4.021-7.243,8.252c0,4.601,3.73,8.332,8.332,8.332c4.601,0,8.331-3.73,8.331-8.332C18.331,6.562,15.173,3.076,11.088,2.542z M10,1.669c0.219,0,0.396,0.177,0.396,0.396S10.219,2.462,10,2.462c-0.22,0-0.397-0.177-0.397-0.396S9.78,1.669,10,1.669z M10,18.332c-4.163,0-7.538-3.375-7.538-7.539c0-4.163,3.375-7.538,7.538-7.538c4.162,0,7.538,3.375,7.538,7.538C17.538,14.957,14.162,18.332,10,18.332z M10.386,9.26c0.002-0.018,0.011-0.034,0.011-0.053V5.24c0-0.219-0.177-0.396-0.396-0.396c-0.22,0-0.397,0.177-0.397,0.396v3.967c0,0.019,0.008,0.035,0.011,0.053c-0.689,0.173-1.201,0.792-1.201,1.534c0,0.324,0.098,0.625,0.264,0.875c-0.079,0.014-0.155,0.043-0.216,0.104l-2.244,2.244c-0.155,0.154-0.155,0.406,0,0.561s0.406,0.154,0.561,0l2.244-2.242c0.061-0.062,0.091-0.139,0.104-0.217c0.251,0.166,0.551,0.264,0.875,0.264c0.876,0,1.587-0.711,1.587-1.587C11.587,10.052,11.075,9.433,10.386,9.26z M10,11.586c-0.438,0-0.793-0.354-0.793-0.792c0-0.438,0.355-0.792,0.793-0.792c0.438,0,0.793,0.355,0.793,0.792C10.793,11.232,10.438,11.586,10,11.586z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </form>
+                {% endif %}
+    <p class="plan_info"><b class="notranslate" style="word-break: break-all;"></b></p>
+
+    </div>
+</div>
+<div class="modal_condition arbitrage_modal_window arbitrage_modal_buy">
+    <div class="modal_title">QTC Address</div>
+    <div class="content_wrapper">
+        
+        <img src="/static/account/img/bg/arbitrage_buy_preview.png" alt="app.name"
+             class="preview preview_wallet notranslate">
+
+        
+        <p class="plan_info"><b class="notranslate" style="word-break: break-all;"></b></p>
+
+        </div>
+</div>
+
+{% endblock content %}
+
+{% block javascripts %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+<!-- <script src="/static/account/js/custom.js"></script> -->
+<style>
+    .jconfirm{
+        display: flex;
+        justify-content: center;
+    }
+    .jconfirm .jconfirm-scrollpane{
+        max-width: 500px;
+    }
+</style>
+<script>
+    $('.dashAction').click(async function(){
+        var load = {};
+        load = $(document).dialog({
+            type: 'toast',
+            infoIcon: '/static/account/img/loading.gif',
+            infoText: 'Please wait...'
+        });
+        let currency = $(this).data("currency");
+        let userInfo = await fetch("/account/fetch-balance/"+currency)
+        userInfo = await userInfo.json();
+        load.close();
+        let price = currency == "BTC" ? $('.btc_price').attr("data-btc") 
+        : currency == "ETH" ? $('.eth_price').attr("data-eth")
+        : currency == "TRX" ? $('.trx_price').attr("data-trx")
+        : currency == "USDT" ? 1
+        : currency == "USD" ? 1
+        : $('.qtc_price').attr("data-qtc");
+        console.log(price);
+        let HTML = 
+            `<div id="overlay-modal"> <div class="cv-spinner"> <span class="spinner"></span> </div> </div>
+
+            <form action="/account/wallet/withdraw-crypto"  method="POST" class="base_form withdraw_crypto_form">
+        {{ form_withdraw_token.csrf_token(  id='form_withdraw_commission' ) }} 
+        <input type="hidden" name="_currency" value="${currency}">
+       
+        <div class="form_block">
+            <label for="withdrawal_balance_amount" class="label">Amount 
+                (Balance: <b>${ currency != 'USD' ? (parseFloat(userInfo.data.balance)/100000000).toFixed(8) : parseFloat(userInfo.data.balance).toFixed(4)} ${currency}</b> )
+            </label>
+            <div class="d_flex" style="align-items: center; justify-content: space-between;">
+                <div style=" width: 60%; position: relative; ">
+                    <input class="data_field numeric" type="text" id="withdrawal_balance_amount" name="amount"  required>
+                    <!-- <small class="input_add_block">
+                        <img src="/static/account/img/icons/input_add_block.png" alt="NOLE">
+                    </small> -->
+                    <small class="number_add_code" style="right: 4px;">${currency}</small>
+                </div>
+                <div class="withdrawal_balance_amount_usd">≈ <span class="to_usd_amount" id="withdrawal_balance_amount_usd">0</span> USD</div>
+            </div>
+            
+        </div>
+        <div class="form_block">
+            <label for="withdrawal_balance_address" class="label">Address ${currency == "USD" ? "USDT TRC20" : currency} for withdrawal</label>
+            <input class="data_field" id="withdrawal_balance_address" name="address" type="text" required>
+            <small class="input_add_block">
+                <img src="/static/account/img/icons/input_add_block.png" alt="NOLE">
+            </small>
+        </div>
+        <div class="form_block">
+            <label for="withdrawal_code__" class="label">Email Code</label>
+            <div class="get_code">
+                <input class="data_field" type="text" id="withdrawal_code__" name="code" required>
+                <a  onclick="getCode(event, 'withdraw_crypto')">Get OTP</a>
+            </div>           
+        </div>
+        <div class="form_block">
+            <label for="2fa_code_" class="label">2FA Code</label>
+            <input class="data_field" type="text" id="2fa_code_" name="otp" required>
+           
+        </div>
+        <small style=" margin-top: -9px; font-weight: 600; font-size: 12px; margin-bottom: 9px; ">	• 24h Withdrawl Limit: {{user.balance.withdraw_usd_today | format_usd}} / {{max_ | format_usd}} USD</small>
+        <small style=" margin-top: -9px; font-weight: 600; font-size: 12px; margin-bottom: 9px; ">	• Weekly Withdrawal Limit: {{user.balance.withdraw_usd_week | format_usd}} / 100 USD</small>
+        <div class="form_block d_flex" style=" flex-direction: row; align-items: center; justify-content: space-between;">
+            <button class="big_button"  type="submit" >
+                <i class="icon"> <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve"> <g> <g> <g> <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0 C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046 c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85 c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844 c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695 c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25 c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/> <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741 c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72 c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/> <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178 c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169 C172.877,105.405,176.842,107.812,180.997,107.812z"/> <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659 c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241 c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849 C390.702,357.21,389.301,350.536,384.322,347.283z"/> <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376 c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736 C294.286,432.161,287.688,430.44,282.558,433.443z"/> <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254 c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255 L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254 c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946 c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946 s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948 s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/> </g> </g> </g> </svg></i>
+                Send requests
+            </button>
+            <a class="__history" href="/account/withdrawals" >
+                <span>History</span>
+                <svg class="svg-icon" style=" width: 2em; height: 2em; " viewBox="0 0 20 20">
+                    <path style=" fill: #00487b; " fill="none" d="M11.088,2.542c0.063-0.146,0.103-0.306,0.103-0.476c0-0.657-0.534-1.19-1.19-1.19c-0.657,0-1.19,0.533-1.19,1.19c0,0.17,0.038,0.33,0.102,0.476c-4.085,0.535-7.243,4.021-7.243,8.252c0,4.601,3.73,8.332,8.332,8.332c4.601,0,8.331-3.73,8.331-8.332C18.331,6.562,15.173,3.076,11.088,2.542z M10,1.669c0.219,0,0.396,0.177,0.396,0.396S10.219,2.462,10,2.462c-0.22,0-0.397-0.177-0.397-0.396S9.78,1.669,10,1.669z M10,18.332c-4.163,0-7.538-3.375-7.538-7.539c0-4.163,3.375-7.538,7.538-7.538c4.162,0,7.538,3.375,7.538,7.538C17.538,14.957,14.162,18.332,10,18.332z M10.386,9.26c0.002-0.018,0.011-0.034,0.011-0.053V5.24c0-0.219-0.177-0.396-0.396-0.396c-0.22,0-0.397,0.177-0.397,0.396v3.967c0,0.019,0.008,0.035,0.011,0.053c-0.689,0.173-1.201,0.792-1.201,1.534c0,0.324,0.098,0.625,0.264,0.875c-0.079,0.014-0.155,0.043-0.216,0.104l-2.244,2.244c-0.155,0.154-0.155,0.406,0,0.561s0.406,0.154,0.561,0l2.244-2.242c0.061-0.062,0.091-0.139,0.104-0.217c0.251,0.166,0.551,0.264,0.875,0.264c0.876,0,1.587-0.711,1.587-1.587C11.587,10.052,11.075,9.433,10.386,9.26z M10,11.586c-0.438,0-0.793-0.354-0.793-0.792c0-0.438,0.355-0.792,0.793-0.792c0.438,0,0.793,0.355,0.793,0.792C10.793,11.232,10.438,11.586,10,11.586z"></path>
+                </svg>
+            </a>
+        </div>
+    </form>
+            `;
+            const deposit_btn= {
+                deposit: {
+                        text: 'Deposit',
+                        btnClass: 'btn-blue',
+                        action: function(){
+                            let params = {'currency': currency}
+                            Pub.post(`/account/wallet/get-address`, params, function (ret, err) {
+                                if (ret.success == 1) {
+                                    let PlanBuyWindow      = $(".arbitrage_modal_window.arbitrage_modal_buy");
+                                    PlanBuyWindow.find(".plan_info b").text(ret.address);
+                                    let add_ = `https://chart.apis.google.com/chart?cht=qr&chs=200x200&chl=bitcoin:${ret.address}&chld=H|0`;
+                                    PlanBuyWindow.find("img").attr("src",add_);
+                                    let HTM_GEN_ADDRESS = `
+                                        <center>
+                                        <img src="${add_}" class="preview preview_wallet notranslate">
+                                        <p class="plan_info"><b class="notranslate" style="word-break: break-all;">${ret.address}</b></p>
+                                        </center>
+                                    `;
+                                    $.dialog({
+                                        title: 'Deposit '+ currency,
+                                        content: HTM_GEN_ADDRESS
+                                    });
+                                }
+                                else {
+                                    $.alert("Error!")
+                                }
+                            }, (e) => {
+                                
+                                
+                            })
+                        }
+                }
+            }
+            const exchange_btn= {
+                transfer: {
+                        text: 'Transfer',
+                        btnClass: 'btn-blue',
+                        action: function(){
+                            let params = {'currency': currency}
+                            let HTM_GEN_ADDRESS = `
+                                        <center>
+                                        <h4>Coming soon</h4>
+                                        </center>
+                                    `;
+                                    $.dialog({
+                                        title: 'Transfer '+ currency,
+                                        content: HTM_GEN_ADDRESS
+                                    });
+                            return;
+                            Pub.post(`/account/wallet/get-address`, params, function (ret, err) {
+                                if (ret.success == 1) {
+                                    let PlanBuyWindow      = $(".arbitrage_modal_window.arbitrage_modal_buy");
+                                    PlanBuyWindow.find(".plan_info b").text(ret.address);
+                                    let add_ = `https://chart.apis.google.com/chart?cht=qr&chs=200x200&chl=bitcoin:${ret.address}&chld=H|0`;
+                                    PlanBuyWindow.find("img").attr("src",add_);
+                                    let HTM_GEN_ADDRESS = `
+                                        <center>
+                                        <img src="${add_}" class="preview preview_wallet notranslate">
+                                        <p class="plan_info"><b class="notranslate" style="word-break: break-all;">${ret.address}</b></p>
+                                        </center>
+                                    `;
+                                    $.dialog({
+                                        title: 'Deposit '+ currency,
+                                        content: HTM_GEN_ADDRESS
+                                    });
+                                }
+                                else {
+                                    $.alert("Error!")
+                                }
+                            }, (e) => {
+                                
+                                
+                            })
+                        }
+                }
+            }
+            const btn_list = currency != "USD" ? deposit_btn : "";
+            $.confirm({
+                title: currency,
+                content: ' ',
+                buttons: {
+                    ...btn_list,
+                    withdraw: {
+                        text: 'Withdraw',
+                        btnClass: 'btn-blue',
+                        action: function(){
+                            
+                            $.dialog({
+                                title: 'Withdraw '+ currency,
+                                content: HTML,
+                                onContentReady: function () {
+                                    $(document).on("input", ".numeric", function(event) {
+                                        $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+                                        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                                            event.preventDefault();
+                                        }
+                                    });
+                                    $("input[name='amount']").keyup(function(){
+                                        let ab = parseFloat($(this).val())*parseFloat(price)
+                                        $('.to_usd_amount').text(ab.toFixed(4))
+                                    })
+                                    var jc = this;
+                                    this.$content.find('form').on('submit', function (e) {
+                                        $("#overlay-modal").fadeIn(300);　
+                                        // if the user submits the form by pressing enter in the field.
+                                        e.preventDefault();
+                                        var form = $(this);
+                                        var url = form.attr('action');
+                                        Pub.post(`/account/wallet/withdraw-crypto`, form.serialize(), function (ret, err) {
+                                            if (ret.success == 1) {
+                                                $.dialog('Withdraw Success');
+                                                $('.jconfirm-closeIcon').trigger("click")
+                                                setTimeout(() => {
+                                                    location.reload();
+                                                }, 1000);
+                                            }
+                                            else {
+                                                $.dialog(ret.msg);
+                                                $("#overlay-modal").fadeOut(300);
+                                            }
+                                        }, (e) => {
+                                            $.dialog('Error! Please try again');
+                                            $("#overlay-modal").fadeOut(300);
+                                        })
+                                       
+                                    });
+                                
+                                }
+                            });
+                        }
+                    },
+                    cancel: function () {
+                        
+                    }
+                }
+            });
+
+    })
+    function parseDateString (dateString) {
+            var matchers = [];
+            matchers.push(/^[0-9]*$/.source);
+            matchers.push(/([0-9]{1,2}\/){2}[0-9]{4}( [0-9]{1,2}(:[0-9]{2}){2})?/.source);
+            matchers.push(/[0-9]{4}([\/\-][0-9]{1,2}){2}( [0-9]{1,2}(:[0-9]{2}){2})?/.source);
+            matchers = new RegExp(matchers.join("|"));
+            if (dateString instanceof Date) {
+                return dateString;
+            }
+            if (String(dateString).match(matchers)) {
+                if (String(dateString).match(/^[0-9]*$/)) {
+                    dateString = Number(dateString);
+                }
+                if (String(dateString).match(/\-/)) {
+                    dateString = String(dateString).replace(/\-/g, "/");
+                }
+                return new Date(dateString);
+            } else {
+                throw new Error("Couldn't cast `" + dateString + "` to a date object.");
+            }
+        }
+    // Set the date we're counting down to
+    var countDownDate = Date.parse(parseDateString("{{date_time}}"));
+   
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+    
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      // Display the result in the element with id="demo"
+      days == 0 ? 
+      document.getElementById("date_reward").innerHTML = hours + "h "
+      + minutes + "m " + seconds + "s " :
+      document.getElementById("date_reward").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+    
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("date_reward").innerHTML = "00:00";
+      }
+    }, 1000);
+    </script>
+{% endblock javascripts %}

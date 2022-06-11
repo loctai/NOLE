@@ -1,0 +1,93 @@
+
+{% extends "main/layouts/base.html" %}
+
+{% block title %} <title>NOLE | Withdraw</title> {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+
+
+<div class="base_wrapper wrapper_withdrawals_wrapper">
+    <h2 class="title">Completed Withdrawal Request</h2>
+    <div class="table_pagination">
+    <table class="base_table">
+        <thead class="thead">
+            <tr>
+                <th>ID</th>
+                <th>USD</th>
+                
+                <th>Amount</th>
+                <!-- <th>Amount</th> -->
+                
+                <th>Fee</th>
+                <th>You will get</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+          {% for item in data %}
+            <tr class="{{ loop.cycle('odd', 'even') }}">
+                <td aria-label="ID">{{item.transaction_id}}</td>
+                <td aria-label="USD">{{item.amount_usd | format_usd}}</td>
+                <td aria-label="Amount">
+                    {{(item.amount_coin_satoshi/0.95) | format_satoshi}} 
+                    {% if item.currency == 'QTC2' %} 
+                    QTC
+                    {% elif  item.currency == 'QTC3' %}
+                    QTC
+                    {% else %}
+                    {{item.currency}}
+                    {% endif %}
+                    
+                    
+                </td>
+                <!-- <td aria-label="Amount">{{item.amount_coin_satoshi | format_satoshi}}</td> -->
+                
+                <td aria-label="Fee">{{item.fee_percent}} %</td>
+                <td aria-label="You will get">
+                    {{item.amount_coin_satoshi | format_satoshi}} 
+                    {% if item.currency == 'QTC2' %} 
+                    QTC
+                    {% elif  item.currency == 'QTC3' %}
+                    QTC
+                    {% else %}
+                    {{item.currency}}
+                    {% endif %}
+                </td>
+                <td aria-label="Date">{{item.createdAt | date_format}}</td>
+                <td aria-label="Status">
+                    {% if item.status == 0 %} <span class="t_info">Pending</span> {% endif %} 
+                    {% if item.status == 1 %} <span class="t_success">Completed</span>{% endif %}
+                    {% if item.status == 2 %} <span class="t_danger" style=" color: #fff; background: #dc3545; padding: 2px 5px; border-radius: 5px; font-size: 14px; ">Cancel</span>{% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+<div class="table_control">
+    <button class="btn prev">
+        <i class="icon">
+            <img src="/static/account/img/icons/blue_arrows.png" alt="app.name">
+        </i>
+        Prev                        </button>
+
+    <div class="dots_wrapper">
+    </div>
+
+    <button class="btn next">
+        Next                            <i class="icon">
+            <img src="/static/account/img/icons/blue_arrows.png" alt="app.name">
+        </i>
+    </button>
+</div>
+</div>
+</div>
+
+{% endblock content %}
+
+{% block javascripts %}
+{% endblock javascripts %}

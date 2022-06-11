@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html lang="en">
+    
+    <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    {% block title %} <title>NOLE | Home</title> {% endblock %}
+    <link rel="stylesheet" href="/static/frontend/css/base.css?1.2.7"/>
+    <link rel="stylesheet" href="/static/frontend/css/animate.css?1.2.7"/>
+    <link rel="stylesheet" href="/static/frontend/css/styles.css?1.2.7"/>
+        
+    <link rel="stylesheet" href="/static/frontend/css/media.css?1.2.7"/>
+    
+    {% block css %} {% endblock %}
+    
+    
+    <!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+    _atrk_opts = { atrk_acct:"/cE5v1Y1Mn20Io", domain:"nole.ai",dynamic: true};
+    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+    </script>
+    <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=/cE5v1Y1Mn20Io" style="display:none" height="1" width="1" alt="" /></noscript>
+    <!-- End Alexa Certify Javascript -->  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PNB5VZ36EW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PNB5VZ36EW');
+    </script>
+</head>
+<body>
+    <div class="push_wrapper">
+        {% for message in get_flashed_messages() %}
+        <div class="push_message">
+            <div class="message_header">
+                <img class="icon" src="/static/frontend/img/icons/warning.png" alt="">
+                <strong class="title">NOLE</strong>
+                <button type="button" class="close">×</button>
+            </div>
+            <div class="message_body">
+                    <p class="text">{{message}}</p>
+                <div class="time_bar"></div>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% include 'home/includes/navigation.html' %}
+    <main id="main">
+    {% block content %}{% endblock content %}
+    </main>    
+    {% include 'home/includes/footer.html' %}
+     
+    <section class="page_loader">
+        <img src="/static/frontend/img/logo_small.png" alt="Nole">
+        <div class="jump_block_wrapper">
+            <span class="block"></span>
+            <span class="block"></span>
+            <span class="block"></span>
+            <span class="block"></span>
+            <span class="block"></span>
+        </div>
+        <!-- <h1 class="project_name">NOLE</h1> -->
+    </section>
+    <a href="/news" class="news_nav blink">News</a>
+    <script src="/static/frontend/js/jquery.js?1.2.7"></script>
+    <script src="/static/frontend/js/wow.js?1.2.7"></script>
+    <script src="/static/frontend/js/scripts.js?1.2.7"></script>
+    <script>
+        wow = new WOW( { boxClass: 'wow', animateClass: 'animated', offset: 100, } ); wow.init();
+    </script>
+    {% block js %} {% endblock %}
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    
+    {% block title %} <title>NOLE | Dashboard</title> {% endblock %}
+    <link href="{{ url_for('static', filename='account/dist/css/main.min.css') }}" rel="stylesheet" type="text/css">
+  
+    {% block stylesheets %}  
+    {% endblock stylesheets %}
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PNB5VZ36EW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PNB5VZ36EW');
+    </script>
+  </head>
+  <body>
+    <div class="push_wrapper">
+      {% for message in get_flashed_messages() %}
+      <div class="push_message">
+          <div class="message_header">
+              <img class="icon" src="/static/frontend/img/icons/warning.png" alt="">
+              <strong class="title">NOLE</strong>
+              <button type="button" class="close">×</button>
+          </div>
+          <div class="message_body">
+                  <p class="text">{{message}}</p>
+              <div class="time_bar"></div>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+      {% include 'main/includes/sidenav.html' %}
+    <div id="main">
+      {% block content %}{% endblock content %}
+    </div>
+    {% include 'main/includes/footer.html' %}
+    <script src="{{ url_for('static', filename='account/dist/js/main.min.js') }}"></script>
+ 
+    {% block javascripts %}
+    {% endblock javascripts %}
+
+  </body>
+</html>

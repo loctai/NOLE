@@ -1,0 +1,185 @@
+{%  extends 'home/layouts/base.html' %}
+
+{% block title %} 
+    <title>News</title>
+{% endblock%}
+{% block css %} 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/css/bootstrap.css') }}">
+<link rel="stylesheet" href="/static/frontend/css/event.css"/>
+{% endblock %}
+{% block content %}
+<div class="main_blog">
+<div class="base_wrapper content">
+<div class="page-event">
+    <div class="cover">
+      <div class="heading">news</div>
+    </div>
+    <div class="container">
+      <div class="upcoming-sec">
+        <div class="heading">Last News</div>
+      </div>
+      <div class="upcoming-event-list">
+        <!-- block -->
+        <div class="event-block">
+          <div class="row">
+            <div class="col-lg-2 sec-1">
+              <table>
+                <tr>
+                  <td>
+                    <div class="month">Jan, 2021</div>
+                    <div class="month-date-devider"></div>
+                    <div class="date">25</div>
+                  </td>
+                  <td class="title">Important notification</td>
+                </tr>
+              </table>
+            </div>
+            
+            <div class="col-lg-10 sec-3">
+              <div class="title">Important notification</div>
+              <p>
+                <b>Dear members of Nole,</b>
+              </p>
+              <p>
+                We thank members from all countries around the globe who have trusted in Nole projects to accompany us in the past time. Due to some objective reasons, we have not launched an internal stock sale (STO) to the Nole community in December 2020. We will have an announcement of this event when everything is complete. We inform the Nole community of new Nole development policies and regulations that are in effect as of January 29, 2021 as follows:
+              </p>
+              <p>
+                1. Investment program to buy QTC exploitation package Members can invest to buy QTC mining package at the rate of 50% QTC and 50% in currencies such as BTC, ETH, TRX, USDT or 100% in currencies BTC, ETH, TRX, USDT.
+                <br>
+                Members receive the profit of the investment package 50% QTC and 50% in currencies BTC, ETH, TRX, USDT. The maximum income limit of the investment package is 300%.
+The system commission policy remains unchanged. Members who develop the system will receive a rate of 50% QTC and 50% in USDT TRC20.
+              </p>
+              <p>
+                2. Staking QTC program right on Nole's wallet Option 1: 6-month deposit term, profit per month is 5% Option 2: 12-month deposit term, profit per month is 8% After 30 days from the staking date, members can withdraw the original amount at any time. Principal withdrawal fee of 10% for the 6-month term and 20% for the 12-month term. Staking system commission is not applicable.
+              </p>
+              <p>
+                3. Members who store TRX on Nole's wallet will be withdrawn from January 30, 2021.
+              </p>
+              <p>
+                4. The function of converting QTCs to other currencies on Nole's wallet is no longer applied, this regulation aims to increase the number of QTC transactions in the community to create value for QTC like other currencies with used globally.
+              </p>
+              <p>
+                Thank you, <br>
+                Nole - Future breakthrough technology
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- end block -->
+        <div class="event-block">
+          <div class="row">
+            <div class="col-lg-2 sec-1">
+              <table>
+                <tr>
+                  <td>
+                    <div class="month">Dec, 2020</div>
+                    <div class="month-date-devider"></div>
+                    <div class="date">16</div>
+                  </td>
+                  <td class="title">Nole news</td>
+                </tr>
+              </table>
+            </div>
+            
+            <div class="col-lg-10 sec-3">
+              <div class="title">Nole news</div>
+              <p>
+                <b>Dear members of Nole,</b>
+              </p>
+              <p>
+                Our team has successfully completed phase of global community development with Nole's foundation and development strategy from the beginning of 2020 until now has made great strides in technology platform and plus multinational copper.
+              </p>
+              <p>
+                We have developed a Nole-based QTC cryptocurrency trading ecosystem to bring QTC digital currency to the vast majority of owners and operators into the ecosystem to increase prices. Value for money as high as the leading digital currencies in the world today.
+              </p>
+              <p>
+                Through statistical reports from Nole's market development department, the number of QTCs on the market is very scarce, so almost QTC is not used by Nole members to operate in Nole's ecosystem to create value  and boosting prices for QTC. We have consulted from markets around the globe, most of the markets are required to receive 100% QTC from profits and commissions to increase the number of QTC owned and operated in generation systems  Nole's ergonomics.
+              </p>
+              <p>
+                Through evaluating the above factors, we decided to move to applicable to the payment of profits and the system commission will receive 100% by QTC from December 16, 2020. The function of converting QTC through TRX will also be temporarily locked until we list QTC on the exchange.
+              </p>
+              <p>
+                Nole members will be deposited by TRX or QTC in the mining investment program and Nole ecosystems, 100% withdraw by QTC in the QTC digital money mining investment program, for Nole ecosystems members will be able to withdraw 100% principal by QTC, profits and commissions withdrawn by TRX or QTC.
+              </p>
+              <p>
+                We hope that with this strategy will help Nole's community grow stronger and increase the value of QTC, helping Nole members become rich and prosperous.
+              </p>
+              <p>
+                Thank you, <br>
+                Nole - Future breakthrough technology
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-block">
+            <div class="row">
+              <div class="col-lg-2 sec-1">
+                <table>
+                  <tr>
+                    <td>
+                      <div class="month">Nov, 2020</div>
+                      <div class="month-date-devider"></div>
+                      <div class="date">15</div>
+                    </td>
+                    <td class="title">Promotion Program</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <div class="col-lg-10 sec-3">
+                <div class="title">Promotion Program</div>
+                <div class="time">
+                    <table>
+                      <tr>
+                        <td><i class="fa fa-clock-o"></i></td>
+                        <td>
+                          <div>From Nov 16, 2020 - Jan 10, 2021</div>
+                          <div data-livestamp="1517054400" class="dim-color"></div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                
+                <p>
+                  Bonus Structure: Total volume 1 level for the week
+                  <br>
+                  - Team volume $10,000 bonus $100
+                  <br>
+                  - Team volume $20,000 bonus $300
+                  <br>
+                  - Team volume $50,000 bonus $1,000
+                </p>
+                <hr>
+                <div class="time">
+                    <table>
+                      <tr>
+                        <td><i class="fa fa-clock-o"></i></td>
+                        <td>
+                          <div>From Nov 23, 2020 - Jan 10, 2021</div>
+                          <div data-livestamp="1517054400" class="dim-color"></div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <p>
+                   - Invest $1,000 - $3,000 bonus 3%
+               <br>
+                   - Invest $5,000 - $10,000 bonus 6%
+                  </p>
+                  <p>Note: <b><i>Payment method with QTC</i></b></p>
+                <p>
+                  Thank you, <br>
+                  Nole - Future breakthrough technology
+                </p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  {% endblock%}

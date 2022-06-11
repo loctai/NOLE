@@ -1,0 +1,849 @@
+/* Media styles */
+/* Tablets and small notebook\monitors */
+@media screen and (max-width: 1180px) {
+    /* 0. Base styles */
+    /* Set fixed */
+    #header {
+        background: #ffffff;
+
+        animation: none !important;
+
+        position: fixed;
+        top: 0px;
+    }
+
+    #header .header_wrapper .content .navigation_wrapper .add_control .small_link,
+    #header .header_wrapper .content .navigation_wrapper .add_control .lang_choose .lang {
+        color: #8c8c8c;
+    }
+    #header .header_wrapper .content .navigation_wrapper .add_control .lang_choose .lang.active {
+        border-bottom-color: #8c8c8c;
+    }
+
+    #header .header_wrapper .content .mobile_control {
+        color: #000;
+    }
+    #header .header_wrapper .content .mobile_control span,
+    #header .header_wrapper .content .mobile_control span::before,
+    #header .header_wrapper .content .mobile_control span::after {
+        background: #000;
+    }
+    /* Set fixed end */
+
+    #header .header_wrapper .content {
+        padding: 20px 10px;
+    }
+    #header .header_wrapper .content .navigation_wrapper {
+        min-width: 320px;
+        max-width: 320px;
+        width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        height: 100%;
+
+        padding: 20px;
+
+        background: #003e6b;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        transition: all .5s ease;
+
+        position: fixed;
+        top: 0px;
+        right: -320px;
+        z-index: 0;
+    }
+    /* .active */
+    #header .header_wrapper .content.active .navigation_wrapper {
+        right: 0px;
+    }
+
+    #header .header_wrapper .content .navigation_wrapper .small_image {
+        display: block;
+
+        position: absolute;
+        left: 20px;
+    }
+
+    #header .header_wrapper .content .navigation_wrapper .navigation {
+        width: 100%;
+
+        margin: 0px 0px 20px 0px;
+        padding: 0px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    #header .header_wrapper .content .navigation_wrapper .navigation .link {
+        margin: 0px 0px 2px 0px;
+    }
+    #header .header_wrapper .content .navigation_wrapper .navigation .link.active {
+        color: #fff;
+    }
+
+    #header .header_wrapper .content .navigation_wrapper .add_control {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    #header .header_wrapper .content .navigation_wrapper .add_control .small_link {
+        text-transform: uppercase;
+
+        margin: 0px 0px 12px 0px;
+    }
+    #header .header_wrapper .content .navigation_wrapper .add_control .lang_choose {
+        margin: 0px;
+        padding: 0px;
+
+        border-left: none;
+
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    #header .header_wrapper .content .navigation_wrapper .add_control .lang_choose .lang {
+        color: #8c8c8c;
+    }
+    #header .header_wrapper .content .navigation_wrapper .add_control .lang_choose .lang.active {
+        color: #fff;
+        border-bottom-color: #fff !important;
+    }
+
+    #header .header_wrapper .content .mobile_control {
+        display: flex;
+    }
+
+    #header .header_wrapper .content.active .mobile_control {
+        color: #fff;
+    }
+    #header .header_wrapper .content.active .mobile_control span {
+        background: transparent;
+    }
+    #header .header_wrapper .content.active .mobile_control span::before,
+    #header .header_wrapper .content.active .mobile_control span::after {
+        background: #fff;
+    }
+    /* 0. Base styles end */
+
+    /* 3. Statistic wrapper */
+    .statistics_wrapper .content .data_wrapper {
+        justify-content: space-around;
+    }
+    .statistics_wrapper .content .data_wrapper .data_block {
+        max-width: 160px;
+
+        margin: 0px 8px !important;
+    }
+    .statistics_wrapper .content .data_wrapper .data_block .title {
+        font-size: 16px;
+    }
+    .statistics_wrapper .content .data_wrapper .data_block .title .attention {
+        font-size: 50px;
+
+        margin: 0px 7px;
+    }
+    .statistics_wrapper .content .data_wrapper .data_block .info {
+        font-size: 14px;
+    }
+
+    .statistics_wrapper .content .additional_wrapper {
+        max-width: 260px;
+
+        padding: 10px;
+    }
+    /* 3. Statistic wrapper end */
+
+    /* Base styes end */
+    /* 2.1 Present */
+    .main_present .content {
+        min-height: 540px;
+    }
+    .main_present .content .present_slider {
+        max-width: calc(100% - 320px);
+
+        padding: 60px 10px 60px 20px;
+    }
+    .main_present .content .present_slider .slides_wrapper {
+        min-height: 300px;
+    }
+
+    .main_present .content .bg {
+        width: 320px;
+        right: 0px;
+    }
+
+    .main_present .content .present_slider .slider_control .control_dot {
+        width: 20px;
+
+        padding: 0px 2px;
+    }
+    .main_present .content .present_slider .slider_control .control_dot .dot::before {
+        width: 20px;
+
+        left: -10px;
+    }
+    /* 2.1 Present end */
+    /* About  */
+    .main_about {
+            padding: 0px 10px 30px
+    }
+    .main_about .content .about_preview {
+        max-width: 340px;
+    }
+    /* End About */
+
+    .main_services .content .item_services {
+        min-width: 350px;
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        background: #fbfbfb;
+        border-radius: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+    }
+
+    /* 2.3 Arbitrage problems */
+    .main_arbitrage_problems {
+        padding: 30px 10px;
+    }
+
+    .main_arbitrage_problems .content .problems_info .title {
+        font-size: 24px;
+    }
+    .main_arbitrage_problems .content .problems_info .text {
+        font-size: 14px;
+    }
+
+    .main_arbitrage_problems .content .problems_info .percent_text {
+        align-items: center;
+    }
+    .main_arbitrage_problems .content .problems_info .percent_text .percent {
+        font-size: 48px;
+
+        margin: 0px 10px 0px 0px;
+    }
+    .main_arbitrage_problems .content .problems_info .percent_text .stroke {
+        font-size: 16px;
+    }
+
+    .main_arbitrage_problems .content .problems_preview {
+        max-width: 340px;
+    }
+    /* 2.3 Arbitrage problems end */
+
+    /* 2.4 Solution */
+    .main_solutions {
+        padding: 40px 10px 10px;
+    }
+
+    .main_solutions .content .head_info .title_wrapper .title {
+        font-size: 24px;
+    }
+    .main_solutions .content .head_info .title_wrapper .sub_title {
+        max-width: 320px;
+
+        font-size: 15px;
+    }
+
+    .main_solutions .content .head_info .success_formula .formula_present {
+        font-size: 40px;
+    }
+
+    .main_solutions .content .main_info .block {
+        margin: 0px 30px 0px 0px;
+    }
+    .main_solutions .content .main_info .block .title {
+        font-size: 22px;
+    }
+    .main_solutions .content .main_info .block .sub_title {
+        font-size: 14px;
+    }
+    .main_solutions .content .main_info .block .text {
+        font-size: 14px;
+    }
+
+    .main_solutions .content .callback {
+        max-width: 240px;
+    }
+    /* 2.4 Solution end */
+
+    /* 2.5 Marketing plans */
+    .main_marketing_plans {
+        min-height: 540px;
+    }
+
+    .main_marketing_plans .white_tape {
+        height: 160px;
+    }
+
+    .main_marketing_plans .content {
+        height: auto;
+
+        padding: 40px 10px 20px;
+    }
+
+    .main_marketing_plans .content .plans_slider {
+        min-height: 500px;
+    }
+
+    .main_marketing_plans .content .plans_slider .slider_control {
+        margin-top: auto;
+    }
+
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview {
+        max-height: 420px;
+
+        padding: 30px 0px 0px 0px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_bg {
+        max-width: 220px;
+        width: 100%;
+        min-height: 380px;
+        max-height: 380px;
+
+        margin: 0px 5px 0px 0px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_bg .small_title {
+        font-size: 14px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_bg .plan_name {
+        font-size: 30px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_bg .icon {
+        width: 52px;
+    }
+
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_data {
+        max-width: 220px;
+        width: 100%;
+        min-height: 380px;
+        max-height: 380px;
+
+        margin: 0px 0px 0px 5px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_data .data_head {
+        min-height: 120px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_data .data_head .line {
+        height: 30px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_data .data_head .title {
+        font-size: 16px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_data .data_info {
+        padding: 10px 10px 0px 10px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_data .data_info .info_wrapper {
+        margin: auto 0px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_data .data_info .info_wrapper .stroke {
+        font-size: 18px;
+    }
+
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_info {
+        max-width: 40%;
+
+        padding: 0px 10px 45px 0px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_info .small_title {
+        font-size: 14px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_info .title {
+        min-height: 84px;
+
+        font-size: 24px;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_info .text {
+        font-size: 14px;
+
+        margin: 0px;
+    }
+    /* 2.5 Marketing plans end */
+
+    /* 2.6 Earnings */
+    .main_earnings {
+        padding: 40px 10px;
+    }
+
+    .main_earnings .content .title {
+        max-width: 320px;
+
+        font-size: 24px;
+    }
+    .main_earnings .content .sub_title {
+        max-width: 480px;
+
+        font-size: 14px;
+    }
+
+    .main_earnings .content .info_wrapper .separator {
+        max-width: 40px;
+
+        margin: auto 5px;
+    }
+
+    .main_earnings .content .info_wrapper .block {
+        max-width: 28%;
+    }
+    .main_earnings .content .info_wrapper .block .head_info .num {
+        font-size: 34px;
+    }
+    .main_earnings .content .info_wrapper .block .head_info .head_title {
+        font-size: 18px;
+    }
+    .main_earnings .content .info_wrapper .block .head_info .icon {
+        min-width: 30px;
+        max-width: 30px;
+        width: 30px;
+        min-height: 30px;
+        max-height: 30px;
+        height: 30px;
+    }
+    /* 2.6 Earnings end */
+
+    /* 2.7 Our team */
+    .main_our_team {
+        padding: 40px 10px;
+    }
+
+    .main_our_team .content .title {
+        font-size: 24px;
+    }
+    .main_our_team .content .sub_title {
+        font-size: 14px;
+    }
+
+    .main_our_team .content .team_wrapper {
+        flex-wrap: wrap;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper {
+        max-width: calc(50% - 10px) !important;
+
+        margin: 0px 10px 60px 0px !important;
+
+        flex-direction: row !important;
+    }
+    .main_our_team .content .team_wrapper .member_wrapper .photo {
+        max-width: 180px !important;
+        width: 100%;
+        min-height: 260px !important;
+    }
+    .main_our_team .content .team_wrapper .member_wrapper .photo {
+        background: url('./../img/teams/member-1.jpg');
+    }
+    .main_our_team .content .team_wrapper .member_wrapper .photo .additional_element {
+        display: none;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .head_info .member_name {
+        font-size: 18px;
+    }
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .head_info .position {
+        font-size: 14px;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .about_text {
+        font-size: 14px !important;
+
+        display: flex !important;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .footer_info {
+        position: absolute;
+
+        bottom: -30px;
+        left: 0px;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .position_status {
+        transform: rotate(0deg) !important;
+
+        position: absolute !important;
+        bottom: -50px !important;
+        left: 0px;
+    }
+    /* 2.7 Our team end */
+
+    /* 2.8 Contact form */
+    .main_contact_form {
+        padding: 40px 10px 80px;
+    }
+
+    .main_contact_form .content .title_message {
+        font-size: 24px;
+    }
+
+    .main_contact_form .content form {
+        flex-wrap: wrap;
+    }
+    .main_contact_form .content form .data_block {
+        max-width: 50%;
+    }
+    .main_contact_form .content form .submit_btn {
+        margin: 40px auto 0px;
+    }
+    /* 2.8 Contact form end */
+
+    /* 3. Footer */
+    #footer .content {
+        padding: 30px 10px;
+    }
+
+    #footer .content .data .small_menu {
+        display: none;
+    }
+
+    #footer .content .data .company_info .title {
+        font-size: 24px;
+    }
+    #footer .content .data .company_info .text {
+        font-size: 14px;
+
+        line-height: 1.4;
+    }
+    /* 3. Footer end */
+
+    /* blog */
+    .blog{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (min-width:768px){
+    .blog__item:nth-child(5n), .blog__item:nth-child(5n+1) {
+        width: 50%;
+    }
+    .blog__item {
+        width: 33.33% ;
+    }
+    .blog__item:first-child {
+        width: 100%;
+        height: 17.125rem;
+    }
+    .blog__item:first-child .blog__card-inner{
+        display: flex;
+        flex-direction: row;
+    }
+    .blog-offered .blog__item:first-child {
+        width: 33.33% ;
+        height: auto;
+    }
+    
+}
+/* Mobile phones */
+@media screen and (max-width: 768px) {
+    /* 0. Base styles */
+    #main {
+        overflow-x: hidden;
+    }
+
+    .base_more_info {
+        font-size: 16px;
+    }
+
+    /* 3. Statistic wrapper */
+    .statistics_wrapper .content .data_wrapper::before,
+    .statistics_wrapper .content .data_wrapper::after {
+        display: none;
+    }
+
+    .statistics_wrapper .content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        position: relative;
+    }
+
+    .statistics_wrapper .content .data_wrapper {
+        padding: 0px;
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+    .statistics_wrapper .content .data_wrapper .data_block {
+        min-width: 160px;
+        max-width: 50%;
+        width: 100%;
+        min-height: 180px;
+
+        margin: 0px !important;
+        padding: 10px;
+
+        justify-content: center;
+    }
+
+    .statistics_wrapper .content .additional_wrapper {
+        min-width: 160px;
+        max-width: 50%;
+        width: 100%;
+        min-height: 180px;
+        height: 50%;
+
+        padding: 10px;
+
+        background: #003e6b;
+
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1;
+    }
+    /* 3. Statistic wrapper end */
+    /* 0. Base styles end */
+
+    /* 2. Main */
+    /* 2.1 Present */
+    .main_present .content {
+        min-height: 420px;
+    }
+
+    .main_present .content .present_slider {
+        max-width: 60%;
+
+        padding: 60px 10px 60px 10px;
+    }
+
+    .main_present .content .bg {
+        width: 40%;
+    }
+
+    .main_present .content .present_slider .slider_control {
+        margin: 10px 0px 0px 0px;
+    }
+    .main_present .content .present_slider .slider_control .control_dot {
+        display: none;
+    }
+
+    .main_present .content .present_slider .slider_control .callback {
+        width: 34px;
+        height: 34px;
+
+        font-size: 0;
+
+        padding: 4px;
+
+        border: 1px solid #9f9f9f;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main_present .content .present_slider .slider_control .callback .icon {
+        margin: 0px;
+    }
+
+    .main_present .content .present_slider .slides_wrapper .slide_block .title {
+        font-size: 18px;
+    }
+    .main_present .content .present_slider .slides_wrapper .slide_block .info {
+        font-size: 14px;
+    }
+    
+    /* 2.1 Present end */
+    .main_about .content {
+        padding-top: 20px;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    /* 2.3 Arbitrage problems */
+    .main_arbitrage_problems .content {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    /* 2.3 Arbitrage problems end */
+
+    /* 2.4 Solution */
+    .main_arbitrage_problems .content {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .main_solutions .content .head_info {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .main_solutions .content .head_info .title_wrapper {
+        margin: 0px 0px 20px;
+    }
+
+    .main_solutions .content .main_info {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .main_solutions .content .main_info .block {
+        max-width: 568px;
+        width: 100%;
+
+        margin: 0px 0px 20px;
+    }
+
+    .main_solutions .content .callback {
+        max-width: 100%;
+
+        margin: 10px auto 0px;
+
+        justify-content: center;
+    }
+    /* 2.4 Solution end */
+
+    /* 2.5 Marketing plans */
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_info {
+        max-width: 100%;
+
+        padding: 0px;
+    }
+
+    .main_marketing_plans .content .plans_slider .slider_control {
+        margin: 30px 0px 0px;
+
+        justify-content: center;
+    }
+    .main_marketing_plans .content .plans_slider .slider_control .control_buttons .btn {
+        max-width: 48px;
+        min-width: 48px;
+        min-height: 48px;
+        max-height: 48px;
+
+        padding: 12px;
+    }
+
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview {
+        max-width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_data {
+        position: absolute;
+        top: 0px;
+        right: calc(50% - 140px);
+        z-index: 1;
+    }
+    .main_marketing_plans .content .plans_slider .slides_wrapper .slide .plan_preview .preview_bg {
+        position: relative;
+        left: -40px;
+    }
+    /* 2.5 Marketing plans end */
+
+    /* 2.6 Earnings */
+    .main_earnings .content .info_wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .main_earnings .content .info_wrapper .block {
+        max-width: 100%;
+    }
+
+    .main_earnings .content .info_wrapper .separator {
+        display: none;
+    }
+    /* 2.6 Earnings end */
+
+    /* 2.7 Our team */
+    .main_our_team .content .team_wrapper .member_wrapper {
+        max-width: 100% !important;
+
+        margin: 0px 0px 30px 0px !important;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .photo {
+        max-height: 260px;
+        height: 260px;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .head_info .member_name {
+        font-size: 16px;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .about_text {
+        order: 3;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .footer_info {
+        max-width: 100%;
+
+        padding: 0px 10px 0px 0px;
+
+        order: 2;
+        justify-content: space-between;
+
+        position: unset !important;
+        bottom: unset !important;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .footer_info .separator {
+        min-width: 30px;
+    }
+
+    .main_our_team .content .team_wrapper .member_wrapper .member_info .position_status {
+        display: none !important;
+    }
+    /* 2.7 Our team end */
+
+    /* 2.8 Contact form */
+    .main_contact_form .content form .data_block {
+        max-width: 100%;
+
+        margin: 0px 0px 40px 0px;
+        padding: 0px;
+    }
+
+    .main_contact_form .content form .submit_btn {
+        margin: 0px auto;
+    }
+    /* 2.8 Contact form end */
+    /* 2. Main end */
+
+    /* 3. Footer */
+    #footer .content .data {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #footer .content .data .company_info {
+        margin: 0px 0px 20px;
+    }
+
+    #footer .content .data .our_contacts {
+        margin: 0px;
+    }
+    /* 3. Footer end */
+    .blog__item{
+        width: 100%;
+    }
+}

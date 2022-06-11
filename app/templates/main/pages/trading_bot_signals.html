@@ -1,0 +1,78 @@
+
+{% extends "main/layouts/base.html" %}
+
+{% block title %} <title>NOLE | Trading Bot & Signals</title> {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="base_wrapper wrapper_trading">
+    <h2 class="title">Trading Feeds</h2>
+    <table class="base_table loading">
+        <thead class="thead">
+            <tr>
+                <th>ID</th>
+                <th>Exchange</th>
+                <th>Currency</th>
+                <th>Qty</th>
+                <th>Profit</th>
+                <th>Date</th>
+                
+            </tr>
+        </thead>
+        <tbody class="tbody">
+       
+             
+          <!-- {% for item in data %}
+            <tr class="{{ loop.cycle('odd', 'even') }}">
+                <td aria-label="ID">{{item.transactionID}}</td>
+                <td aria-label="Currency">{{item.exchange}}</td>
+                <td aria-label="Currency">{{item.currency}}</td>
+                <td aria-label="Currency">{{item.qty}}</td>
+                <td aria-label="Currency">{{item.profit}}</td>
+               
+                <td aria-label="Date">{{item.date_added | datetime_format}}</td>
+               
+            </tr>
+            {% endfor %} -->
+        </tbody>
+    </table>
+
+</div>
+</div>
+
+{% endblock content %}
+
+{% block javascripts %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8">
+    var url = window.location.protocol + "//" + window.location.hostname;
+    const socket = io(url,{transports: ['websocket'], upgrade: false});
+    socket.on('connect', function() {
+        socket.emit('@TRADING_BOT', {data: 'I\'m connected!'});
+    });
+    socket.on('@TRADING_BOT', function(data){
+        var item = JSON.parse(data)
+        let style= parseFloat(item.profit) == 0 ? 'color:red; font-weight:bold' : 'color:green; font-weight:bold'
+        $(`       
+        <tr class="anim highlight ${item._cls}">
+            <td aria-label="ID">${item.transactionID}</td>
+            <td aria-label="Exchange">${item.exchange}</td>
+            <td aria-label="Currency">${item.currency}</td>
+            <td aria-label="Qty">${item.qty}</td>
+            <td aria-label="Profit" style="${style}">${parseFloat(item.profit) == 0 ? '-' : item.profit +'%' }</td>
+            <td aria-label="Date">${item.date_added}</td>
+        </tr>
+        `)
+        .hide()
+        .prependTo('.wrapper_trading table tbody')
+        .fadeIn("slow")
+        .addClass('normal');
+        $('.wrapper_trading table').removeClass('loading');
+        if($('.wrapper_trading tbody tr').length > 20){
+            $('.wrapper_trading tbody tr:last').remove();
+        }
+    })
+</script>
+
+{% endblock javascripts %}

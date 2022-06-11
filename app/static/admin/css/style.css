@@ -1,0 +1,140 @@
+body {
+  background: white;
+  margin-top: 10%;
+  overflow-x: hidden; }
+
+.navbar {
+  box-shadow: 2px 2px 5px #880e4f;
+  opacity: 0.9;
+  background: #fff; }
+  .navbar .nav-item {
+    font-size: 15px;
+    padding-right: 20px; }
+
+.carousel-item {
+  height: 450px; }
+
+#property .card:hover {
+  color: #880e4f; }
+
+#property .btn:hover {
+  background: #fff;
+  color: #880e4f; }
+
+#contact .fa {
+  font-size: 50px; }
+
+#post .card:hover {
+  color: #880e4f; }
+
+#post .btn:hover {
+  background: #fff;
+  color: #880e4f; }
+
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 5px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .pagination .active a {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+
+  .kyc_table .image{
+    max-width: 200px;
+  }
+  .kyc_table .image img{
+    width: 100%;
+  }
+  .table.kyc_table th, .table.kyc_table td{
+    vertical-align:middle;
+  }
+  
+    /* ============= */
+    .mail-box_body .mail-box_list:nth-child(2) {
+      background-color: #f9f9f9;
+  }
+
+.mail-box_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 12px;
+  cursor: pointer;
+}
+.mail-box_list.active{
+  font-weight: 600;
+}
+.mail-box_list-date {
+  /* flex-direction: row; */
+  /* flex-wrap: nowrap; */
+}
+
+.mail-box_list-subject {
+  flex: 1;
+  max-width: 550px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 5px;
+  width: 100%;
+}
+
+.mail-box_body {
+  width: 100%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  min-height: 100vh;
+}
+
+.mail-box {
+  width: 100%;
+}
+.mail-box_content-head {
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  font-weight: 600;
+}
+.mail-box_content-item {
+  width: 100%;
+  position: relative;
+}
+.mail-box_body .mail-box_content-item:nth-child(2) {
+      background-color: #f9f9f9;
+  }
+.mail-box_content-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px;
+}
+.mail-box_content-name .m_name{
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.mail-box_content-detail {
+  padding: 15px;
+  line-height: 1.5;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 10px;
+  padding-top: 0;
+  margin-top: -20px;
+}

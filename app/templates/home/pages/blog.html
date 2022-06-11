@@ -1,0 +1,47 @@
+
+{%  extends 'home/layouts/base.html' %}
+
+{% block title %} 
+    <title>Blog</title>
+{% endblock%}
+
+{% block content %}
+    <div class="main_blog">
+        <div class="base_wrapper content">
+            <div class="blog">
+                <div class="blog__header">
+                    <h1 class="blog__title">
+                        Welcome to Blog!
+                    </h1>
+                </div>
+                <ul class="blog__list">
+                    {% for i in posts %}
+                    <li class="blog__item">
+                        <div class="blog__card">
+                            <a class="blog__card-inner" href="{{url_for( '.post' , slug= i[4])}}">
+                                <div class="blog__card-image">
+                                    <div class="image-box">
+                                        <img src="{{i[3]}}" alt="{{i[1]}}">
+                                    </div>
+                                </div>
+                                <div class="blog__card-body">
+                                    <h2 class="blog__card-title">
+                                        {{i[1]}}
+                                    </h2>
+                                    <div class="blog__card-desc">
+                                        {{i[2]}}...
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    {% endfor %}
+            
+                </ul>
+            </div>
+
+            
+        </div>
+    </div>
+    
+{% endblock%}

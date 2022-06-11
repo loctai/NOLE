@@ -1,0 +1,12 @@
+Dear {{ data.name }},
+
+You received {{data.amount_coin}} {{data.currency}} and {{data.amount_qtc}} QTC in your Nole account.
+
+Investment Package: ${{data.plan}}
+
+Percent: {{data.percent}}%
+
+Sincerely,
+
+The NOLE Team
+

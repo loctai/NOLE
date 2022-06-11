@@ -1,0 +1,151 @@
+{% extends 'admin/layouts/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<br>
+
+<ul class="list-unstyled list-inline">
+	
+	<li class="list-inline-item">
+		<a class="btn btn-success  text-white m-1" href="/admin-management-page/posts"> Posts</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-warning  m-1" href="/admin-management-page/users"></i>Users</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-danger  m-1" href="/admin-management-page/kyc"> KYC</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-primary  m-1" href="/admin-management-page/investments"> Invesmtns</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-info  m-1" href="/admin-management-page/withdraw"> Withdraw</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-secondary  m-1" href="/admin-management-page/withdraw-profit"> Withdraw Profit</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-dark  m-1" href="/admin-management-page/update-profit"> Update Profit</a>
+	</li>
+</ul>
+<section id="table3">
+	<h1 class="display-4 text-primary text-center">
+        User Profiles
+    </h1>
+	<div class="row">
+		<div class="col-md-3 mx-auto m-1">
+			<input type="text" class="form-control   search" placeholder=" Search Users..." id="basics">
+		</div>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-striped kyc_table">
+			<thead class="thead">
+				<tr>
+					<th>#</th>
+					<th>Username</th>
+					<th>Full Name</th>
+					<th>Gender</th>
+					<th>Passport</th>
+                    <th>Front Side</th>
+                    <th>Back Side</th>
+                    <th>Selfie</th>
+                    <th>#</th>
+				</tr>
+			</thead>
+			<tbody class="list">                
+            {% for i in usersList %}             
+            <tr class="users ">
+                    <td class="_id">{{loop.index}}</td>
+                    <td class="username">{{i.username }}</td>
+                    <td class="fullname">   {{i.fullname}}</td>
+                    <td class="fullname">   {{i.gender}}</td>
+                    <td class="fullname">   {{i.passport}}</td>
+                    <td class="image"> 
+                        <a href="{{i.front}}" target="_blank">
+                            <img src="{{i.front}}" style=" height: 60px; " />
+                        </a>
+                    </td>
+                    <td class="image"> 
+                        <a href="{{i.back}}" target="_blank">
+                            <img src="{{i.back}}" style=" height: 60px; "/>
+                        </a>
+                    </td>
+                    <td class="image"> 
+                        <a href="{{i.selfie}}" target="_blank">
+                            <img src="{{i.selfie}}" style=" height: 60px; "/>
+                        </a>
+                    </td>
+                    <td class="date">
+                    {{i.date_added | date_format}}
+                    </td>
+                    <td>
+                        {% if i.status == 0 %}
+                        <p>
+                            <a href="javscript:void(0);" onclick="changeStatusKyc('{{i._id}}', '2')" class="btn-sm btn btn-success">
+                                Approve
+                            </a> --
+                            <a href="javscript:void(0);"  onclick="changeStatusKyc('{{i._id}}', '1')" class="btn-sm btn btn-danger">
+                                Reject
+                            </a>
+                        </p>
+                        {% endif %}
+
+                        {% if i.status == 2 %}
+                            <button type="button" class="btn-sm btn btn-success">
+                                Approved
+                            </button>
+                        {% endif %}
+                        {% if i.status == 1 %}
+                      
+                            <button type="button"  class="btn-sm btn btn-danger">
+                                Rejected
+                            </button>
+                            <a href="javscript:void(0);"  onclick="add_noted_kyc('{{i._id}}')" class="btn-sm btn btn-info">
+                                Add note
+                            </a>
+                            <br />
+                        <span class="text-danger">
+                            {{i.admin_note}}
+                        </span>
+                        {% endif %}
+                        {% if i.status ==3 %}
+                      
+                        <button type="button"  class="btn-sm btn btn-danger">
+                            Rejected
+                        </button>
+                        <br />
+                        <span class="text-danger">
+                            {{i.admin_note}}
+                        </span>
+                    {% endif %}
+                    </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+		</table>
+	</div>
+	<div class="row">
+		<div class="col-md- col-sm- mx-auto">
+			<p class="lead text-muted text-center">Pages:</p>
+			<ul class="pagination text-center"></ul>
+		</div>
+	</div>
+</section>
+<div class="modal fade text-dark" role="dialog" tabindex="-1" id="add_noted">
+	<div class="modal-dialog  modal-lg " role="document">
+		<div class="modal-body">
+			<div class="card bg-light border border-primary ">
+				<div class="card-body">
+					<form action="/admin-management-page/add-note-kyc" method="post" class="form" enctype="multipart/form-data" role="form">
+                        <input type="hidden" name="note_id" id="note_id" value="" />
+                        <div class="form-group  required">
+                            <label class="control-label" for="summary">Note</label>
+                            <textarea class="form-control" name="note" required=""></textarea>
+                        </div>
+                        <input class="btn btn-default" id="btn" type="submit" value="Submit">
+                    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

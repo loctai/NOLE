@@ -1,0 +1,60 @@
+ 
+ 
+/* --- Animation --- */
+@keyframes spin { 100% { -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes spinr { 100% { -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+
+@keyframes rotaterr { 0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); } }
+
+@keyframes rotatell  { 0% { transform: rotate(0deg); }
+100% { transform: rotate(-360deg); } }
+
+@keyframes moveOne { 0% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+  20% { transform: translate(73px, -1px) rotate(36deg) scale(0.9); }
+  40% { transform: translate(141px, 72px) rotate(72deg) scale(1); }
+  60% { transform: translate(83px, 122px) rotate(108deg) scale(1.2); }
+  80% { transform: translate(-40px, 72px) rotate(144deg) scale(1.1); }
+  100% { transform: translate(0px, 0px) rotate(0deg) scale(1); } }
+
+@keyframes moveTwo { 0% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+  20% { transform: translate(73px, -1px) rotate(-26deg) scale(0.9); }
+  40% { transform: translate(141px, 72px) rotate(52deg) scale(1); }
+  60% { transform: translate(83px, 122px) rotate(118deg) scale(1.2); }
+  80% { transform: translate(-40px, 72px) rotate(164deg) scale(1.1); }
+  100% { transform: translate(0px, 0px) rotate(0deg) scale(1); } }
+
+@keyframes moveThree { 0% { transform: translate(-200px, 151px) rotate(0deg); }
+  100% { transform: translate(251px, -200px) rotate(180deg); } }
+
+@keyframes moveFour { 0% { transform: translate(0px, 0px) rotate(0deg); }
+  20% { transform: translate(73px, -1px) rotate(36deg); }
+  40% { transform: translate(141px, 72px) rotate(72deg); }
+  60% { transform: translate(83px, 122px) rotate(108deg); }
+  80% { transform: translate(-40px, 72px) rotate(144deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); } }
+
+@keyframes bounce { 0% { transform: translateY(-10px); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(-10px); } }
+
+@keyframes border-transform { 0%, 100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; }
+  14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; }
+  28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; }
+  42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; }
+  56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; }
+  70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; }
+  84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } }
+
+@keyframes animatebox {
+	from {
+		background-position: 0;
+	}
+
+	to {
+		background-position: 0 450px;
+	}
+}

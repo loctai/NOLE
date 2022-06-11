@@ -1,0 +1,71 @@
+@media screen and (max-width: 900px) {
+    .auth_wrapper .auth_block {
+        max-width: 100%;
+    }
+    .auth_wrapper .auth_block.bg_block {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .auth_wrapper {
+        padding-top: 60px;
+    }
+    .auth_wrapper .control_block .return_on_site {
+        width: 100%;
+
+        padding: 10px;
+
+        background: #fff;
+
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+    .auth_wrapper .control_block .auth_preview .sub_title {
+        font-size: 18px;
+    }
+    .auth_wrapper .control_block .auth_preview .line h1 {
+        font-size: 34px;
+    }
+    .auth_wrapper .control_block .auth_preview .page_title {
+        font-size: 26px;
+    }
+
+    .auth_wrapper .auth_block .small_link .title,
+    .auth_wrapper .auth_block .small_link .link {
+        font-size: 15px;
+    }
+
+    .auth_wrapper .auth_block .small_link .title,
+    .auth_wrapper .auth_block .small_link .link {
+        font-size: 15px;
+    }
+    .auth_wrapper .control_block .auth_preview .page_title {
+        width: 100%;
+
+        text-align: center;
+
+        margin: 0px 0px 10px;
+    }
+    .auth_wrapper .control_block .auth_preview .line {
+        flex-wrap: wrap;
+    }
+
+    .auth_wrapper .control_block .auth_form .form_control {
+        flex-direction: column;
+        align-items: center;
+    }
+    .auth_wrapper .control_block .auth_form .form_control .submit {
+        margin: 0px 0px 20px;
+    }
+
+    .auth_wrapper .auth_block .small_link {
+        width: 100%;
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

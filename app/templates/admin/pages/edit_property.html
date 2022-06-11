@@ -1,0 +1,25 @@
+{% extends "admin/layouts/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}TWRE - Edit Property{% endblock %}
+{% block body %}
+{% block content %}
+<div class="row">
+	<div class="col-lg-4 mx-auto">
+		<br>
+		<div class="card bg-light border border-primary ">
+			<div class="card-body">
+				<div class="card-title">
+					<h1 class="display-4">
+                                                       Edit Property
+                                                     </h1>
+				</div>
+				<div class="lead text-muted ">{{ wtf.quick_form(form ,enctype="multipart/form-data") }}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+
+{% endblock %}
+
+{% endblock%}

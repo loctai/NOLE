@@ -1,0 +1,219 @@
+
+{% extends "main/layouts/base.html" %}
+
+{% block title %} <title>NOLE | Referral</title> {% endblock title %}
+
+{% block stylesheets %}
+<link href="{{ url_for('static', filename='account/css/tree.css') }}" rel="stylesheet" type="text/css">
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="base_wrapper partner_link">
+  <div class="partner_link_wrapper">
+      <div class="preview">
+          <img src="/static/account/img/bg/exm.svg" alt="NOLE">
+      </div>
+
+      <div class="link_info">
+          <h3 class="title">
+            Referral Link</h3>
+          <!-- <p class="text">Use our affiliate program to work with your referral partners and get even more income! We provide you with unlimited opportunities for the number of your referral partners and high interest conditions for the possibility of your early development.</p> -->
+            <input type="text" class="input_link" readonly value="https://nole.ai/?ref={{user.username}}" />
+          <div class="link_control">
+              <button class="big_button link_copy" data-link="https://nole.ai/?ref={{user.username}}" data-base-text="Get the link" data-copied-text="Copied!">
+                  <i class="icon">
+                      <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.092 512.092" style="enable-background:new 0 0 512.092 512.092;" xml:space="preserve">
+  <g>
+      <g>
+          <path d="M312.453,199.601c-6.066-6.102-12.792-11.511-20.053-16.128c-19.232-12.315-41.59-18.859-64.427-18.859
+              c-31.697-0.059-62.106,12.535-84.48,34.987L34.949,308.23c-22.336,22.379-34.89,52.7-34.91,84.318
+              c-0.042,65.98,53.41,119.501,119.39,119.543c31.648,0.11,62.029-12.424,84.395-34.816l89.6-89.6
+              c1.628-1.614,2.537-3.816,2.524-6.108c-0.027-4.713-3.87-8.511-8.583-8.484h-3.413c-18.72,0.066-37.273-3.529-54.613-10.581
+              c-3.195-1.315-6.867-0.573-9.301,1.877l-64.427,64.512c-20.006,20.006-52.442,20.006-72.448,0
+              c-20.006-20.006-20.006-52.442,0-72.448l108.971-108.885c19.99-19.965,52.373-19.965,72.363,0
+              c13.472,12.679,34.486,12.679,47.957,0c5.796-5.801,9.31-13.495,9.899-21.675C322.976,216.108,319.371,206.535,312.453,199.601z"
+              />
+      </g>
+  </g>
+  <g>
+      <g>
+          <path d="M477.061,34.993c-46.657-46.657-122.303-46.657-168.96,0l-89.515,89.429c-2.458,2.47-3.167,6.185-1.792,9.387
+              c1.359,3.211,4.535,5.272,8.021,5.205h3.157c18.698-0.034,37.221,3.589,54.528,10.667c3.195,1.315,6.867,0.573,9.301-1.877
+              l64.256-64.171c20.006-20.006,52.442-20.006,72.448,0c20.006,20.006,20.006,52.442,0,72.448l-80.043,79.957l-0.683,0.768
+              l-27.989,27.819c-19.99,19.965-52.373,19.965-72.363,0c-13.472-12.679-34.486-12.679-47.957,0
+              c-5.833,5.845-9.35,13.606-9.899,21.845c-0.624,9.775,2.981,19.348,9.899,26.283c9.877,9.919,21.433,18.008,34.133,23.893
+              c1.792,0.853,3.584,1.536,5.376,2.304c1.792,0.768,3.669,1.365,5.461,2.048c1.792,0.683,3.669,1.28,5.461,1.792l5.035,1.365
+              c3.413,0.853,6.827,1.536,10.325,2.133c4.214,0.626,8.458,1.025,12.715,1.195h5.973h0.512l5.12-0.597
+              c1.877-0.085,3.84-0.512,6.059-0.512h2.901l5.888-0.853l2.731-0.512l4.949-1.024h0.939c20.961-5.265,40.101-16.118,55.381-31.403
+              l108.629-108.629C523.718,157.296,523.718,81.65,477.061,34.993z"/>
+      </g>
+  </g>
+</svg>                    </i>
+                  <span class="btn_text">Get the link</span>
+              </button>
+
+              <ul class="action_position">
+                <li>
+                    {% if user.position == 0 %}
+                        <input type="radio" checked id="left" value="0"  name="position">
+                    {% else %}
+                        <input type="radio" id="left"  value="0" name="position">
+                    {% endif %}
+                  <label for="left">Left</label>
+                  
+                  <div class="check"></div>
+                </li>
+                
+                <li>
+                    {% if user.position == 1 %}
+                    <input type="radio" checked id="right"  value="1" name="position">
+                    {% else %}
+                        <input type="radio" id="right"  value="1" name="position">
+                    {% endif %}
+                  <label for="right">Right</label>
+                  
+                  <div class="check"><div class="inside"></div></div>
+                </li>
+                
+              
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="base_wrapper partner_line_tables">
+    <div class="line_tables_header">
+        <h2 class="title">Referral F1</h2>
+       
+    </div>
+    <div class="line_tables_content">
+        <div class="table_pagination">
+            <table class="base_table">
+                <thead class="thead">
+                    <tr>
+                        <th>Username</th>
+                        <th>Invested</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                {% for item in referral %}
+                <tr class="{{ loop.cycle('odd', 'even') }}">
+                    <td aria-label="Username">{{item.name}}</td>
+                    <td aria-label="Invested">{{item.balance.total_invest | format_usd}}</td>
+                    <td aria-label="Date">{{item.createdAt | date_format}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="table_control">
+                <button class="btn prev">
+                    <i class="icon">
+                        <img src="/static/account/img/icons/blue_arrows.png" alt="NOLE">
+                    </i>
+                    Prev                </button>
+
+                <div class="dots_wrapper">
+                </div>
+
+                <button class="btn next">
+                    Next                    <i class="icon">
+                        <img src="/static/account/img/icons/blue_arrows.png" alt="NOLE">
+                    </i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="base_wrapper partner_program">
+        <h2 class="title">Binary Tree</h2>
+        <input type="hidden" name="__username" id="__username" value="{{user.username}}">
+        <input type="hidden" name="uid_customer" id="uid_customer" value="{{user._id}}">
+        <div class="statistical_tree">
+            <div class="__box">
+                <div class="team_value">
+                    <p>Reg Left:  <strong> {{total_binary_lefts}}</strong></p>
+                    <p>Team Left: <strong> {{user.balance.team_left | format_usd}}</strong></p>
+                    <p style="font-size: 13px;color: #bed6e7;">Total Team Left: <strong> {{user.balance.total_team_left | format_usd}}</strong>
+                         </p>
+                </div>
+            </div>
+            <div class="__box">
+                <div class="team_value">
+                    <p>Reg Right: <strong> {{total_binary_rights}}</strong></p>
+                    <p>Team Right: <strong> {{user.balance.team_right | format_usd}}</strong></p>
+                    <p style="font-size: 13px;color: #bed6e7;">Total Team Right: <strong> {{user.balance.total_team_right | format_usd}}</strong>
+                         </p>
+                </div>
+            </div>
+            <div class="__box">
+                <div class="team_value">
+                   
+                    <p>Team Volume: <strong> {{user.balance.team_volume | format_usd}}</strong></p>
+                    <p>Volume Weeks F1 : <strong> {{user.balance.team_volume_f1 | format_usd}}</strong></p>
+                    
+                </div>
+            </div>
+            <!-- <div class="__box">
+                <p>
+                    Reg Left: 
+                    <strong>
+                       {{total_binary_lefts}}
+                    </strong>
+                </p>
+            </div>
+            <div class="__box">
+                <p>
+                    Reg Right: 
+                    <strong>
+                        {{total_binary_rights}}
+                    </strong>
+                </p>
+            </div> -->
+        </div>
+        <div class="action_tree">
+                <div class="go_top">
+                    <a class="big_button" href="javascript:void(0)" onclick='click_node("{{user._id}}")'>
+                        <i class="icon">
+                            <svg class="svg-icon" viewBox="0 0 20 20">
+                                <path d="M3.24,7.51c-0.146,0.142-0.146,0.381,0,0.523l5.199,5.193c0.234,0.238,0.633,0.064,0.633-0.262v-2.634c0.105-0.007,0.212-0.011,0.321-0.011c2.373,0,4.302,1.91,4.302,4.258c0,0.957-0.33,1.809-1.008,2.602c-0.259,0.307,0.084,0.762,0.451,0.572c2.336-1.195,3.73-3.408,3.73-5.924c0-3.741-3.103-6.783-6.916-6.783c-0.307,0-0.615,0.028-0.881,0.063V2.575c0-0.327-0.398-0.5-0.633-0.261L3.24,7.51 M4.027,7.771l4.301-4.3v2.073c0,0.232,0.21,0.409,0.441,0.366c0.298-0.056,0.746-0.123,1.184-0.123c3.402,0,6.172,2.709,6.172,6.041c0,1.695-0.718,3.24-1.979,4.352c0.193-0.51,0.293-1.045,0.293-1.602c0-2.76-2.266-5-5.046-5c-0.256,0-0.528,0.018-0.747,0.05C8.465,9.653,8.328,9.81,8.328,9.995v2.074L4.027,7.771z"></path>
+                            </svg>
+                        </i>
+                        <span class="btn_text">Top</span>
+                    </a>
+                </div>
+                <div class="go_back">
+                    <a class="big_button" href="javascript:void(0)" onclick='click_back()'>
+                        <i class="icon">
+                            <svg class="svg-icon" viewBox="0 0 20 20">
+                                <path fill="none" d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+                                L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+                                c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+                                c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+                                S18.707,9.212,18.271,9.212z"></path>
+                            </svg>
+                        </i>
+                        <span class="btn_text">Back</span>
+                    </a>
+                </div>
+        </div>
+        <div class="personal-tree text-center">
+
+            
+        </div>
+        <div class="detail_tree">
+    
+        </div>
+  </div>
+
+
+
+{% endblock content %}
+
+{% block javascripts %}
+<script src="/static/account/js/lodash.min.js"></script>
+<script src="/static/account/js/jstree.js"></script>
+{% endblock javascripts %}

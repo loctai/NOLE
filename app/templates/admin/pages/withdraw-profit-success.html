@@ -1,0 +1,185 @@
+{% extends 'admin/layouts/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<br>
+
+<ul class="list-unstyled list-inline">
+	<li class="list-inline-item">
+		<a class="btn btn-secondary  m-1" href="/admin-management-page/withdraw-profit"> Withdraw Profit</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-dark  m-1" href="/admin-management-page/withdraw-profit-success"> Withdraw Profit Success</a>
+	</li>
+</ul>
+<div class="row">
+		
+	<div class="col-md-3 ">
+		<div class="card text-center bg-info text-white mb-4">
+			<h5>Total TRX</h5>
+			<h4 class="total_trx">														 
+				{{totalTRX | format_satoshi}}
+			</h4>
+		</div>
+	</div>
+	
+	<div class="col-md-3 ">
+		<div class="card text-center bg-warning text-white mb-4">
+			<h5>Total QTC</h5>
+			<h4 class="total_qtc">														 
+				{{totalQTC | format_satoshi}}
+			</h4>
+		</div>
+	</div>
+
+	
+	
+</div>
+<section >
+	<h1 class="display-4 text-primary text-center">
+        Withdraw Profit
+    </h1>
+	
+	<div class="table-responsive">
+		From <input type="date" name="startDate"> -
+		 To <input type="date" name="endDate">
+		  <a href="#" class="export-excel btn btn-info">Export Excel</a>
+		  <hr> 
+		  <b>Total TRX: <span class="trx_sum"> 0 </span></b> | <b>Total QTC: <span class="qtc_sum"> 0 </span> </b>
+		  <hr>
+		<table id="table_data" class="table table-striped mt-3">
+			<thead class="thead">
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>USD</th>
+					<th>Amount</th>
+                    <th>Currency</th>
+                    <th>Address</th>
+                    <th>Date</th>
+                    <th>Status</th>
+				</tr>
+			</thead>
+			
+		</table>
+	</div>
+	<div class="row">
+		<div class="col-md- col-sm- mx-auto">
+			<p class="lead text-muted text-center">Pages:</p>
+			<ul class="pagination text-center"></ul>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+{% block js %}
+<style>
+	.loading {
+		position: fixed;
+		height: 100vh;
+		width: 100vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(0, 0, 0,0.5);
+		z-index: 9999999;
+		color: #fff;
+		font-weight: bold;
+	}
+</style>
+<script type="text/javascript" language="javascript" >
+	$(document).ready(function(){
+		function load_ajax(url)
+            {
+                $.ajax({
+                    url : url,
+                    type : "get",
+                    dateType:"json",               
+                    success : function (result){
+						$('.qtc_sum').html(result.qtc);
+						$('.trx_sum').html(result.trx)
+                        console.log(result)
+                    }
+                });
+            } 
+		var today = new Date(); 
+        var dd = today.getDate(); 
+        var mm = today.getMonth() + 1; 
+		var yyyy = today.getFullYear();		
+		var end_date = dd + '-' + mm + '-' + yyyy;
+		
+		$("input[name='endDate']").val(end_date.split('-').reverse().join('-'))
+		
+
+		const yesterday = new Date(today)
+		yesterday.setDate(yesterday.getDate() - 1);
+		var mm_y = yesterday.getMonth() + 1; 
+		var start_date = yesterday.getDate() + '-' + mm_y + '-' + yesterday.getFullYear(); 
+		$("input[name='startDate']").val(start_date.split('-').reverse().join('-'))
+		$(".export-excel").attr("href", `/admin-management-page/export-withdraw-profit-success?start=${start_date}&end=${end_date}`);
+		load_ajax(`/admin-management-page/get-sum-withdraw?start=${start_date}&end=${end_date}`)
+		$('input[name="startDate"]').on('change',function() {
+			var $this = $(this);
+			start_date = $this.val().split('-').reverse().join('-')
+			$(".export-excel").attr("href", `/admin-management-page/export-withdraw-profit-success?start=${start_date}&end=${end_date}`);
+			load_ajax(`/admin-management-page/get-sum-withdraw?start=${start_date}&end=${end_date}`)
+		});
+		$('input[name="endDate"]').on('change',function() {
+			var $this = $(this);
+			end_date = $this.val().split('-').reverse().join('-')
+			$(".export-excel").attr("href", `/admin-management-page/export-withdraw-profit-success?start=${start_date}&end=${end_date}`);
+			load_ajax(`/admin-management-page/get-sum-withdraw?start=${start_date}&end=${end_date}`)
+		});
+		$('.export-excel').click(function(e){
+			var myDiv = document.createElement("div");
+			myDiv.className = 'loading';
+			myDiv.innerHTML = "<span>Loading....</span>";
+			document.body.appendChild(myDiv);
+			setTimeout(() => {
+				$('.loading').hide()
+			}, 5000);
+		})
+		var setting_maxTxCount = 100;
+		var setting_txPerPage = 100;
+		var lengthMenuOpts = [];
+		var lengthMenuOptsAdd = [ 10, 25, 50, 75, 100, 250, 500, 1000 ];
+		for (i=0; i < lengthMenuOptsAdd.length; i++) {
+		if (setting_maxTxCount >= lengthMenuOptsAdd[i]) {
+			lengthMenuOpts.push(lengthMenuOptsAdd[i]);
+		}
+		}
+		if (setting_maxTxCount < setting_txPerPage) {
+		var displayLengthMax = setting_maxTxCount;
+		} else {
+		var displayLengthMax = setting_txPerPage;
+		}
+		var rtable = $('#table_data').dataTable( {  
+			autoWidth: false,      
+			searching: false,
+			ordering: false,
+			responsive: false,
+			lengthChange: true,
+			processing: true,
+			serverSide: true,
+			iDisplayLength: displayLengthMax,
+			lengthMenu: lengthMenuOpts,
+			ajax: '/admin-management-page/get-profit-withdraw-success',
+            "columns": [
+                { "data": "_id" },
+                { "data": "name" },
+                { "data": "amount_usd" },
+                { "data": "amount_coin_satoshi" },
+                { "data": "currency" },
+                { "data": "address" },
+                { "data": "createdAt" },
+                { "data": "status" }
+            ]
+		
+		});
+
+	
+		
+	});
+	
+</script>
+{% endblock %}

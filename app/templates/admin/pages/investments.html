@@ -1,0 +1,172 @@
+{% extends 'admin/layouts/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<br>
+
+<ul class="list-unstyled list-inline">
+	
+	<li class="list-inline-item">
+		<a class="btn btn-success  text-white m-1" href="/admin-management-page/posts"> Posts</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-warning  m-1" href="/admin-management-page/users"></i>Users</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-danger  m-1" href="/admin-management-page/kyc"> KYC</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-primary  m-1" href="/admin-management-page/investments"> Invesmtns</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-info  m-1" href="/admin-management-page/withdraw"> Withdraw</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-secondary  m-1" href="/admin-management-page/withdraw-profit"> Withdraw Profit</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-dark  m-1" href="/admin-management-page/update-profit"> Update Profit</a>
+	</li>
+</ul>
+<div class="row">
+	<div class="col-md-3 ">
+		<div class="card text-center bg-danger text-white mb-4">
+			<h5>Total USD</h5>
+			<h4 class="total_usd">														 
+				0
+			</h4>
+		</div>
+	</div>
+	<div class="col-md-3 ">
+		<div class="card text-center bg-success text-white mb-4">
+			<h5>Total BTC</h5>
+			<h4 class="total_btc">														 
+				0
+			</h4>
+		</div>
+	</div>
+	<div class="col-md-3 ">
+		<div class="card text-center bg-info text-white mb-4">
+			<h5>Total ETH</h5>
+			<h4 class="total_eth">														 
+				0
+			</h4>
+		</div>
+	</div>
+	<div class="col-md-3 ">
+		<div class="card text-center bg-info text-white mb-4">
+			<h5>Total TRX</h5>
+			<h4 class="total_trx">														 
+				0
+			</h4>
+		</div>
+	</div>
+	<div class="col-md-3 ">
+		<div class="card text-center bg-warning text-white mb-4">
+			<h5>Total USDT</h5>
+			<h4 class="total_usdt">														 
+				0
+			</h4>
+		</div>
+	</div>
+</div>
+<section>
+	<h1 class="text-primary text-center">
+        Investment
+    </h1>
+	
+	<div class="table-responsive">
+		<table id="table_data" class="table table-striped  ">
+			<thead  class="thead">
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Plan</th>
+					<th>Amount</th>
+					<th>Profit</th>
+                    <th>Date</th>
+                    <th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+                {% for i in query %}
+                <tr>
+                    <td class="_id">{{i._id}}</td> 
+                    <td class="author">{{i.name}}</td>
+                    <td class="amount_usd" data-usd="{{i.amount_usd }}">{{i.amount_usd | format_usd}}</td>
+					<td data-currency="{{i.currency}}" data-amount_coin="{{i.amount_coin_satoshi}}" class="amount_coin">{{i.amount_coin_satoshi | format_satoshi }} {{i.currency}}</td>
+					<td>{{i.percent}} %</td>
+                    <td class="date">{{ i.createdAt | date_format}}</td>
+                    <td>
+                        {% if i.status == 1 %}
+                        <span class="text-info">In Processing</span>
+                        {% else %}
+                        <span class="text-success">Completed</span>
+                        {% endif %}
+                    </td>
+                </td>
+            {% endfor %}
+            </tbody>
+		</table>
+	</div>
+	<div class="row">
+		<div class="col-md- col-sm- mx-auto">
+			<p class="lead text-muted text-center">Pages:</p>
+			<ul class="pagination text-center"></ul>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" language="javascript" >
+	$(document).ready(function(){
+
+		$('#table_data').DataTable({
+			"order": [[ 0, "desc" ]],
+			dom: 'lBfrtip',
+			buttons: [
+				{
+					extend: 'excelHtml5',
+					title: 'Excel',
+					text:'Export to excel'
+				},
+				
+			],
+			"footerCallback": function ( row, data, start, end, display ) {
+			var api = this.api(), data;
+
+			var intVal = function ( i ) {				
+				return typeof i === 'string' ?
+					i.replace(/[\$,]/g, '')*1 :
+					typeof i === 'number' ?
+						i : 0;
+			};
+			var total_trx = api
+			.column(3)
+			.data()
+			.reduce(function (a, b) {
+					var cur_index = api.column(3).data().indexOf(b);
+					let data = api.column(3).data()[cur_index]
+					var n = data.includes("TRX");
+					data = data.replace("TRX", "")
+					return n ? intVal(a) + intVal(data) : intVal(a)
+			}, 0);
+		
+			var usd_total = api
+				.column( 2 )
+				.data()
+				.reduce( function (a, b) {
+					return intVal(a) + intVal(b);
+				}, 0 );
+			
+			$(".total_usd").html(usd_total.toFixed(3));
+			$(".total_trx").html(total_trx.toFixed(5));
+			},
+			
+		});
+		
+	});
+	
+</script>
+{% endblock %}

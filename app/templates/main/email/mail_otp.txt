@@ -1,0 +1,10 @@
+Dear {{ data.name }},
+
+{{txt}}
+
+{{data.code}}
+
+Sincerely,
+
+The NOLE Team
+

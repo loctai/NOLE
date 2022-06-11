@@ -1,0 +1,81 @@
+{% extends "admin/layouts/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}TWRE - Posts Admin {% endblock %}
+{% block content %}
+
+<ul class="list-unstyled list-inline">
+	
+	<li class="list-inline-item">
+		<a class="btn btn-success  text-white m-1" href="/admin-management-page/posts"> Posts</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-warning  m-1" href="/admin-management-page/users"></i>Users</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-danger  m-1" href="/admin-management-page/kyc"> KYC</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-primary  m-1" href="/admin-management-page/investments"> Invesmtns</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-info  m-1" href="/admin-management-page/withdraw"> Withdraw</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-secondary  m-1" href="/admin-management-page/withdraw-profit"> Withdraw Profit</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-dark  m-1" href="/admin-management-page/update-profit"> Update Profit</a>
+	</li>
+</ul>
+<section id="table2">
+	<h1 class="display-4 text-primary text-center">
+        Posts
+    </h1>
+	<div class="row">
+		<div class="col-md-3 mx-auto">
+			<input type="text" class="form-control   search" placeholder=" Search Posts..." id="basics">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 mx-auto m-1">
+			<a href="#add_post" class="text-center">
+				<button class="btn btn-primary text-white" data-toggle="modal" data-target="#add_postModal">Add Post</button>
+			</a>
+		</div>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-striped ">
+			<thead class="thead">
+				<tr>
+					<th>#</th>
+					<th>author</th>
+					<th class="sort" data-sort="title">Title</th>
+					<th>Post Date</th>
+					<th>Post Edit</th>
+				</tr>
+			</thead>
+			<tbody class="list">{% include 'admin/includes/_postlist.html' %}</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<div class="col-md- col-sm- mx-auto">
+			<p class="lead text-muted text-center">Pages:</p>
+			<ul class="pagination text-center"></ul>
+		</div>
+	</div>
+</section>
+<!-- add post modal -->
+<div class="modal fade text-dark" role="dialog" tabindex="-1" id="add_postModal">
+	<div class="modal-dialog  modal-lg " role="document">
+		<div class="modal-body">
+			<div class="card bg-light border border-primary ">
+				<div class="card-body">
+					<div class="lead text-muted ">{{ wtf.quick_form(form2 ,action='/admin-management-page/posts') }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,229 @@
+
+{% extends "main/layouts/base.html" %}
+
+{% block title %} <title>NOLE | Transactions History</title> {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="base_wrapper arbitrage_deals_wrapper">
+    <div class="deals_header">
+        <h2 class="title">Your
+            <strong>Transactions</strong>
+        </h2>
+     
+    </div>
+    <div class="deals_wrapper big_transaction_wrapper"></div>
+</div>
+<div class="base_wrapper base_tabs_window all_transaction_wrapper">
+    <div class="tabs_header">
+        <button class="btn active" data-target="daily_profit">Daily Profit</button>
+        <button class="btn" data-target="binary_bonus">Binary Bonus</button>
+        <button class="btn" data-target="i_commission">Income Commission</button>
+        <button class="btn" data-target="f_commission">Floor Commission</button>
+    </div>
+    <div class="tabs_content">
+        <div class="content_wrapper daily_profit active">
+            <div class="table_pagination">
+                <table class="base_table table_daily_profit" >
+                    <thead class="thead">
+                        <tr>
+                            <th>Plan</th>
+                            <th>Percent</th>
+                            <th>Amount</th>
+                            <th>Currency</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        {% for item in transaction.daily_profit %}
+                        <tr class="{{ loop.cycle('odd', 'even') }}">
+                            <td aria-label="Plan">${{item.package | format_usd}}</td>
+                            <td aria-label="Percent" >{{item.percent}} %</td>
+                            {% if item.currency == "USD" %}
+                                <td class="t_profit_amount_usd" data-amount_coin="{{item.amount_usd}}" aria-label="Amount">{{item.amount_usd | format_usd}}</td>
+                            {%else%}
+                            <td class="t_profit_amount_coin" data-amount_coin="{{item.amount_coin}}" aria-label="Amount">{{item.amount_coin | format_satoshi}}</td>
+                                
+                            {%endif%}
+                            <td class="t_profit_currency" data-currency="{{item.currency}}" aria-label="Currency">{{item.currency}}</td>
+                            <td aria-label="Date">{{item.createdAt | date_format}}</td>
+                         
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="table_control">
+                    <button class="btn prev">
+                        <i class="icon"> <img src="/static/account/img/icons/blue_arrows.png" alt="app.name"> </i> Prev
+					</button>
+                    <div class="dots_wrapper"></div>
+                    <button class="btn next">
+                        Next <i class="icon"> <img src="/static/account/img/icons/blue_arrows.png" alt="app.name"> </i>
+					</button>
+                </div>
+                <div class="static">
+                    <p style="margin-right: 10px;font-weight: bold;">Statistical:</p>
+                    <div class="sumary">
+                        <p class="total_qtc_profit"></p>
+                        <p class="total_usd_profit"></p>
+                        <p class="total_usdt_profit" style="display:none;"></p>
+                        <p class="total_eth_profit"></p>
+                        <p class="total_trx_profit"></p>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div class="content_wrapper binary_bonus">
+            <div class="table_pagination">
+                <table class="base_table table_commission_binary">
+                    <thead class="thead">
+                        <tr>
+                            <th>Amount</th>
+                            <th>Currency</th>
+                            <th>Date</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        {% for item in transaction.binary_bonus %}
+                        <tr class="{{ loop.cycle('odd', 'even') }}">                           
+                            {% if item.currency == "QTC" %}
+                                <td class="binary_amount" data-amount="{{item.amount_coin}}" aria-label="Amount">
+                                    {{item.amount_coin | format_satoshi}} 
+                                </td>
+                            {%else%}
+                                <td class="binary_amount" data-amount="{{item.amount_usd}}" aria-label="Amount">
+                                    {{item.amount_usd | format_usd}}
+                                </td>
+                                
+                            {%endif%}
+                            <td class="binary_currency" data-currency="{{item.currency}}" aria-label="Currency">{{item.currency}}</td>
+                            <td aria-label="Date">{{item.createdAt | date_format}}</td>
+                            <td aria-label="Detail">{{item.detai}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="table_control">
+                    <button class="btn prev">
+                        <i class="icon"> <img src="/static/account/img/icons/blue_arrows.png" alt="app.name"> </i> Prev
+					</button>
+                    <div class="dots_wrapper"></div>
+                    <button class="btn next">
+                        Next <i class="icon"> <img src="/static/account/img/icons/blue_arrows.png" alt="app.name"> </i>
+					</button>
+                </div>
+                <div class="static">
+                    <p style="margin-right: 10px;font-weight: bold;">Statistical:</p>
+                    <div class="sumary">
+                        <p class="total_qtc_binary"></p>
+                        <p class="total_usd_binary"></p>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div class="content_wrapper i_commission">
+            <div class="table_pagination">
+                <table class="base_table table_commission_i">
+                    <thead class="thead">
+                        <tr>
+                            <th>Amount</th>
+                            <th>Currency</th>
+                            <th>Date</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        {% for item in transaction.i_commission %}
+                        <tr class="{{ loop.cycle('odd', 'even') }}">
+                            {% if item.currency == "QTC" %}
+                                <td class="i_amount" data-amount="{{item.amount_coin}}" aria-label="Amount">
+                                    {{item.amount_coin | format_satoshi}} 
+                                </td>
+                            {%else%}
+                                <td class="i_amount" data-amount="{{item.amount_usd}}" aria-label="Amount">
+                                    {{item.amount_usd | format_usd}}
+                                </td>
+                                
+                            {%endif%}
+                            <td class="i_currency" data-currency="{{item.currency}}" aria-label="Currency">{{item.currency}}</td>
+                            <td aria-label="Date">{{item.createdAt | date_format}}</td>
+                            <td aria-label="Detail">{{item.detai}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="table_control">
+                    <button class="btn prev">
+                        <i class="icon"> <img src="/static/account/img/icons/blue_arrows.png" alt="app.name"> </i> Prev
+					</button>
+                    <div class="dots_wrapper"></div>
+                    <button class="btn next">
+                        Next <i class="icon"> <img src="/static/account/img/icons/blue_arrows.png" alt="app.name"> </i>
+					</button>
+                </div>
+                <div class="static">
+                    <p style="margin-right: 10px;font-weight: bold;">Statistical:</p>
+                    <div class="sumary">
+                        <p class="total_qtc_i"></p>
+                        <p class="total_usd_i"></p>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div class="content_wrapper f_commission">
+            <div class="table_pagination">
+                <table class="base_table table_commission_f">
+                    <thead class="thead">
+                        <tr>
+                            <th>Amount</th>
+                            <th>Currency</th>
+                            <th>Date</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        {% for item in transaction.f_commission %}
+                        <tr class="{{ loop.cycle('odd', 'even') }}">
+                            {% if item.currency == "QTC" %}
+                                <td class="f_amount" data-amount="{{item.amount_coin}}" aria-label="Amount">
+                                    {{item.amount_coin | format_satoshi}} 
+                                </td>
+                            {%else%}
+                                <td class="f_amount" data-amount="{{item.amount_usd}}" aria-label="Amount">
+                                    {{item.amount_usd | format_usd}}
+                                </td>
+                                
+                            {%endif%}
+                            <td class="f_currency" data-currency="{{item.currency}}" aria-label="Currency">{{item.currency}}</td>
+                            <td aria-label="Date">{{item.createdAt | date_format}}</td>
+                            <td aria-label="Detail">{{item.detai}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="table_control">
+                    <button class="btn prev">
+                        <i class="icon"> <img src="/static/account/img/icons/blue_arrows.png" alt="app.name"> </i> Prev
+					</button>
+                    <div class="dots_wrapper"></div>
+                    <button class="btn next">
+                        Next <i class="icon"> <img src="/static/account/img/icons/blue_arrows.png" alt="app.name"> </i>
+					</button>
+                </div>
+                <div class="static">
+                    <p style="margin-right: 10px;font-weight: bold;">Statistical:</p>
+                    <div class="sumary">
+                        <p class="total_qtc_f"></p>
+                        <p class="total_usd_f"></p>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascripts %}
+{% endblock javascripts %}

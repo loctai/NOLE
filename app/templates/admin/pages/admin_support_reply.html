@@ -1,0 +1,96 @@
+{% extends 'admin/layouts/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<br>
+
+<ul class="list-unstyled list-inline">
+	
+	<li class="list-inline-item">
+		<a class="btn btn-success  text-white m-1" href="/admin-management-page/posts"> Posts</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-warning  m-1" href="/admin-management-page/users"></i>Users</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-danger  m-1" href="/admin-management-page/kyc"> KYC</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-primary  m-1" href="/admin-management-page/investments"> Invesmtns</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-info  m-1" href="/admin-management-page/withdraw"> Withdraw</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-secondary  m-1" href="/admin-management-page/withdraw-profit"> Withdraw Profit</a>
+	</li>
+	<li class="list-inline-item">
+		<a class="btn btn-dark  m-1" href="/admin-management-page/update-profit"> Update Profit</a>
+	</li>
+</ul>
+<section id="table3">
+	<h1 class="display-4 text-primary text-center">
+        Support Reply
+    </h1>
+	<div class="row">
+        <div class="col-md-12">
+            <div class="mail-box_content">
+                <div class="mail-box_content-head">
+                    {{data.subject}}
+                </div>
+                {% for item in data.content %}
+                <div class="mail-box_content-item">
+                    <div class="mail-box_content-name">
+                        <div class="m_name">
+                            {% if (item.name == "You") %}
+                            {{data.user}} 
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                            </svg>
+                            Nole Support
+                            {% else %}
+                            Nole Support
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                                </svg>
+                                {{data.user}} 
+                            {% endif %}
+                        </div>
+                        <div class="m_date">
+                            {{item.date | date_format}}
+                        </div>
+                    </div>
+                    <div class="mail-box_content-detail">
+                        {{item.msg}}
+                    </div>
+                </div>
+                {% endfor %}
+                
+                <form  method="POST" class="base_form">
+           
+                    <div class="form-group">
+                        <label for="msg" class="label">Message</label>
+                        <textarea rows="4"  class="form-control" name="msg"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Reply</button>
+                       
+                    </div>
+                </form>
+            </div>
+        </div>
+		
+	</div>
+	
+</section>
+
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function(){
+        $('.mail-box_content-detail').each(function(){
+            $(this).html($(this).text().replace(/\n/g,"<br>"))
+        })
+    });
+</script>
+{% endblock %}

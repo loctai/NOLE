@@ -1,0 +1,70 @@
+
+{%  extends 'home/layouts/base.html' %}
+
+{% block title %} 
+    <title>Blog</title>
+{% endblock%}
+
+{% block content %}
+    <div class="main_blog_article">
+        <div class="base_wrapper content">
+            <div class="blog">
+                <div class="blog-article__header">
+                    <time class="blog-article__date">{{post.date | date_format }}</time>
+                    <h1 class="blog-article__title">
+                        {{post.title}}
+                    </h1>
+                </div>
+                <div class="blog-article__body">
+                    <div class="blog-article__image">
+                        <div class="image-box">
+                            <img src="{{post.image}}" alt="{{post.title}}">
+                        </div>
+                    </div>
+                    <div class="blog-article__content">
+                        <div class="blog-article__text text">
+                            {{post.body_html | safe}} 
+                        </div>
+                        <div class="blog-article__footer">
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            
+        </div>
+    </div>
+    <div class="blog-offered" style="display: none;">
+        <div class="base_wrapper content">
+            <div class="blog">
+               
+                <ul class="blog__list">
+                    <li class="blog__item">
+                        <div class="blog__card">
+                            <a class="blog__card-inner" href="/">
+                                <div class="blog__card-image">
+                                    <div class="image-box">
+                                        <img src="Image" alt="title">
+                                    </div>
+                                </div>
+                                <div class="blog__card-body">
+                                    <h2 class="blog__card-title">
+                                        Title
+                                    </h2>
+                                    <div class="blog__card-desc">
+                                        Content
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    
+                  
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+{% endblock%}

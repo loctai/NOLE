@@ -1,0 +1,64 @@
+$bg-color:rgb(255, 255, 255);
+$primary: #880e4f ;
+
+
+body{
+    background: $bg-color;
+    margin-top:10%;
+    overflow-x:hidden;
+}
+
+
+
+.navbar{
+   box-shadow: 2px 2px 5px $primary;
+    opacity:0.9;
+    background: #fff;
+   
+    .nav-item{
+        font-size:1.4rem;
+        padding-right:20px;
+    }
+    
+}
+
+.carousel-item{
+    height:450px;
+  }
+  
+  #property{
+
+    .card:hover{
+      color:$primary;}
+  
+    .btn:hover{
+        background:#fff;
+        color:$primary;}
+
+}
+
+#contact{
+
+  .fa{
+       font-size:50px;
+  }
+}
+
+#post{
+
+  .card:hover{
+    color:$primary;}
+
+  
+
+  .btn:hover{
+      background:#fff;
+      color:$primary;}
+
+}
+
+.floating-alert {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}

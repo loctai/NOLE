@@ -1,0 +1,106 @@
+{% extends 'admin/layouts/base.html' %}
+{% block title%} Dashboard {% endblock %}
+
+{% block content %}
+<h1 class="text-primary text-center">
+    DashBoard
+ </h1>
+ <div class="row ">
+    <div class="col-md-3 d-none">
+       <div class="card text-center bg-primary text-white mb-4">
+          <div class="card-body">
+             <h3>Properties</h3>
+             <h1 class="">
+                <i class="fa fa-home"></i>
+                {{ count_estates}}
+             </h1>
+             <a href="/admin-management-page/properties" class="btn btn-outline-light btn-sm">View</a>
+          </div>
+       </div>
+    </div>
+    <div class="col-md-3 ">
+       <div class="card text-center bg-success text-white mb-4">
+          <div class="card-body">
+             <h3>Posts</h3>
+             <h1 class="">
+                {{ count_posts }}
+             </h1>
+             <a href="/admin-management-page/posts" class="btn btn-outline-light btn-sm">View</a>
+          </div>
+       </div>
+    </div>
+    <div class="col-md-3  ">
+       <div class="card text-center bg-warning text-white mb-4">
+          <div class="card-body">
+             <h3>users</h3>
+             <h1 class="">
+                {{ count_users}}
+             </h1>
+             <a href="admin-management-page/users" class="btn btn-outline-light btn-sm">View</a>
+          </div>
+       </div>
+    </div>
+    <div class="col-md-3 ">
+       <div class="card text-center bg-primary text-white mb-4">
+          <div class="card-body">
+             <h3>Investment</h3>
+             <h1 class="">
+                {{ count_investment }}
+             </h1>
+             <a href="/admin-management-page/investments" class="btn btn-outline-light btn-sm">View</a>
+          </div>
+       </div>
+    </div>
+    <div class="col-md-3 ">
+       <div class="card text-center bg-danger text-white mb-4">
+          <div class="card-body">
+             <h3>Withdraw</h3>
+             <h1 class="">
+                {{ count_withdraw }}
+             </h1>
+             <a href="/admin-management-page/withdraw" class="btn btn-outline-light btn-sm">View</a>
+          </div>
+       </div>
+    </div>
+    <div class="col-md-3 ">
+       <div class="card text-center bg-info text-white mb-4">
+          <div class="card-body">
+             <h3>Withdraw Profit</h3>
+             <h1 class="">
+                {{ count_profit_Withdraw }}
+             </h1>
+             <a href="/admin-management-page/withdraw-profit" class="btn btn-outline-light btn-sm">View</a>
+          </div>
+       </div>
+    </div>
+    <!-- social connect -->
+    <div class="col-md-3 bg-light">
+       <h1 class="lead text-center">
+          Balance Server
+       </h1>
+       <ul class="list-unstyled text-center">
+          <li>
+             BTC: {{ balances_btc }}
+          </li>
+          <li>
+             ETH: {{ balances_eth }}
+          </li>
+          <li>
+            TRX: {{ balances_trx }}
+         </li>
+          <li>
+             USDT: {{ balances_usdt }}
+          </li>
+          <hr>
+        
+       </ul>
+    </div>
+ </div>
+ <section>
+    <div class="row">
+       <div class="col-md-9 mx-auto"></div>
+    </div>
+ </section>
+ <hr>
+        
+{% endblock %}

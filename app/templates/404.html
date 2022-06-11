@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:500,600" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    
+    <link rel="stylesheet" href="/static/frontend/css/base.css?1.2.7">
+
+    
+    <title>NOLE</title>
+
+    
+    <style>
+        .main {
+            width: 100%;
+            min-height: 100vh;
+            height: 100%;
+
+            background: #fff;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            margin: 0px 0px 20px 0px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .title .code {
+            font-size: 80px;
+            font-weight: 600;
+
+            line-height: 1;
+            text-transform: uppercase;
+
+            color: #272727;
+        }
+
+        .return_on_website {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .return_on_website a {
+            font-size: 24px;
+            font-weight: 500;
+
+            line-height: 1;
+            text-transform: uppercase;
+
+            color: #00456b;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+        .return_on_website a::after {
+            content: '';
+
+            width: 30px;
+            height: 2px;
+
+            background: #00456b;
+
+            transition: width .5s ease;
+
+            position: absolute;
+            bottom: -4px;
+        }
+        .return_on_website a:hover::after {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <section class="page_loader">
+    <div class="jump_block_wrapper">
+        <span class="block"></span>
+        <span class="block"></span>
+        <span class="block"></span>
+        <span class="block"></span>
+        <span class="block"></span>
+    </div>
+    <h1 class="project_name">NOLE</h1>
+</section>
+    
+<main class="main">
+        
+    <div class="base_wrapper content">
+        <div class="title">
+            <h2 class="code">404</h2>
+            <h4>Page not found </h4>
+            <small>Sorry, the page you are opening was not found.</small>
+        </div>
+
+        
+        <div class="return_on_website" style="position: relative; top: unset; left: unset;">
+            <a href="/">Return to website</a>
+        </div>
+    </div>
+</main>
+    <script src="/static/frontend/js/jquery.js?1.2.7"></script>
+    <script src="/static/frontend/js/scripts.js?1.2.7"></script>
+</body>
+</html>

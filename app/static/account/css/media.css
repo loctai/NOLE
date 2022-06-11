@@ -1,0 +1,745 @@
+@media screen and (max-width: 1180px) {
+    /* 0. Base styles */
+    /* 0.1 Header */
+    #header {
+        max-width: 120px;
+        min-width: 120px;
+    }
+    /* .active */
+    #header.active {
+        max-width: 380px;
+        min-width: 380px;
+    }
+    #header .user_data {
+        min-width: 230px;
+    }
+
+    #header .navigation .mobile_control {
+        display: flex;
+    }
+    #header.active .navigation .mobile_control {
+        opacity: 1;
+    }
+    #header.active .navigation .mobile_control .icon {
+        transform: rotate(180deg);
+    }
+    #header.active .user_data .user_navigation {
+        display: flex;
+    }
+    #header .user_data .user_language {
+        display: none;
+    }
+    #header.active .user_data .user_language {
+        display: flex;
+    }
+    /* 0.1 Header */
+    /* 0. Base styles end*/
+
+    /* 1. Main */
+    /* Base styles */
+    #main {
+        padding: 20px 20px 20px 140px;
+    }
+    #header.active + #main{
+        padding: 30px 0px 30px 390px;
+    }
+    /* Big transaction */
+    .big_transaction_block {
+        max-width: 520px;
+
+        margin: 0px auto 10px 0px !important;
+    }
+
+    .big_transaction_block .trans_head {
+        max-width: 460px;
+    }
+    .big_transaction_block .trans_head .dates::before {
+        display: none;
+    }
+
+    .big_transaction_block .trans_footer {
+        max-width: 460px;
+    }
+    .big_transaction_block .trans_footer .add_info {
+        align-items: flex-end;
+    }
+    .big_transaction_block .trans_footer .add_info .sub_title {
+        text-align: right;
+    }
+    /* Big transaction end */
+    /* Base styles end */
+
+    /* Arbitrage */
+    /* Slider */
+    .arbitrage_plan_slider .slides_wrapper .slide_block .block_info {
+        max-width: 250px;
+
+        margin: 0px 10px 0px 0px;
+        padding: 10px;
+    }
+    .arbitrage_plan_slider .slides_wrapper .slide_block .block_info .info_title {
+        font-size: 18px;
+    }
+    .arbitrage_plan_slider .slides_wrapper .slide_block .block_info .sub_title {
+        font-size: 15px;
+    }
+    .arbitrage_plan_slider .slides_wrapper .slide_block .block_info .text {
+        font-size: 14px;
+    }
+    .arbitrage_plan_slider .slides_wrapper .slide_block .block_data {
+        margin: 0px;
+    }
+
+    .arbitrage_plan_slider .slides_control {
+        margin: 10px 0px 0px 0px;
+    }
+
+    /* User deals */
+    .arbitrage_user_control {
+        flex-wrap: wrap;
+    }
+    .arbitrage_user_control .block_wrapper {
+        max-width: 50%;
+    }
+    .arbitrage_user_control .block_wrapper:last-child {
+        max-width: 100%;
+
+        border-top: 1px solid #eaeaea;
+    }
+
+    .arbitrage_user_control .last_deal_statistic .trans_footer .info_block:last-child {
+        align-items: flex-end;
+    }
+
+    .arbitrage_user_control .last_deal_statistic .main_info .deal_sum {
+        align-items: flex-end;
+    }
+    .arbitrage_user_control .last_deal_statistic .main_info .deal_sum .sub_title {
+        text-align: right;
+    }
+    /* Arbitrage end */
+
+    /* FAQ */
+    .base_wrapper.faq_wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .faq_wrapper .faq_title {
+        max-width: 100%;
+
+        margin: 0px 0px 20px 0px;
+    }
+    /* FAQ end */
+    /* 1. Main end */
+}
+
+@media screen and (max-width: 991px) {
+    #header.active + #main{
+        padding: 30px 0px 30px 140px;
+        -webkit-transform: translateX(230px);
+        transform: translateX(230px);
+    }
+    /* investment */
+    
+    .card_pricing_content .pricing-card{
+        width: 100%;
+    }
+    /* End investment */
+}
+/* Mobile devices */
+@media screen and (max-width: 768px) {
+    /* Base */
+    .arbitrage_modal_window {
+        max-width: 300px;
+        min-width: 300px;
+
+        top: 70px;
+        left: calc(50% - 150px);
+    }
+    .arbitrage_modal_window .content_wrapper {
+        max-width: 100%;
+    }
+
+    /* Page loader */
+    .page_loader .project_name {
+        font-size: 48px;
+    }
+
+    /* Header */
+    #header {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+        min-height: 60px;
+        max-height: 60px;
+        height: 100%;
+
+        padding: 5px 10px;
+    }
+
+    #header .user_data {
+        max-width: 320px;
+        width: 100%;
+        min-height: 100vh;
+        height: 100%;
+
+        margin: 0px;
+        padding: 70px 20px 20px 20px;
+
+        background: #00487b;
+
+        transition: all .5s ease;
+
+        overflow-y: scroll;
+
+        position: fixed;
+        top: 0px;
+        right: -320px;
+    }
+    #header .user_data.active {
+        right: 0px;
+    }
+    #header .user_data .user_language {
+        margin: 0px auto 20px 0px;
+
+        display: flex;
+
+        position: relative;
+        top: 0px;
+        right: 0px;
+    }
+
+    #header .navigation {
+        min-width: 100%;
+        max-width: 100%;
+        height: 100%;
+
+        margin: 0px;
+        padding: 0px;
+
+        background: none;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #header .navigation .link_list {
+        max-width: 320px;
+        width: 100%;
+        min-height: 100vh;
+        height: 100%;
+
+        margin: 0px;
+        padding: 70px 20px 20px 20px;
+
+        background: #00487b;
+
+        display: flex !important;
+
+        transition: all .5s ease;
+
+        overflow-y: scroll;
+
+        position: fixed;
+        top: 0px;
+        left: -320px;
+    }
+    #header .navigation .link_list.active {
+        left: 0px;
+    }
+
+    #header .navigation .mobile_control {
+        display: none;
+    }
+
+    #header .navigation .logo {
+        max-width: 60px;
+
+        margin: auto 0px;
+
+        justify-content: center;
+        align-items: center;
+
+        z-index: 1;
+    }
+    #header .navigation .logo .title {
+        display: none;
+    }
+    #header .navigation .logo .icon {
+        width: 46px;
+    }
+
+    /* Mobile menu control */
+    #header .navigation .mobile_menu_control {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 1;
+    }
+    #header .navigation .mobile_menu_control span {
+        width: 26px;
+        height: 3px;
+
+        background: #fff;
+        border-radius: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: all .5s ease;
+
+        position: relative;
+    }
+    #header .navigation .mobile_menu_control span .dot {
+        width: 4px;
+        height: 3px;
+
+        background: #00487b;
+
+        position: relative;
+        right: -4px;
+    }
+
+    #header .navigation .mobile_menu_control span::before,
+    #header .navigation .mobile_menu_control span::after {
+        content: '';
+
+        width: 100%;
+        height: 100%;
+
+        background: #fff;
+        border-radius: 50px;
+
+        transition: all .5s ease;
+
+        position: absolute;
+    }
+    #header .navigation .mobile_menu_control span::before {
+        top: -6px;
+    }
+    #header .navigation .mobile_menu_control span::after {
+        bottom: -6px;
+    }
+    /* .active */
+    #header .navigation .mobile_menu_control.active span {
+        transform: rotate(135deg);
+    }
+    #header .navigation .mobile_menu_control.active span::before {
+        top: 0px;
+
+        transform: rotate(-270deg);
+    }
+    #header .navigation .mobile_menu_control.active span::after {
+        bottom: 0px;
+
+        transform: rotate(-270deg);
+    }
+
+    /* Account mobile button */
+    #header .navigation .mobile_account_control {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: all .5s ease;
+
+        z-index: 1;
+    }
+    #header .navigation .mobile_account_control svg {
+        fill: #fff;
+
+        transition: all .5s ease;
+    }
+    /* .active */
+    #header .navigation .mobile_account_control.active {
+        background: #fff;
+        border-radius: 6px;
+    }
+    #header .navigation .mobile_account_control.active svg {
+        fill: #00487b;
+    }
+
+    /* Hide pseudo elements */
+    #header::before,
+    #header::after {
+        display: none;
+    }
+
+    /* Main content */
+    #main {
+        padding: 70px 10px 10px 10px;
+    }
+
+    /* Referrals link */
+    .partner_link_wrapper {
+        padding: 0px;
+
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .partner_link_wrapper .link_info {
+        padding: 10px;
+    }
+    .partner_link_wrapper .link_info .link_control {
+        flex-wrap: wrap;
+    }
+    .partner_link_wrapper .link_info .link_control .share_link {
+        margin-top: 8px;
+    }
+
+    /* Arbitrage */
+    .arbitrage_plan_slider .slides_wrapper .slide_block {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .arbitrage_plan_slider .slides_wrapper .slide_block .block_info {
+        max-width: 100%;
+
+        margin: 0px 0px 10px;
+    }
+
+    .arbitrage_plan_slider .slides_wrapper .slide_block .block_data {
+        overflow: hidden;
+
+        justify-content: flex-start;
+    }
+    .arbitrage_plan_slider .slides_wrapper .slide_block .block_data .data_terms {
+        max-width: 220px;
+        min-width: 220px;
+    }
+    .arbitrage_plan_slider .slides_wrapper .slide_block .block_data .data_preview {
+        max-width: 220px;
+        min-width: 220px;
+    }
+
+    .arbitrage_plan_slider .slides_control {
+        width: 100%;
+
+        margin: 10px auto 0px;
+    }
+
+    /* Arbitrage deal controls */
+    .arbitrage_user_control .block_wrapper {
+        max-width: 100%;
+
+        border-right: none;
+    }
+    .arbitrage_user_control .open_deal_form {
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    /* Invest */
+    .double_zone_wrapper {
+        flex-direction: column;
+    }
+    .double_zone_wrapper .zone_block {
+        max-width: 100%;
+    }
+    .double_zone_wrapper .zone_block:first-child {
+        border-right: none;
+        border-bottom: 1px solid #eaeaea;
+    }
+    .double_zone_wrapper .zone_block.info_content {
+        padding-top: 35px;
+    }
+
+    /* Base table */
+    .base_table .thead {
+        display: none;
+    }
+    .base_table .tbody tr {
+        margin: 0px 0px 6px;
+
+        border-bottom: 2px solid #00487b;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .base_table .tbody tr td {
+        width: 100% !important;
+
+        font-size: 16px;
+
+        padding: 8px 0px 8px;
+
+        border-bottom: 1px solid #eaeaea;
+
+        justify-content: flex-end;
+        padding-left: 55px;
+        position: relative;
+    }
+    .base_table .tbody tr td:last-child {
+        padding-bottom: 0px;
+
+        border-bottom: none;
+    }
+    .base_table .tbody tr:last-child {
+        border-bottom: 2px solid transparent;
+    }
+    .base_table .tbody tr td::before {
+        content: attr(aria-label);
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1;
+
+        color: #838383;
+
+        position: absolute;
+        left: 0px;
+    }
+    /* Referrals page */
+    .partner_line_tables {
+        padding: 10px 20px;
+    }
+    .partner_line_tables .line_tables_header {
+        flex-wrap: wrap;
+    }
+    .partner_line_tables .line_tables_header .title {
+        margin-bottom: 20px;
+    }
+    .partner_line_tables .line_tables_header .lines_control {
+        margin: 0px auto;
+    }
+
+    /* Last arbitrage deals */
+    .arbitrage_deals_wrapper .deals_header {
+        flex-direction: column;
+    }
+    .arbitrage_deals_wrapper .deals_header .title {
+        margin-bottom: 20px;
+    }
+
+    /* Profile page */
+    .profile_wrapper .tabs_header {
+        max-width: 100%;
+        overflow-x: scroll;
+        border-right: none;
+    }
+    .profile_wrapper .tabs_content .content_wrapper, .tab_container {
+        flex-direction: column;
+    }
+
+    /* Small double zone */
+    .sml_double_zone_wrapper .sml_zone_block {
+        max-width: 100%;
+        min-width: 100%;
+
+        padding: 0px;
+    }
+    .sml_double_zone_wrapper .sml_zone_block:first-child {
+        border-right: none;
+        border-bottom: 1px solid #eaeaea;
+    }
+    .sml_double_zone_wrapper .sml_zone_block:last-child {
+        padding-top: 20px;
+    }
+
+    /* 1.11 Referrals detailed info */
+    .partner_program .content {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    /* Partners turnover terms */
+    .partner_program .content .partners_turnover {
+        max-width: 100%;
+        width: 100%;
+
+        padding: 20px 20px 40px;
+
+        border-bottom: 2px dashed #00487b;
+        border-right: none;
+    }
+    .partner_program .content .partners_turnover .add_elem {
+        right: unset;
+        top: unset;
+        bottom: -24px;
+        left: calc(50% - 24px);
+    }
+    /* Partners turnover terms end */
+
+    /* Partners marketing terms */
+    .partner_program .content .marketing_lines {
+        padding: 40px 20px;
+    }
+    /* Partners marketing terms end */
+    /* 1.11 Referrals detailed info end */
+    
+
+    /* Dashboard */
+    .card_dash .card_dash-box{
+        width: 50%;
+    }
+    .card_dash .card_dash-box.crypto:last-child{
+        width: 100%;
+    }
+    .card_dash.commission .card_dash-box{
+        width: 50%;
+    }
+    .profile_wrapper .tabs_header, .withdrawals_tabs_wrapper .tabs_header{
+        border-right: 0px;
+    }
+    .base_tabs_window .tabs_content .content_wrapper.active{
+        display:block;
+    }
+    .sml_double_zone_wrapper .sml_zone_block:first-child{
+        padding-right:0px;
+    }
+    .kyc_wrapper{
+        flex-direction: column;
+    }
+    .kyc_wrapper._wrapper_upload {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+    }
+    .upload_form {
+        max-width: 50%;
+        margin-bottom: 20px;
+    }
+    .kyc_wrapper .form_content{
+        max-width: 100%;
+        padding:0
+    }
+    .kyc_wrapper .form_content:first-child {
+        padding-right:0px;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 560px) {
+    /* 1.11 Referrals detailed info */
+   
+    .partner_program .content .marketing_lines {
+        min-width: unset;
+    }
+    .partner_program .content .marketing_lines .marketing_wrapper {
+        flex-wrap: wrap;
+    }
+    .partner_program .content .marketing_lines .marketing_wrapper .line_column {
+        max-width: 50%;
+
+        margin: 0px 0px 20px;
+    }
+    .partner_program .content .marketing_lines .marketing_wrapper .line_column::before {
+        display: none;
+    }
+    .partner_program .content .marketing_lines .marketing_wrapper .line_column:first-child::before {
+        display: flex;
+
+        left: unset;
+        right: 0px;
+    }
+    .partner_program .content .marketing_lines .marketing_wrapper .line_column:last-child::before {
+        display: flex;
+
+    }
+    /* 1.11 Referrals detailed info end */
+     /* Dashboard */
+    .card_dash .card_dash-box{
+        width: 100%;
+    }
+    .card_dash .card_dash-box.crypto{
+        width: 100%;
+    }
+    .card_dash.commission .card_dash-box{
+        width: 100%;
+    }
+    /* End Dashboard */
+}
+
+@media screen and (max-width: 430px){
+    .card_pricing_content .pricing-card{
+        border-radius: 6px;
+    }
+    .card_pricing_content .pricing-card .card-left{
+        background: linear-gradient(65deg, #47c5ba, #00487b);
+        border-radius: 0;
+        border-radius: 6px 0 0 6px;
+    }
+    .card_pricing_content .pricing-card .card-left:before{
+        width: 155px;
+        height: 100%;
+        border: 0;
+        border-left-color: #9e54e2;
+        left: -20px;
+        top: 44%;
+        bottom: 0;
+        animation: none;
+        border-radius: 0;
+    }
+    .upload_form {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Very small mobile devices*/
+@media screen and (max-width: 379px) {
+    /* Base */
+    .table_pagination .table_control .btn {
+        font-size: 14px;
+    }
+    .table_pagination .table_control .dots_wrapper .dot {
+        min-width: 20px;
+        max-width: 20px;
+        min-height: 20px;
+        max-height: 20px;
+
+        font-size: 13px;
+
+        margin: 0px auto;
+    }
+    /* Partners link */
+    .partner_link_wrapper .link_info .link_control .link_copy {
+        width: 100%;
+    }
+
+    /* Small arbitrage deal */
+    .big_transaction_block .trans_head {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .big_transaction_block .trans_head .dates {
+        min-width: 100%;
+
+        margin: 20px 0px 0px 0px;
+    }
+    .big_transaction_block .trans_footer {
+        flex-wrap: wrap;
+    }
+    .big_transaction_block .trans_footer .add_info {
+        min-width: 100%;
+
+        margin: 10px auto 0px;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 1.11 Referrals detailed info */
+    .partner_program .content .marketing_lines .marketing_wrapper .line_column {
+        max-width: 100%;
+    }
+    .partner_program .content .marketing_lines .marketing_wrapper .line_column::before {
+        display: none;
+    }
+    /* 1.11 Referrals detailed info */
+}
+

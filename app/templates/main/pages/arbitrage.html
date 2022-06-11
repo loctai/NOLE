@@ -1,0 +1,1075 @@
+
+{% extends "main/layouts/base.html" %}
+
+{% block title %} <title>NOLE | Dashboard</title> {% endblock %}
+
+{% block content %}
+
+   
+<div class="base_wrapper arbitrage_plan_slider">
+    <form action="./home/arbitrage-invest" method="POST" class="slides_wrapper">
+        <input type="hidden" name="_token" value="jg32FNcIeoLBfLyt9ZabegFOrqhehTg0bK3RbcEV">                
+            <div  class="hidden_inputs"  style="display: none !important;">
+                                        <input type="radio" id="arbitrage_plan_1" name="plan_id" value="1"
+                                                        checked
+                        
+                                                >
+                                        <input type="radio" id="arbitrage_plan_2" name="plan_id" value="2"
+                        
+                                                >
+                                        <input type="radio" id="arbitrage_plan_3" name="plan_id" value="3"
+                        
+                                                >
+                                        <input type="radio" id="arbitrage_plan_4" name="plan_id" value="4"
+                        
+                                                >
+                                </div>
+                        
+            <div class="slide_block  active ">
+                <div class="block_info">
+                    <h2 class="info_title">Plan <strong>Oreon</strong> — start small, get more</h2>
+                    <small class="sub_title">Junior</small>
+                    <p class="text">You do not need to independently understand the rules and nuances of arbitrage trading - just register on the site and use the finished product. Our experts have developed several standard tendering plans. They are based on the analysis of a large number of transactions. Each of the proposed strategies is focused on specific goals and has its own set of advantages.</p>
+                </div>
+                <div class="block_data">
+                    <div class="data_terms">
+                        <div class="terms_form">
+                            <div class="terms_form_header">
+                                <h4 class="terms_title">How it works?</h4>
+                                <img src="/static/account/img/icons/blue_triangle_down.png"
+                                     alt="app.name" class="icon">
+                            </div>
+                            <div class="terms_form_main">
+                                <div class="terms_block">
+                                    <small class="sub_title">Your account</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+
+                                                                                        from $<strong class="plan_min_price">25</strong> to $<strong class="plan_max_price">499</strong>                                                                                    </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Deals per day</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to <strong>3</strong> PCS.                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Validity</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        on the <strong>10</strong> days                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Max. transaction amount</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to $<strong>499</strong>                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Deal time</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to <strong>2400</strong> sec                                        </p>
+                                </div>
+                            </div>
+                            <div class="terms_form_control">
+                                <button type="button" class="big_button buy_plan arbitrage_button_modal" target="arbitrage_modal_buy"
+                                                                            >
+                                    <i class="icon">
+                                        <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                                        </i>
+                                    Get started                                    </button>
+                            </div>
+                            <button class="data_flip">
+                                View bot                                    <i class="icon">
+                                    <svg width="15px" height="15px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M511.563,434.259c-1.728-142.329-124.42-258.242-277.087-263.419V95.999c0-17.645-14.342-31.999-31.974-31.999
+            c-7.931,0-15.591,3.042-21.524,8.562c0,0-134.828,124.829-173.609,163.755C2.623,241.109,0,248.088,0,255.994
+            c0,7.906,2.623,14.885,7.369,19.687c38.781,38.915,173.609,163.745,173.609,163.745c5.933,5.521,13.593,8.562,21.524,8.562
+            c17.631,0,31.974-14.354,31.974-31.999v-74.591c153.479,2.156,255.792,50.603,255.792,95.924c0,5.896,4.767,10.666,10.658,10.666
+            c0.167,0.021,0.333,0.01,0.416,0c5.891,0,10.658-4.771,10.658-10.666C512,436.259,511.854,435.228,511.563,434.259z"/>
+    </g>
+</g>
+</svg>                                    </i>
+                            </button>
+                        </div>
+                        <div class="bot_form">
+                            <div class="terms_form_control">
+                                <p class="bot_info">Total $<strong class="bot_price">25</strong> and this little baby will automate all your transactions for the duration of the package.</p>
+
+                                <button class="big_button buy_bot arbitrage_button_modal" target="bot_modal_buy"
+                                        
+                                                                                        disabled
+                                        
+                                        >
+                                    <i class="icon">
+                                        <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                                        </i>
+                                    Buy bot                                    </button>
+                            </div>
+                            <button class="data_flip">
+                                View Terms                                    <i class="icon">
+                                    <svg width="15px" height="15px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M511.563,434.259c-1.728-142.329-124.42-258.242-277.087-263.419V95.999c0-17.645-14.342-31.999-31.974-31.999
+            c-7.931,0-15.591,3.042-21.524,8.562c0,0-134.828,124.829-173.609,163.755C2.623,241.109,0,248.088,0,255.994
+            c0,7.906,2.623,14.885,7.369,19.687c38.781,38.915,173.609,163.745,173.609,163.745c5.933,5.521,13.593,8.562,21.524,8.562
+            c17.631,0,31.974-14.354,31.974-31.999v-74.591c153.479,2.156,255.792,50.603,255.792,95.924c0,5.896,4.767,10.666,10.658,10.666
+            c0.167,0.021,0.333,0.01,0.416,0c5.891,0,10.658-4.771,10.658-10.666C512,436.259,511.854,435.228,511.563,434.259z"/>
+    </g>
+</g>
+</svg>                                    </i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="data_preview preview_bg_1">
+                        <small
+                            class="sub_title">Junior</small>
+                        <h4 class="name">Oreon</h4>
+                        <img src="/static/account/img/icons/triangle_down.png" alt="NOLE"
+                             class="add_icon">
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="slide_block ">
+                <div class="block_info">
+                    <h2 class="info_title">Plan <strong>Galaxy</strong> — more opportunities, more income</h2>
+                    <small class="sub_title">Base</small>
+                    <p class="text">You do not need to independently understand the rules and nuances of arbitrage trading - just register on the site and use the finished product. Our experts have developed several standard tendering plans. They are based on the analysis of a large number of transactions. Each of the proposed strategies is focused on specific goals and has its own set of advantages.</p>
+                </div>
+                <div class="block_data">
+                    <div class="data_terms">
+                        <div class="terms_form">
+                            <div class="terms_form_header">
+                                <h4 class="terms_title">How it works?</h4>
+                                <img src="/static/account/img/icons/blue_triangle_down.png"
+                                     alt="app.name" class="icon">
+                            </div>
+                            <div class="terms_form_main">
+                                <div class="terms_block">
+                                    <small class="sub_title">Your account</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+
+                                                                                        from $<strong class="plan_min_price">500</strong> to $<strong class="plan_max_price">2499</strong>                                                                                    </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Deals per day</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to <strong>6</strong> PCS.                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Validity</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        on the <strong>25</strong> days                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Max. transaction amount</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to $<strong>2499</strong>                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Deal time</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to <strong>1800</strong> sec                                        </p>
+                                </div>
+                            </div>
+                            <div class="terms_form_control">
+                                <button type="button" class="big_button buy_plan arbitrage_button_modal" target="arbitrage_modal_buy"
+                                                                            >
+                                    <i class="icon">
+                                        <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                                        </i>
+                                    Get started                                    </button>
+                            </div>
+                            <button class="data_flip">
+                                View bot                                    <i class="icon">
+                                    <svg width="15px" height="15px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M511.563,434.259c-1.728-142.329-124.42-258.242-277.087-263.419V95.999c0-17.645-14.342-31.999-31.974-31.999
+            c-7.931,0-15.591,3.042-21.524,8.562c0,0-134.828,124.829-173.609,163.755C2.623,241.109,0,248.088,0,255.994
+            c0,7.906,2.623,14.885,7.369,19.687c38.781,38.915,173.609,163.745,173.609,163.745c5.933,5.521,13.593,8.562,21.524,8.562
+            c17.631,0,31.974-14.354,31.974-31.999v-74.591c153.479,2.156,255.792,50.603,255.792,95.924c0,5.896,4.767,10.666,10.658,10.666
+            c0.167,0.021,0.333,0.01,0.416,0c5.891,0,10.658-4.771,10.658-10.666C512,436.259,511.854,435.228,511.563,434.259z"/>
+    </g>
+</g>
+</svg>                                    </i>
+                            </button>
+                        </div>
+                        <div class="bot_form">
+                            <div class="terms_form_control">
+                                <p class="bot_info">Total $<strong class="bot_price">150</strong> and this little baby will automate all your transactions for the duration of the package.</p>
+
+                                <button class="big_button buy_bot arbitrage_button_modal" target="bot_modal_buy"
+                                        
+                                                                                        disabled
+                                        
+                                        >
+                                    <i class="icon">
+                                        <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                                        </i>
+                                    Buy bot                                    </button>
+                            </div>
+                            <button class="data_flip">
+                                View Terms                                    <i class="icon">
+                                    <svg width="15px" height="15px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M511.563,434.259c-1.728-142.329-124.42-258.242-277.087-263.419V95.999c0-17.645-14.342-31.999-31.974-31.999
+            c-7.931,0-15.591,3.042-21.524,8.562c0,0-134.828,124.829-173.609,163.755C2.623,241.109,0,248.088,0,255.994
+            c0,7.906,2.623,14.885,7.369,19.687c38.781,38.915,173.609,163.745,173.609,163.745c5.933,5.521,13.593,8.562,21.524,8.562
+            c17.631,0,31.974-14.354,31.974-31.999v-74.591c153.479,2.156,255.792,50.603,255.792,95.924c0,5.896,4.767,10.666,10.658,10.666
+            c0.167,0.021,0.333,0.01,0.416,0c5.891,0,10.658-4.771,10.658-10.666C512,436.259,511.854,435.228,511.563,434.259z"/>
+    </g>
+</g>
+</svg>                                    </i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="data_preview preview_bg_2">
+                        <small
+                            class="sub_title">Base</small>
+                        <h4 class="name">Galaxy</h4>
+                        <img src="/static/account/img/icons/triangle_down.png" alt="NOLE"
+                             class="add_icon">
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="slide_block ">
+                <div class="block_info">
+                    <h2 class="info_title">Plan <strong>Caesar</strong> — stability and income, the perfect solution</h2>
+                    <small class="sub_title">Pro</small>
+                    <p class="text">You do not need to independently understand the rules and nuances of arbitrage trading - just register on the site and use the finished product. Our experts have developed several standard tendering plans. They are based on the analysis of a large number of transactions. Each of the proposed strategies is focused on specific goals and has its own set of advantages.</p>
+                </div>
+                <div class="block_data">
+                    <div class="data_terms">
+                        <div class="terms_form">
+                            <div class="terms_form_header">
+                                <h4 class="terms_title">How it works?</h4>
+                                <img src="/static/account/img/icons/blue_triangle_down.png"
+                                     alt="app.name" class="icon">
+                            </div>
+                            <div class="terms_form_main">
+                                <div class="terms_block">
+                                    <small class="sub_title">Your account</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+
+                                                                                        from $<strong class="plan_min_price">2500</strong> to $<strong class="plan_max_price">7499</strong>                                                                                    </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Deals per day</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to <strong>8</strong> PCS.                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Validity</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        on the <strong>50</strong> days                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Max. transaction amount</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to $<strong>7499</strong>                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Deal time</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to <strong>1200</strong> sec                                        </p>
+                                </div>
+                            </div>
+                            <div class="terms_form_control">
+                                <button type="button" class="big_button buy_plan arbitrage_button_modal" target="arbitrage_modal_buy"
+                                                                            >
+                                    <i class="icon">
+                                        <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                                        </i>
+                                    Get started                                    </button>
+                            </div>
+                            <button class="data_flip">
+                                View bot                                    <i class="icon">
+                                    <svg width="15px" height="15px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M511.563,434.259c-1.728-142.329-124.42-258.242-277.087-263.419V95.999c0-17.645-14.342-31.999-31.974-31.999
+            c-7.931,0-15.591,3.042-21.524,8.562c0,0-134.828,124.829-173.609,163.755C2.623,241.109,0,248.088,0,255.994
+            c0,7.906,2.623,14.885,7.369,19.687c38.781,38.915,173.609,163.745,173.609,163.745c5.933,5.521,13.593,8.562,21.524,8.562
+            c17.631,0,31.974-14.354,31.974-31.999v-74.591c153.479,2.156,255.792,50.603,255.792,95.924c0,5.896,4.767,10.666,10.658,10.666
+            c0.167,0.021,0.333,0.01,0.416,0c5.891,0,10.658-4.771,10.658-10.666C512,436.259,511.854,435.228,511.563,434.259z"/>
+    </g>
+</g>
+</svg>                                    </i>
+                            </button>
+                        </div>
+                        <div class="bot_form">
+                            <div class="terms_form_control">
+                                <p class="bot_info">Total $<strong class="bot_price">500</strong> and this little baby will automate all your transactions for the duration of the package.</p>
+
+                                <button class="big_button buy_bot arbitrage_button_modal" target="bot_modal_buy"
+                                        
+                                                                                        disabled
+                                        
+                                        >
+                                    <i class="icon">
+                                        <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                                        </i>
+                                    Buy bot                                    </button>
+                            </div>
+                            <button class="data_flip">
+                                View Terms                                    <i class="icon">
+                                    <svg width="15px" height="15px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M511.563,434.259c-1.728-142.329-124.42-258.242-277.087-263.419V95.999c0-17.645-14.342-31.999-31.974-31.999
+            c-7.931,0-15.591,3.042-21.524,8.562c0,0-134.828,124.829-173.609,163.755C2.623,241.109,0,248.088,0,255.994
+            c0,7.906,2.623,14.885,7.369,19.687c38.781,38.915,173.609,163.745,173.609,163.745c5.933,5.521,13.593,8.562,21.524,8.562
+            c17.631,0,31.974-14.354,31.974-31.999v-74.591c153.479,2.156,255.792,50.603,255.792,95.924c0,5.896,4.767,10.666,10.658,10.666
+            c0.167,0.021,0.333,0.01,0.416,0c5.891,0,10.658-4.771,10.658-10.666C512,436.259,511.854,435.228,511.563,434.259z"/>
+    </g>
+</g>
+</svg>                                    </i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="data_preview preview_bg_3">
+                        <small
+                            class="sub_title">Pro</small>
+                        <h4 class="name">Caesar</h4>
+                        <img src="/static/account/img/icons/triangle_down.png" alt="NOLE"
+                             class="add_icon">
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="slide_block ">
+                <div class="block_info">
+                    <h2 class="info_title">Plan <strong>Liberty</strong> — high income and consistent results</h2>
+                    <small class="sub_title">VIP</small>
+                    <p class="text">You do not need to independently understand the rules and nuances of arbitrage trading - just register on the site and use the finished product. Our experts have developed several standard tendering plans. They are based on the analysis of a large number of transactions. Each of the proposed strategies is focused on specific goals and has its own set of advantages.</p>
+                </div>
+                <div class="block_data">
+                    <div class="data_terms">
+                        <div class="terms_form">
+                            <div class="terms_form_header">
+                                <h4 class="terms_title">How it works?</h4>
+                                <img src="/static/account/img/icons/blue_triangle_down.png"
+                                     alt="app.name" class="icon">
+                            </div>
+                            <div class="terms_form_main">
+                                <div class="terms_block">
+                                    <small class="sub_title">Your account</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+
+                                                                                        from $<strong class="plan_min_price">7500</strong> to $<strong class="plan_max_price">25000</strong>                                                                                    </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Deals per day</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to <strong>12</strong> PCS.                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Validity</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        on the <strong>90</strong> days                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Max. transaction amount</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to $<strong>25000</strong>                                        </p>
+                                </div>
+                                <div class="terms_block">
+                                    <small class="sub_title">Deal time</small>
+                                    <p class="text">
+                                        <img src="/static/account/img/icons/small_arrow.png"
+                                             alt="app.name" class="icon">
+                                        to <strong>600</strong> sec                                        </p>
+                                </div>
+                            </div>
+                            <div class="terms_form_control">
+                                <button type="button" class="big_button buy_plan arbitrage_button_modal" target="arbitrage_modal_buy"
+                                                                            >
+                                    <i class="icon">
+                                        <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                                        </i>
+                                    Get started                                    </button>
+                            </div>
+                            <button class="data_flip">
+                                View bot                                    <i class="icon">
+                                    <svg width="15px" height="15px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M511.563,434.259c-1.728-142.329-124.42-258.242-277.087-263.419V95.999c0-17.645-14.342-31.999-31.974-31.999
+            c-7.931,0-15.591,3.042-21.524,8.562c0,0-134.828,124.829-173.609,163.755C2.623,241.109,0,248.088,0,255.994
+            c0,7.906,2.623,14.885,7.369,19.687c38.781,38.915,173.609,163.745,173.609,163.745c5.933,5.521,13.593,8.562,21.524,8.562
+            c17.631,0,31.974-14.354,31.974-31.999v-74.591c153.479,2.156,255.792,50.603,255.792,95.924c0,5.896,4.767,10.666,10.658,10.666
+            c0.167,0.021,0.333,0.01,0.416,0c5.891,0,10.658-4.771,10.658-10.666C512,436.259,511.854,435.228,511.563,434.259z"/>
+    </g>
+</g>
+</svg>                                    </i>
+                            </button>
+                        </div>
+                        <div class="bot_form">
+                            <div class="terms_form_control">
+                                <p class="bot_info">Total $<strong class="bot_price">900</strong> and this little baby will automate all your transactions for the duration of the package.</p>
+
+                                <button class="big_button buy_bot arbitrage_button_modal" target="bot_modal_buy"
+                                        
+                                                                                        disabled
+                                        
+                                        >
+                                    <i class="icon">
+                                        <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                                        </i>
+                                    Buy bot                                    </button>
+                            </div>
+                            <button class="data_flip">
+                                View Terms                                    <i class="icon">
+                                    <svg width="15px" height="15px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M511.563,434.259c-1.728-142.329-124.42-258.242-277.087-263.419V95.999c0-17.645-14.342-31.999-31.974-31.999
+            c-7.931,0-15.591,3.042-21.524,8.562c0,0-134.828,124.829-173.609,163.755C2.623,241.109,0,248.088,0,255.994
+            c0,7.906,2.623,14.885,7.369,19.687c38.781,38.915,173.609,163.745,173.609,163.745c5.933,5.521,13.593,8.562,21.524,8.562
+            c17.631,0,31.974-14.354,31.974-31.999v-74.591c153.479,2.156,255.792,50.603,255.792,95.924c0,5.896,4.767,10.666,10.658,10.666
+            c0.167,0.021,0.333,0.01,0.416,0c5.891,0,10.658-4.771,10.658-10.666C512,436.259,511.854,435.228,511.563,434.259z"/>
+    </g>
+</g>
+</svg>                                    </i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="data_preview preview_bg_4">
+                        <small
+                            class="sub_title">VIP</small>
+                        <h4 class="name">Liberty</h4>
+                        <img src="/static/account/img/icons/triangle_down.png" alt="NOLE"
+                             class="add_icon">
+                    </div>
+                </div>
+            </div>
+        
+        
+        <div class="modal_condition arbitrage_modal_window arbitrage_modal_buy">
+            <div class="content_wrapper">
+                
+                <img src="/static/account/img/bg/arbitrage_buy_preview.png" alt="app.name"
+                     class="preview">
+
+                
+                <p class="plan_info">To activate a trading plan <strong class="name">Plan_name: Error!</strong> You need to enter an amount from $<strong class="min_price">50</strong> before $<strong class="max_price">50000</strong>.</p>
+
+                
+                <div class="base_form plan_control_form">
+                    
+                    <div class="form_block">
+                        <label for="plan_invest_amount"
+                               class="label">Amount</label>
+                        <input class="data_field" id="plan_invest_amount" type="number" name="amount_usd"
+                               value="" min="50" max="50000" step="0.01" required>
+
+                        <small class="input_add_block">
+                            <img src="/static/account/img/icons/input_add_block.png" alt="app.name">
+                        </small>
+
+                        <small class="number_add_code">USD</small>
+                    </div>
+
+                    
+                    <div class="form_block">
+                        <button class="big_button" type="submit">
+                            <i class="icon">
+                                <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                                </i>
+                            Activate a trading plan                            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <form action="./home/arbitrage-invest" method="POST" class="modal_condition arbitrage_modal_window bot_modal_buy">
+        <input type="hidden" name="_token" value="jg32FNcIeoLBfLyt9ZabegFOrqhehTg0bK3RbcEV">            <div class="content_wrapper">
+            
+            <img src="/static/account/img/bg/arbitrage_buy_preview.png" alt="app.name"
+                 class="preview">
+
+            
+            <p class="plan_info">You confirm the purchase of a bot for the plan <strong class="plan_name">Plan_name: Error!</strong>?</p>
+
+            
+            <div class="base_form plan_control_form">
+                
+                <div class="form_block">
+                    <button class="big_button" type="submit" name="buyBot" value="1">
+                        <i class="icon">
+                            <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                            </i>
+                        Activate trading bot                        </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="slides_control">
+        <button class="btn prev">
+            <i class="icon">
+                <img src="/static/account/img/icons/blue_arrows.png" alt="app.name">
+            </i>
+            Prev            </button>
+
+        <div class="dots_wrapper">
+        </div>
+
+        <button class="btn next">
+            Next                <i class="icon">
+                <img src="/static/account/img/icons/blue_arrows.png" alt="app.name">
+            </i>
+        </button>
+    </div>
+</div>
+
+
+<div class="base_wrapper arbitrage_user_control">
+    <form action="./home/arbitrage?2232" method="POST"
+          class="block_wrapper open_deal_form base_form">
+        <input type="hidden" name="_token" value="jg32FNcIeoLBfLyt9ZabegFOrqhehTg0bK3RbcEV">
+        <h4 class="form_title">Open a deal</h4>
+
+        
+        <div class="form_block">
+            <label for="new_deal_sum" class="label">Arbitration balance</label>
+
+                                <input class="data_field" value="0$" name="arbitrage_balance" type="text" readonly>
+                        </div>
+
+        
+        <div class="form_block">
+            <label for="new_deal_sum" class="label">Transaction amount</label>
+                                <input class="data_field" id="new_deal_sum" name="amount_usd" value="0" min="0" max="0" step="0"
+                       type="number" required>
+                            <small class="input_add_block">
+                <img src="/static/account/img/icons/input_add_block.png" alt="app.name">
+            </small>
+            <small class="number_add_code">USD</small>
+        </div>
+
+        <div class="form_block">
+            <label for="currency" class="label">Currency to buy</label>
+            
+            <select class="data_field beautiful_select_list arbitrage_currencies" name="currency" id="currency"
+                    required>
+                                        <option
+                        value='{"id":"1","code":"BTC"}'
+                        data-name="BTC"  selected >
+                                        <option
+                        value='{"id":"2","code":"ETH"}'
+                        data-name="ETH" >
+                                        <option
+                        value='{"id":"3","code":"XRP"}'
+                        data-name="XRP" >
+                                        <option
+                        value='{"id":"4","code":"LTC"}'
+                        data-name="LTC" >
+                                </select>
+        </div>
+
+        
+        <div class="form_block" style="margin-bottom: 0px;">
+            <button class="big_button open_new_deal" 
+                                        type="button" disabled
+                                >
+                <i class="icon">
+                    <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<g>
+    <g>
+        <g>
+            <path d="M466.395,88.411C395.95,69.109,325.091,39.054,261.478,1.496c-3.379-1.995-7.572-1.995-10.95,0
+                C185.08,40.133,118.05,68.562,45.605,88.411c-4.68,1.281-7.924,5.535-7.924,10.388v110.046
+                c0,113.323,52.279,188.335,96.137,231.306c47.216,46.265,102.216,71.85,122.185,71.85c19.967,0,74.967-25.585,122.183-71.85
+                c43.857-42.97,96.133-117.982,96.133-231.306V98.798C474.319,93.946,471.075,89.692,466.395,88.411z M452.779,208.844
+                c0,105.843-48.761,175.838-89.669,215.92c-46.431,45.495-96.074,65.695-107.107,65.695c-11.033,0-60.679-20.2-107.111-65.695
+                c-40.907-40.083-89.67-110.077-89.67-215.92V106.974C128.5,87.304,193.018,59.853,256.005,23.25
+                c61.414,35.632,129.151,64.448,196.774,83.72V208.844z"/>
+            <path d="M160.538,105.769c-2.18-5.535-8.433-8.254-13.969-6.073c-19.24,7.581-38.988,14.559-58.695,20.741
+                c-4.491,1.41-7.547,5.57-7.547,10.276v41.591c0,5.948,4.823,10.77,10.77,10.77s10.77-4.822,10.77-10.77v-33.72
+                c17.679-5.72,35.339-12.047,52.598-18.848C160,117.557,162.719,111.304,160.538,105.769z"/>
+            <path d="M180.997,107.812c1.445,0,2.912-0.291,4.319-0.905l0.198-0.086c5.449-2.388,7.903-8.731,5.515-14.178
+                c-2.39-5.449-8.769-7.914-14.212-5.528l-0.174,0.075c-5.452,2.381-7.914,8.719-5.533,14.169
+                C172.877,105.405,176.842,107.812,180.997,107.812z"/>
+            <path d="M384.322,347.283c-4.977-3.253-11.651-1.854-14.908,3.125c-8.875,13.584-19.287,26.592-30.951,38.659
+                c-9.592,9.922-19.986,19.17-30.893,27.485c-4.729,3.606-5.639,10.364-2.034,15.095c2.121,2.779,5.328,4.241,8.572,4.241
+                c2.278,0,4.573-0.719,6.523-2.207c11.765-8.971,22.975-18.944,33.317-29.642c12.611-13.044,23.881-27.124,33.499-41.849
+                C390.702,357.21,389.301,350.536,384.322,347.283z"/>
+            <path d="M282.558,433.443l-0.618,0.364c-5.147,2.981-6.906,9.569-3.926,14.716c1.997,3.45,5.612,5.376,9.331,5.376
+                c1.83,0,3.688-0.467,5.385-1.452l0.713-0.419c5.133-3.006,6.857-9.603,3.851-14.736
+                C294.286,432.161,287.688,430.44,282.558,433.443z"/>
+            <path d="M182.589,234.019c-6.613-6.614-15.408-10.254-24.762-10.254s-18.15,3.641-24.766,10.254
+                c-13.653,13.656-13.653,35.876,0,49.531l63.596,63.594c6.614,6.612,15.409,10.253,24.764,10.253s18.15-3.641,24.765-10.255
+                L378.947,214.38c13.652-13.659,13.652-35.876-0.002-49.527c-6.614-6.614-15.409-10.254-24.765-10.254
+                c-9.355,0-18.15,3.641-24.765,10.254L221.42,272.848L182.589,234.019z M344.647,180.085c2.545-2.545,5.932-3.946,9.534-3.946
+                c3.604,0,6.988,1.401,9.535,3.946c5.255,5.255,5.255,13.809-0.002,19.066l-132.759,132.76c-2.545,2.545-5.932,3.946-9.534,3.946
+                s-6.989-1.401-9.535-3.946l-63.594-63.592c-5.257-5.257-5.257-13.811-0.002-19.066c2.546-2.545,5.933-3.948,9.536-3.948
+                s6.988,1.401,9.533,3.946l46.445,46.446c2.021,2.019,4.759,3.154,7.616,3.154s5.595-1.134,7.614-3.154L344.647,180.085z"/>
+        </g>
+    </g>
+</g>
+</svg>                    </i>
+                Open a deal                </button>
+        </div>
+    </form>
+    <div class="block_wrapper deal_timer">
+        <div class="timer_counter">
+            <span class="block hours">
+                <p class="count">00</p>
+                <small class="sub_title">Hours</small>
+            </span>
+            <span class="block minutes">
+                <p class="count">00</p>
+                <small class="sub_title">Minutes</small>
+            </span>
+            <span class="block seconds">
+                <p class="count">00</p>
+                <small class="sub_title">Seconds</small>
+            </span>
+        </div>
+        <div class="timer_preview">
+            <div class="logo_title">
+                <h3 class="name">Timer</h3>
+                <img src="/static/account/img/icons/arbitrage_timer_logo.png" alt="app.name"
+                     class="icon">
+            </div>
+            <strong class="text_info">
+                Before<br>End<br>Deals<br>Left                </strong>
+        </div>
+    </div>
+
+    
+    <div class="block_wrapper last_deal_statistic">
+                        <div class="trans_head">
+                <div class="income plus">
+                    <h3 class="amount">$0.00</h3>
+                    <small class="sub_title">Your last trade income</small>
+                </div>
+                <div class="main_info">
+                    <div class="dates">
+                        <div class="date_block">
+                            <small class="title">Opening date</small>
+                            <p class="value">-</p>
+                        </div>
+                        <div class="date_block">
+                            <small class="title">Closing date</small>
+                            <p class="value">-</p>
+                        </div>
+                    </div>
+                    <div class="deal_sum">
+                        <strong class="sum">0.00</strong>
+                        <small class="sub_title">Amount<br>deals</small>
+                    </div>
+                </div>
+            </div>
+            <div class="trans_footer">
+                <div class="info_block exchange">
+                    <small class="title">Stock exchange</small>
+                    <div class="line">
+                        <i class="icon">
+                            <img src="/static/account/img/icons/blue_arrows.png" alt="app.name">
+                        </i>
+                        <p class="name">-</p>
+                    </div>
+                    <div class="line">
+                        <i class="icon">
+                            <img src="/static/account/img/icons/blue_arrows.png" alt="app.name">
+                        </i>
+                        <p class="name">-</p>
+                    </div>
+                </div>
+                <div class="info_block course">
+                    <small class="title">Course</small>
+                    <div class="line">
+                        <p class="name">0.00</p>
+                    </div>
+                    <div class="line">
+                        <p class="name">0.00</p>
+                    </div>
+                </div>
+            </div>
+                </div>
+</div>
+
+
+<div class="base_wrapper last_arbitrage_transactions">
+    <h2 class="base_title">Your <strong>recent deals</strong></h2>
+
+    <div class="transaction_wrapper big_transaction_wrapper">
+                                            </div>
+</div>
+
+{% endblock content %}
+
+

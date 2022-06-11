@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 431 150" style="enable-background:new 0 0 431 150;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'MyriadPro-Regular';}
+	.st1{font-size:12px;}
+	.st2{clip-path:url(#SVGID_2_);}
+	.st3{fill:url(#SVGID_3_);}
+	.st4{opacity:0.2;clip-path:url(#SVGID_2_);fill:#FFFFFF;enable-background:new    ;}
+</style>
+<text transform="matrix(1 0 0 1 215.5 75)" class="st0 st1">e7b2a2</text>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="431" height="150"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st2">
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="85.7407" y1="48.3932" x2="307.3324" y2="93.83">
+			<stop  offset="0" style="stop-color:#6E5CFA"/>
+			<stop  offset="1" style="stop-color:#6E4EFA"/>
+		</linearGradient>
+		<rect class="st3" width="431" height="150"/>
+	</g>
+	<circle class="st4" cx="18.25" cy="14.25" r="34.75"/>
+	<circle class="st4" cx="198.25" cy="-10.75" r="34.75"/>
+	<circle class="st4" cx="232.75" cy="111.75" r="17.25"/>
+	<circle class="st4" cx="403.75" cy="27.75" r="17.25"/>
+	<circle class="st4" cx="436.75" cy="97.75" r="70.25"/>
+	<circle class="st4" cx="130" cy="271" r="182.5"/>
+	<circle class="st4" cx="291" cy="-11" r="80.5"/>
+</g>
+</svg>

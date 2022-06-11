@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/css/font-awesome.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin/css/bootstrap.css') }}">
+    <link href="{{ url_for('static', filename='admin/plugin/dialog/dialog.css') }}" rel="stylesheet" type="text/css">
+	<link rel="icon" href="{{ url_for('static', filename='admin/img/Rent_25px.png') }}">
+	<style>
+		#btn{
+		        background-color:#880e4f;
+		        color: white;
+		    }
+		.easyPaginateNav a {padding:5px;}
+		.easyPaginateNav a.current {font-weight:bold;text-decoration:underline;}
+	</style>{% endblock %}
+	{% block css %}
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
+	{% endblock %}
+	</head>
+	
+
+<body>
+	<div class="container-fluid">{% block navbar %}
+		<nav class="navbar navbar-expand-lg  sticky-top navbar-light p-2">
+			<a href="" class="navbar-brand mx-2">
+				<img src="{{ url_for('static', filename='admin/img/twre.png')}}" width="50" height="50" alt="">
+			</a>
+			<h3 class="d-inline align-middle lead mx-4">TWRE</h3>
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"> <span class="navbar-toggler-icon">                </span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item"> <a href="/admin-management-page" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item"> <a href="/admin-management-page/investments" class="nav-link">Investment</a>
+                    </li>
+                    <li class="nav-item"> <a href="/admin-management-page/withdraw" class="nav-link">Withdraw</a>
+                    </li>
+                    <li class="nav-item"> <a href="/admin-management-page/withdraw-profit" class="nav-link">Profit Withdraw</a>
+					</li>
+					<li class="nav-item"> <a href="/admin-management-page/users" class="nav-link">Users</a>
+					</li>
+					<li class="nav-item"> <a href="/admin-management-page/kyc" class="nav-link">KYC</a>
+					</li>
+					<!-- <li class="nav-item"> <a href="/admin/posts" class="nav-link">Blog</a>
+					</li>
+				 -->
+                    <li class="nav-item"> <a href="/admin-management-page/update-profit" class="nav-link">Profit</a>
+					</li>
+					<li class="nav-item"> <a href="/admin-management-page/support" class="nav-link">Support</a>
+					</li>
+                    <li class="nav-item"> <a href="/admin-management-page/support-user" class="nav-link">User Support</a>
+					</li>
+					<li class="nav-item"> <a class="nav-link  " href="{{ url_for('auth.logout') }}">Logout</a>
+                    </li>
+                    {% else %}
+					<li class="nav-item"><a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+                    </li>
+                    {% endif %}
+             
+				</ul>
+			</div>
+		</nav>{% endblock %}
+		<br>
+		<h1 class="lead mx-2">
+            <a class="btn btn-light border border-primary" href="/admin-management-page"> <i class="fa fa-arrow-left"></i>     Dashboard</a>
+        </h1>
+		{% for message in get_flashed_messages() %}
+		<div class="alert alert-light  bg-primary text-white p-2 m-2 floating-alert text-center">{{ message }}</div>{% endfor %} {% block content %} {% block page_content %}{% endblock %} {% endblock %}
+		<!-- footer -->
+		<footer id="main-footer" class="bg-primary  ">
+			<div class="row">
+				<div class="col">
+					<h4 class="text-center display-4  text-white text-center">NOLE </h4>
+					<div class="row">
+						<div class="col text-center">
+							<p class="lead text-white">Copyright &copy; 2020 All rights reserved</p>
+						</div>
+					</div>
+					<br>
+				</div>
+			</div>
+		</footer>
+	</div>
+	
+	<script src="{{ url_for('static', filename='admin/js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='admin/js/popper.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='admin/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin/js/list.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin/plugin/dialog/dialog.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin/js/public.js') }}"></script>
+	<script src="{{ url_for('static', filename='admin/js/main.js') }}"></script>
+	<script src="{{ url_for('static', filename='admin/js/ckeditor.js') }}"></script>{{ moment.include_moment() }}
+	<script type="text/javascript" src="https://cdn.datatables.net/r/dt/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+	<!-- <script>
+		    CKEDITOR.replace( 'editor1' );
+	</script> -->
+	<!-- listjs -->
+	<script>
+		var options = {
+            valueNames: ['_id', 'title', 'price', 'category', 'address', 'date', 'author'],
+            page: 8,
+            pagination: true
+        };
+        var propertyList = new List('table', options);
+        var options = {
+            valueNames: ['_id', 'title', 'date', 'author'],
+            page: 8,
+            pagination: true
+        };
+        var postList = new List('table2', options);
+        var options = {
+			valueNames: ['_id', 'username', 'email'],
+            page: 8,
+            pagination: true
+        };
+		var userList = new List('table3', options);
+		
+	</script>
+	{% block js %}
+	{% endblock %}
+</body>
+
+</html>

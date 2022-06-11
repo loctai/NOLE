@@ -1,0 +1,39 @@
+
+{%  extends 'home/layouts/base.html' %}
+
+{% block title %} 
+    <title>Blog</title>
+{% endblock%}
+
+{% block content %}
+    <div class="main_blog">
+        <div class="base_wrapper content">
+            <div class="contact_page">
+                <h1 class="blog__title">
+                    Contact Us
+                </h1>
+                {% for field, errors in form.errors.items() %}
+            <div class="alert-error">
+                {{ form[field].label }}: {{ ', '.join(errors) }}
+            </div>
+            {% endfor %}
+                <form method="POST">
+                    {{form.csrf_token}}
+                  <label for="fname">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name..">
+              
+                  <label for="lname">Email</label>
+                  <input type="text" id="email" name="email" placeholder="Your email..">
+              
+                  <label for="subject">Message</label>
+                  <textarea id="subject" name="message" placeholder="Write something.." style="height:200px"></textarea>
+                  {{ form.recaptcha }}
+                  <input type="submit" name="submit" value="Submit">
+                </form>
+              </div>
+
+            
+        </div>
+    </div>
+    
+{% endblock%}

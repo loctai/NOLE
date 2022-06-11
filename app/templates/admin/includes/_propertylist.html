@@ -1,0 +1,22 @@
+{% for i in propertyList %}
+<tr class="estate ">
+	<div class="estate-body lead ">
+		<td class="_id">{{i[0]}}</td>
+		<td class="title">{{i[1]}}</td>
+		<td class="category">{{i[2]}}</td>
+		<td class="address">{{ i[3]}}</td>
+		<td class="price">{{ i[4] }}</td>
+		<td class="author">{{i[6]}}</td>
+		<td class="date">{{i[5]}}</td>
+		<td>
+			<p>
+				<a href="{{ url_for('admin.edit_property', id=i[0]) }}"> <i data-toggle="tooltip" data-placement="top" title="Edit" class="fa fa-edit"></i>
+				</a>----
+				<a href="{{ url_for('admin.delete_property', id=i[0]) }}"> <i data-toggle="tooltip" data-placement="top" title="Delete" class="fa fa-trash">
+       </i>
+				</a>
+			</p>
+		</td>
+	</div>
+</tr>
+{% endfor %}

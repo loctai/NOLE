@@ -1,0 +1,21 @@
+{% extends "admin/layouts/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+<div class="row">
+	<div class="col-lg-4 mx-auto">
+		<br>
+		<div class="card bg-light border border-primary ">
+			<div class="card-body">
+				<div class="card-title">
+					<h1 class="display-4">
+                                             Profile
+                                         </h1>
+				</div>
+				<div class="lead text-muted ">{{ wtf.quick_form(form) }}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+{% endblock %}

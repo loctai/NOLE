@@ -1,0 +1,30 @@
+
+       
+    {% for i in usersList %}
+  
+
+    <tr class="users ">
+
+    <div class="user-body lead">
+       <td class="_id">{{i._id}}</td> 
+      <td class="username">{{i.name }}</td>
+
+        <td class="email">   {{i.email}}</td>
+        <td class="total_invest">   {{i.balance.total_invest}}</td>
+        <td>{{i.balance.balance_usd | format_usd}}</td>
+        <td>{{i.wallet.coin_balance | format_satoshi}}</td>
+        <td>{{i.wallet.coin_balance_reward | format_satoshi}}</td>
+        <td>{{i.balance.team_volume_f1 | format_usd}}</td>
+         <td class="date">
+           {{i.createdAt | date_format}}
+         </td>
+        
+  
+            </div>
+
+
+        </tr>
+
+
+{% endfor %}
+
